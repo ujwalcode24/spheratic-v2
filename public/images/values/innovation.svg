@@ -1,0 +1,24 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rocket body -->
+  <path d="M100 20 L120 60 L120 120 L100 140 L80 120 L80 60 Z" stroke="currentColor" stroke-width="4" fill="currentColor" opacity="0.8"/>
+  
+  <!-- Rocket fins -->
+  <path d="M80 100 L60 120 L80 120 Z" stroke="currentColor" stroke-width="3" fill="currentColor" opacity="0.6"/>
+  <path d="M120 100 L140 120 L120 120 Z" stroke="currentColor" stroke-width="3" fill="currentColor" opacity="0.6"/>
+  
+  <!-- Rocket window -->
+  <circle cx="100" cy="50" r="12" stroke="currentColor" stroke-width="3" fill="none"/>
+  <circle cx="100" cy="50" r="6" fill="currentColor" opacity="0.4"/>
+  
+  <!-- Flame -->
+  <path d="M85 140 Q100 160 115 140 Q100 170 85 140" stroke="currentColor" stroke-width="3" fill="currentColor" opacity="0.7"/>
+  
+  <!-- Stars -->
+  <path d="M40 40 L42 46 L48 46 L43 50 L45 56 L40 52 L35 56 L37 50 L32 46 L38 46 Z" fill="currentColor" opacity="0.5"/>
+  <path d="M160 30 L162 36 L168 36 L163 40 L165 46 L160 42 L155 46 L157 40 L152 36 L158 36 Z" fill="currentColor" opacity="0.5"/>
+  <path d="M170 80 L172 86 L178 86 L173 90 L175 96 L170 92 L165 96 L167 90 L162 86 L168 86 Z" fill="currentColor" opacity="0.5"/>
+  
+  <!-- Orbit rings -->
+  <circle cx="100" cy="100" r="70" stroke="currentColor" stroke-width="2" fill="none" opacity="0.3"/>
+  <circle cx="100" cy="100" r="85" stroke="currentColor" stroke-width="1" fill="none" opacity="0.2"/>
+</svg>

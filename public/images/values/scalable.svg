@@ -1,0 +1,45 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Growth chart bars -->
+  <rect x="40" y="140" width="20" height="40" fill="currentColor" opacity="0.6"/>
+  <rect x="70" y="120" width="20" height="60" fill="currentColor" opacity="0.7"/>
+  <rect x="100" y="90" width="20" height="90" fill="currentColor" opacity="0.8"/>
+  <rect x="130" y="60" width="20" height="120" fill="currentColor" opacity="0.9"/>
+  <rect x="160" y="30" width="20" height="150" fill="currentColor" opacity="1"/>
+  
+  <!-- Growth arrow -->
+  <path d="M30 170 L170 40" stroke="currentColor" stroke-width="4" fill="none"/>
+  <path d="M160 30 L170 40 L160 50" stroke="currentColor" stroke-width="4" fill="none"/>
+  
+  <!-- Data points -->
+  <circle cx="50" cy="140" r="4" fill="currentColor"/>
+  <circle cx="80" cy="120" r="4" fill="currentColor"/>
+  <circle cx="110" cy="90" r="4" fill="currentColor"/>
+  <circle cx="140" cy="60" r="4" fill="currentColor"/>
+  <circle cx="170" cy="30" r="4" fill="currentColor"/>
+  
+  <!-- Connection line -->
+  <path d="M50 140 Q80 120 110 90 Q140 60 170 30" stroke="currentColor" stroke-width="2" fill="none" opacity="0.6"/>
+  
+  <!-- Scale indicators -->
+  <path d="M25 180 L185 180" stroke="currentColor" stroke-width="2"/>
+  <path d="M25 180 L25 20" stroke="currentColor" stroke-width="2"/>
+  
+  <!-- Scale marks -->
+  <path d="M25 160 L30 160" stroke="currentColor" stroke-width="1"/>
+  <path d="M25 140 L30 140" stroke="currentColor" stroke-width="1"/>
+  <path d="M25 120 L30 120" stroke="currentColor" stroke-width="1"/>
+  <path d="M25 100 L30 100" stroke="currentColor" stroke-width="1"/>
+  <path d="M25 80 L30 80" stroke="currentColor" stroke-width="1"/>
+  <path d="M25 60 L30 60" stroke="currentColor" stroke-width="1"/>
+  <path d="M25 40 L30 40" stroke="currentColor" stroke-width="1"/>
+  
+  <!-- Bottom scale marks -->
+  <path d="M50 180 L50 185" stroke="currentColor" stroke-width="1"/>
+  <path d="M80 180 L80 185" stroke="currentColor" stroke-width="1"/>
+  <path d="M110 180 L110 185" stroke="currentColor" stroke-width="1"/>
+  <path d="M140 180 L140 185" stroke="currentColor" stroke-width="1"/>
+  <path d="M170 180 L170 185" stroke="currentColor" stroke-width="1"/>
+  
+  <!-- Growth percentage -->
+  <text x="180" y="25" font-family="Arial" font-size="12" fill="currentColor" opacity="0.8">+500%</text>
+</svg>

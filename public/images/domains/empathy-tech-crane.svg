@@ -1,0 +1,126 @@
+<svg width="280" height="300" viewBox="0 0 280 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ground/Base Platform with texture -->
+  <rect x="0" y="280" width="280" height="20" fill="currentColor" opacity="0.3"/>
+  <rect x="0" y="285" width="280" height="2" fill="currentColor" opacity="0.5"/>
+  <rect x="0" y="290" width="280" height="1" fill="currentColor" opacity="0.4"/>
+
+  <!-- Crane Base/Foundation with more detail -->
+  <rect x="110" y="240" width="60" height="40" fill="currentColor" opacity="0.9"/>
+  <rect x="115" y="245" width="50" height="30" fill="currentColor" opacity="0.7"/>
+  <rect x="120" y="250" width="40" height="20" fill="currentColor" opacity="0.5"/>
+  <rect x="100" y="270" width="80" height="10" fill="currentColor" opacity="0.8"/>
+
+  <!-- Concrete foundation details -->
+  <rect x="105" y="275" width="70" height="5" fill="currentColor" opacity="0.6"/>
+  <circle cx="115" cy="277" r="1" fill="currentColor" opacity="0.8"/>
+  <circle cx="165" cy="277" r="1" fill="currentColor" opacity="0.8"/>
+
+  <!-- Main Mast/Tower with structural details -->
+  <rect x="135" y="60" width="10" height="180" fill="currentColor" opacity="0.9"/>
+  <rect x="137" y="60" width="6" height="180" fill="currentColor" opacity="0.7"/>
+  <rect x="139" y="60" width="2" height="180" fill="currentColor" opacity="0.5"/>
+
+  <!-- Horizontal Jib/Boom with structural details -->
+  <rect x="60" y="55" width="160" height="8" fill="currentColor" opacity="0.9"/>
+  <rect x="60" y="57" width="160" height="4" fill="currentColor" opacity="0.7"/>
+  <rect x="60" y="59" width="160" height="2" fill="currentColor" opacity="0.5"/>
+
+  <!-- Jib support cables -->
+  <line x1="140" y1="60" x2="220" y2="55" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+  <line x1="140" y1="60" x2="200" y2="55" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+
+  <!-- Counter Jib with details -->
+  <rect x="20" y="55" width="40" height="6" fill="currentColor" opacity="0.8"/>
+  <rect x="20" y="57" width="40" height="2" fill="currentColor" opacity="0.6"/>
+
+  <!-- Trolley on the jib with mechanical details -->
+  <rect x="180" y="48" width="12" height="15" fill="currentColor" opacity="0.9"/>
+  <rect x="182" y="50" width="8" height="11" fill="currentColor" opacity="0.7"/>
+  <circle cx="184" cy="52" r="1" fill="currentColor" opacity="0.8"/>
+  <circle cx="188" cy="52" r="1" fill="currentColor" opacity="0.8"/>
+
+  <!-- Trolley wheels -->
+  <circle cx="182" cy="63" r="2" fill="currentColor" opacity="0.8"/>
+  <circle cx="190" cy="63" r="2" fill="currentColor" opacity="0.8"/>
+
+  <!-- Hook and Cable system -->
+  <line x1="186" y1="63" x2="186" y2="150" stroke="currentColor" stroke-width="2" opacity="0.7"/>
+  <line x1="185" y1="63" x2="185" y2="150" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+  <line x1="187" y1="63" x2="187" y2="150" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+
+  <!-- Hook mechanism -->
+  <circle cx="186" cy="155" r="4" fill="currentColor" opacity="0.8"/>
+  <path d="M182 155 Q186 150 190 155" stroke="currentColor" stroke-width="2" fill="none" opacity="0.8"/>
+
+  <!-- Load being lifted (detailed heart shape for empathy) -->
+  <path d="M186 160 Q170 145 170 130 Q170 115 186 115 Q202 115 202 130 Q202 145 186 160" fill="currentColor" opacity="0.7"/>
+  <path d="M186 155 Q175 145 175 135 Q175 125 186 125 Q197 125 197 135 Q197 145 186 155" fill="currentColor" opacity="0.5"/>
+  <circle cx="180" cy="135" r="2" fill="currentColor" opacity="0.9"/>
+  <circle cx="192" cy="135" r="2" fill="currentColor" opacity="0.9"/>
+
+  <!-- Operator Cab with detailed interior -->
+  <rect x="125" y="80" width="20" height="15" rx="2" fill="currentColor" opacity="0.8"/>
+  <rect x="127" y="82" width="6" height="6" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+  <rect x="129" y="84" width="2" height="2" fill="currentColor" opacity="0.7"/>
+  <rect x="135" y="82" width="8" height="6" fill="currentColor" opacity="0.6"/>
+  <circle cx="137" cy="84" r="0.5" fill="currentColor" opacity="0.8"/>
+  <circle cx="141" cy="84" r="0.5" fill="currentColor" opacity="0.8"/>
+
+  <!-- Cab access ladder -->
+  <rect x="123" y="95" width="2" height="15" fill="currentColor" opacity="0.7"/>
+  <rect x="121" y="98" width="6" height="1" fill="currentColor" opacity="0.6"/>
+  <rect x="121" y="102" width="6" height="1" fill="currentColor" opacity="0.6"/>
+  <rect x="121" y="106" width="6" height="1" fill="currentColor" opacity="0.6"/>
+
+  <!-- Support Cables with tension details -->
+  <line x1="140" y1="60" x2="220" y2="63" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+  <line x1="140" y1="60" x2="60" y2="63" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+  <line x1="140" y1="62" x2="200" y2="64" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+  <line x1="140" y1="62" x2="80" y2="64" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+
+  <!-- Counterweight with mechanical details -->
+  <rect x="15" y="65" width="15" height="25" fill="currentColor" opacity="0.8"/>
+  <rect x="17" y="67" width="11" height="21" fill="currentColor" opacity="0.6"/>
+  <rect x="19" y="69" width="7" height="17" fill="currentColor" opacity="0.4"/>
+  <circle cx="22" cy="77" r="2" fill="currentColor" opacity="0.9"/>
+
+  <!-- Construction building being built (representing progress) with scaffolding -->
+  <rect x="200" y="220" width="50" height="40" fill="currentColor" opacity="0.5"/>
+  <rect x="205" y="200" width="40" height="20" fill="currentColor" opacity="0.4"/>
+  <rect x="210" y="180" width="30" height="20" fill="currentColor" opacity="0.3"/>
+  <rect x="215" y="160" width="20" height="20" fill="currentColor" opacity="0.2"/>
+
+  <!-- Building windows -->
+  <rect x="208" y="225" width="4" height="6" fill="currentColor" opacity="0.3"/>
+  <rect x="218" y="225" width="4" height="6" fill="currentColor" opacity="0.3"/>
+  <rect x="228" y="225" width="4" height="6" fill="currentColor" opacity="0.3"/>
+  <rect x="238" y="225" width="4" height="6" fill="currentColor" opacity="0.3"/>
+
+  <!-- Scaffolding -->
+  <line x1="198" y1="220" x2="198" y2="160" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+  <line x1="252" y1="220" x2="252" y2="160" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+  <line x1="198" y1="180" x2="252" y2="180" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+  <line x1="198" y1="200" x2="252" y2="200" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+
+  <!-- Birds flying (representing freedom and aspiration) -->
+  <path d="M40 50 Q45 45 50 50 Q45 55 40 50" fill="currentColor" opacity="0.4"/>
+  <path d="M60 35 Q65 30 70 35 Q65 40 60 35" fill="currentColor" opacity="0.4"/>
+  <path d="M230 60 Q235 55 240 60 Q235 65 230 60" fill="currentColor" opacity="0.4"/>
+
+  <!-- Soft clouds -->
+  <ellipse cx="45" cy="25" rx="15" ry="8" fill="currentColor" opacity="0.2"/>
+  <ellipse cx="220" cy="35" rx="12" ry="6" fill="currentColor" opacity="0.2"/>
+
+  <!-- Ground line -->
+  <line x1="0" y1="300" x2="280" y2="300" stroke="currentColor" stroke-width="3" opacity="0.8"/>
+
+  <!-- Additional structural details on mast -->
+  <rect x="138" y="100" width="4" height="6" fill="currentColor" opacity="0.7"/>
+  <rect x="138" y="120" width="4" height="6" fill="currentColor" opacity="0.7"/>
+  <rect x="138" y="140" width="4" height="6" fill="currentColor" opacity="0.7"/>
+  <rect x="138" y="160" width="4" height="6" fill="currentColor" opacity="0.7"/>
+
+  <!-- Empathy symbol on the crane -->
+  <circle cx="140" cy="260" r="6" fill="currentColor" opacity="0.6"/>
+  <path d="M140 255 Q136 252 136 248 Q136 244 140 244 Q144 244 144 248 Q144 252 140 255" fill="currentColor" opacity="0.8"/>
+</svg>

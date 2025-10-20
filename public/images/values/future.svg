@@ -1,0 +1,51 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Clock face -->
+  <circle cx="100" cy="100" r="50" stroke="currentColor" stroke-width="4" fill="currentColor" opacity="0.1"/>
+  <circle cx="100" cy="100" r="45" stroke="currentColor" stroke-width="2" fill="none"/>
+  
+  <!-- Clock numbers -->
+  <circle cx="100" cy="60" r="3" fill="currentColor"/>
+  <circle cx="130" cy="70" r="3" fill="currentColor"/>
+  <circle cx="140" cy="100" r="3" fill="currentColor"/>
+  <circle cx="130" cy="130" r="3" fill="currentColor"/>
+  <circle cx="100" cy="140" r="3" fill="currentColor"/>
+  <circle cx="70" cy="130" r="3" fill="currentColor"/>
+  <circle cx="60" cy="100" r="3" fill="currentColor"/>
+  <circle cx="70" cy="70" r="3" fill="currentColor"/>
+  
+  <!-- Clock hands pointing to future -->
+  <path d="M100 100 L100 75" stroke="currentColor" stroke-width="4"/>
+  <path d="M100 100 L120 100" stroke="currentColor" stroke-width="3"/>
+  <circle cx="100" cy="100" r="4" fill="currentColor"/>
+  
+  <!-- Future sparkles/stars -->
+  <path d="M40 40 L42 46 L48 46 L43 50 L45 56 L40 52 L35 56 L37 50 L32 46 L38 46 Z" fill="currentColor" opacity="0.7"/>
+  <path d="M160 30 L162 36 L168 36 L163 40 L165 46 L160 42 L155 46 L157 40 L152 36 L158 36 Z" fill="currentColor" opacity="0.7"/>
+  <path d="M170 160 L172 166 L178 166 L173 170 L175 176 L170 172 L165 176 L167 170 L162 166 L168 166 Z" fill="currentColor" opacity="0.7"/>
+  <path d="M30 170 L32 176 L38 176 L33 180 L35 186 L30 182 L25 186 L27 180 L22 176 L28 176 Z" fill="currentColor" opacity="0.7"/>
+  
+  <!-- Innovation rays -->
+  <path d="M100 30 L100 20" stroke="currentColor" stroke-width="3"/>
+  <path d="M130 40 L140 30" stroke="currentColor" stroke-width="3"/>
+  <path d="M160 70 L170 60" stroke="currentColor" stroke-width="3"/>
+  <path d="M170 100 L180 100" stroke="currentColor" stroke-width="3"/>
+  <path d="M160 130 L170 140" stroke="currentColor" stroke-width="3"/>
+  <path d="M130 160 L140 170" stroke="currentColor" stroke-width="3"/>
+  <path d="M100 170 L100 180" stroke="currentColor" stroke-width="3"/>
+  <path d="M70 160 L60 170" stroke="currentColor" stroke-width="3"/>
+  <path d="M40 130 L30 140" stroke="currentColor" stroke-width="3"/>
+  <path d="M30 100 L20 100" stroke="currentColor" stroke-width="3"/>
+  <path d="M40 70 L30 60" stroke="currentColor" stroke-width="3"/>
+  <path d="M70 40 L60 30" stroke="currentColor" stroke-width="3"/>
+  
+  <!-- Digital elements -->
+  <rect x="85" y="15" width="4" height="4" fill="currentColor" opacity="0.6"/>
+  <rect x="95" y="10" width="4" height="4" fill="currentColor" opacity="0.6"/>
+  <rect x="105" y="15" width="4" height="4" fill="currentColor" opacity="0.6"/>
+  <rect x="115" y="10" width="4" height="4" fill="currentColor" opacity="0.6"/>
+  
+  <rect x="185" y="85" width="4" height="4" fill="currentColor" opacity="0.6"/>
+  <rect x="190" y="95" width="4" height="4" fill="currentColor" opacity="0.6"/>
+  <rect x="185" y="105" width="4" height="4" fill="currentColor" opacity="0.6"/>
+  <rect x="190" y="115" width="4" height="4" fill="currentColor" opacity="0.6"/>
+</svg>

@@ -1,0 +1,46 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Heart shape -->
+  <path d="M100 160 Q60 120 60 90 Q60 60 85 60 Q100 70 100 70 Q100 70 115 60 Q140 60 140 90 Q140 120 100 160" stroke="currentColor" stroke-width="4" fill="currentColor" opacity="0.8"/>
+  
+  <!-- Inner heart glow -->
+  <path d="M100 140 Q70 110 70 90 Q70 70 90 70 Q100 80 100 80 Q100 80 110 70 Q130 70 130 90 Q130 110 100 140" stroke="currentColor" stroke-width="2" fill="none" opacity="0.6"/>
+  
+  <!-- Human figures around heart -->
+  <!-- Figure 1 -->
+  <circle cx="50" cy="50" r="8" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.7"/>
+  <path d="M50 58 L50 80" stroke="currentColor" stroke-width="3"/>
+  <path d="M50 70 L40 80" stroke="currentColor" stroke-width="2"/>
+  <path d="M50 70 L60 80" stroke="currentColor" stroke-width="2"/>
+  <path d="M50 80 L45 95" stroke="currentColor" stroke-width="2"/>
+  <path d="M50 80 L55 95" stroke="currentColor" stroke-width="2"/>
+  
+  <!-- Figure 2 -->
+  <circle cx="150" cy="50" r="8" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.7"/>
+  <path d="M150 58 L150 80" stroke="currentColor" stroke-width="3"/>
+  <path d="M150 70 L140 80" stroke="currentColor" stroke-width="2"/>
+  <path d="M150 70 L160 80" stroke="currentColor" stroke-width="2"/>
+  <path d="M150 80 L145 95" stroke="currentColor" stroke-width="2"/>
+  <path d="M150 80 L155 95" stroke="currentColor" stroke-width="2"/>
+  
+  <!-- Figure 3 -->
+  <circle cx="30" cy="120" r="8" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.7"/>
+  <path d="M30 128 L30 150" stroke="currentColor" stroke-width="3"/>
+  <path d="M30 140 L20 150" stroke="currentColor" stroke-width="2"/>
+  <path d="M30 140 L40 150" stroke="currentColor" stroke-width="2"/>
+  <path d="M30 150 L25 165" stroke="currentColor" stroke-width="2"/>
+  <path d="M30 150 L35 165" stroke="currentColor" stroke-width="2"/>
+  
+  <!-- Figure 4 -->
+  <circle cx="170" cy="120" r="8" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.7"/>
+  <path d="M170 128 L170 150" stroke="currentColor" stroke-width="3"/>
+  <path d="M170 140 L160 150" stroke="currentColor" stroke-width="2"/>
+  <path d="M170 140 L180 150" stroke="currentColor" stroke-width="2"/>
+  <path d="M170 150 L165 165" stroke="currentColor" stroke-width="2"/>
+  <path d="M170 150 L175 165" stroke="currentColor" stroke-width="2"/>
+  
+  <!-- Connection lines -->
+  <path d="M50 50 Q100 30 150 50" stroke="currentColor" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M30 120 Q100 100 170 120" stroke="currentColor" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M50 50 Q40 85 30 120" stroke="currentColor" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M150 50 Q160 85 170 120" stroke="currentColor" stroke-width="2" fill="none" opacity="0.4"/>
+</svg>
