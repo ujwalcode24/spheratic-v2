@@ -40,7 +40,7 @@ const MissionSection: React.FC<MissionSectionProps> = ({ className }) => {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl md:text-3xl font-bold text-black mb-6">
-              Building Tomorrow's Solutions Today
+              Building Tomorrow&apos;s Solutions Today
             </h3>
             <p className="text-lg text-black mb-6 leading-relaxed">
               At Spheratic, we&apos;re not just creating software &ndash; we&apos;re crafting experiences that
@@ -89,7 +89,7 @@ const MissionSection: React.FC<MissionSectionProps> = ({ className }) => {
               <h4 className="text-xl font-bold text-black mb-4">Our Vision</h4>
               <p className="text-lg text-black leading-relaxed">
                 To be the global leader in empathy-driven technology, creating a world where
-                innovation serves humanity's greatest challenges and opportunities.
+                innovation serves humanity&apos;s greatest challenges and opportunities.
               </p>
             </div>
 

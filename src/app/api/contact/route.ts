@@ -7,7 +7,7 @@ import { isValidEmail } from '@/lib/utils';
 const createTransporter = () => {
   // For development, you can use a service like Gmail, SendGrid, or Mailgun
   // This is a placeholder configuration
-  return nodemailer.createTransporter({
+  return nodemailer.createTransport({
     host: process.env.SMTP_HOST || 'smtp.gmail.com',
     port: parseInt(process.env.SMTP_PORT || '587'),
     secure: false,
@@ -21,24 +21,24 @@ const createTransporter = () => {
 export async function POST(request: NextRequest) {
   try {
     const body: ContactForm = await request.json();
-    
+
     // Validation
     const { firstName, lastName, email, subject, message, type } = body;
-    
+
     if (!firstName || !lastName || !email || !subject || !message) {
       return NextResponse.json(
         { error: 'All required fields must be filled' },
         { status: 400 }
       );
     }
-    
+
     if (!isValidEmail(email)) {
       return NextResponse.json(
         { error: 'Invalid email address' },
         { status: 400 }
       );
     }
-    
+
     // Create email content
     const emailContent = `
       New Contact Form Submission
@@ -56,21 +56,21 @@ export async function POST(request: NextRequest) {
       ---
       Submitted at: ${new Date().toISOString()}
     `;
-    
+
     // For development, just log the email content
     if (process.env.NODE_ENV === 'development') {
       console.log('Contact form submission:');
       console.log(emailContent);
-      
+
       return NextResponse.json(
         { message: 'Contact form submitted successfully (development mode)' },
         { status: 200 }
       );
     }
-    
+
     // In production, send actual email
     const transporter = createTransporter();
-    
+
     await transporter.sendMail({
       from: process.env.SMTP_FROM || 'noreply@spheratic.com',
       to: 'connect@spheratic.com',
@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
       text: emailContent,
       html: emailContent.replace(/\n/g, '<br>'),
     });
-    
+
     // Send auto-reply to user
     await transporter.sendMail({
       from: process.env.SMTP_FROM || 'noreply@spheratic.com',
@@ -91,12 +91,12 @@ export async function POST(request: NextRequest) {
         <p>Best regards,<br>The Spheratic Team</p>
       `,
     });
-    
+
     return NextResponse.json(
       { message: 'Contact form submitted successfully' },
       { status: 200 }
     );
-    
+
   } catch (error) {
     console.error('Contact form error:', error);
     return NextResponse.json(

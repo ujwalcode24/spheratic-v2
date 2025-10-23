@@ -3,52 +3,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { FullWidthSection, FeatureHighlight, Button } from '@/components/ui';
+import { FullWidthSection, FeatureHighlight } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
 
 const ProductsPage = () => {
-  const products = [
-    {
-      id: 'ai-platform',
-      name: 'AI Platform',
-      description: 'Comprehensive AI and machine learning platform for enterprise applications.',
-      features: ['Natural Language Processing', 'Computer Vision', 'Predictive Analytics', 'AutoML'],
-      category: 'AI & Machine Learning',
-      comingSoon: false
-    },
-    {
-      id: 'fintech-suite',
-      name: 'FinTech Suite',
-      description: 'Complete financial technology solutions for modern banking and payments.',
-      features: ['Digital Banking', 'Payment Processing', 'Fraud Detection', 'Compliance Tools'],
-      category: 'Financial Technology',
-      comingSoon: false
-    },
-    {
-      id: 'healthtech-solutions',
-      name: 'HealthTech Solutions',
-      description: 'Advanced healthcare technology for better patient outcomes.',
-      features: ['Telemedicine', 'Health Analytics', 'Patient Management', 'Medical AI'],
-      category: 'Healthcare Technology',
-      comingSoon: false
-    },
-    {
-      id: 'blockchain-tools',
-      name: 'Blockchain Tools',
-      description: 'Secure and scalable blockchain solutions for enterprise.',
-      features: ['Smart Contracts', 'DeFi Solutions', 'NFT Platforms', 'Crypto Trading'],
-      category: 'Blockchain & Web3',
-      comingSoon: true
-    },
-    {
-      id: 'analytics-dashboard',
-      name: 'Analytics Dashboard',
-      description: 'Real-time analytics and business intelligence platform.',
-      features: ['Real-time Monitoring', 'Custom Reports', 'Data Visualization', 'API Integration'],
-      category: 'Business Intelligence',
-      comingSoon: true
-    }
-  ];
 
   return (
     <div className="pt-16 min-h-screen bg-white">
@@ -107,7 +65,7 @@ const ProductsPage = () => {
       <FeatureHighlight
         title="FinTech Suite"
         subtitle="Complete financial technology solutions for modern banking and payments"
-        variant="blue"
+        variant="black"
         features={[
           {
             title: "Digital Banking",
@@ -130,7 +88,7 @@ const ProductsPage = () => {
       <FeatureHighlight
         title="HealthTech Solutions"
         subtitle="Advanced healthcare technology for better patient outcomes"
-        variant="purple"
+        variant="white"
         features={[
           {
             title: "Telemedicine",

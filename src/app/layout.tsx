@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     images: [SEO_DEFAULTS.ogImage],
   },
   twitter: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     card: SEO_DEFAULTS.twitterCard as any,
     title: SEO_DEFAULTS.title,
     description: SEO_DEFAULTS.description,

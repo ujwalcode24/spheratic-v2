@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle, Button } from '@/components/ui';
+import { Card, Button } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
 
 const CaseStudiesPage = () => {
@@ -105,7 +105,7 @@ const CaseStudiesPage = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-accent-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Discover how we've helped businesses across industries achieve digital transformation
+              Discover how we&apos;ve helped businesses across industries achieve digital transformation
               and drive measurable results through innovative technology solutions.
             </p>
           </motion.div>
@@ -258,7 +258,7 @@ const CaseStudiesPage = () => {
               Ready to Write Your Success Story?
             </h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-              Let's discuss how we can help you achieve similar results for your business.
+              Let&apos;s discuss how we can help you achieve similar results for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/company/contact">

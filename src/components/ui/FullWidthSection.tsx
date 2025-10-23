@@ -80,7 +80,6 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
   features,
   variant,
   icon,
-  image,
   reverse = false,
   id
 }) => {

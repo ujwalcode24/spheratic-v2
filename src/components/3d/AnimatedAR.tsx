@@ -94,15 +94,15 @@ const AnimatedAR: React.FC = () => {
 
       // Rotate vertices
       const rotatedVertices = vertices.map(v => {
-        let [x, y, z] = v;
+        const [x, y, z] = v;
 
         // Rotate around X
-        let y1 = y * Math.cos(rotationX) - z * Math.sin(rotationX);
-        let z1 = y * Math.sin(rotationX) + z * Math.cos(rotationX);
+        const y1 = y * Math.cos(rotationX) - z * Math.sin(rotationX);
+        const z1 = y * Math.sin(rotationX) + z * Math.cos(rotationX);
 
         // Rotate around Y
-        let x2 = x * Math.cos(rotationY) + z1 * Math.sin(rotationY);
-        let z2 = -x * Math.sin(rotationY) + z1 * Math.cos(rotationY);
+        const x2 = x * Math.cos(rotationY) + z1 * Math.sin(rotationY);
+        const z2 = -x * Math.sin(rotationY) + z1 * Math.cos(rotationY);
 
         return [x2, y1, z2];
       });

@@ -54,7 +54,7 @@ const CustomersPage = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-accent-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Discover how leading companies are transforming their businesses with Spheratic's innovative solutions.
+              Discover how leading companies are transforming their businesses with Spheratic&apos;s innovative solutions.
             </p>
           </motion.div>
         </div>

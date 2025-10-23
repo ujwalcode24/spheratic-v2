@@ -90,7 +90,7 @@ const SolutionsPage = () => {
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {solutions.map((solution, index) => (
+            {solutions.map((solution) => (
               <motion.div
                 key={solution.id}
                 variants={ANIMATIONS.fadeInUp}

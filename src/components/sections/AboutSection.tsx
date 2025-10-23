@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { DomainSection, FullWidthSection, FeatureHighlight } from '@/components/ui';
+import { FullWidthSection } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
 
 const AboutSection = () => {
@@ -80,13 +80,6 @@ const AboutSection = () => {
         "Long-term vision planning"
       ]
     }
-  ];
-
-  const stats = [
-    { value: "5+", label: "Years Experience" },
-    { value: "100+", label: "Projects Delivered" },
-    { value: "50+", label: "Happy Clients" },
-    { value: "24/7", label: "Support Available" }
   ];
 
   const getOverlayColor = (index: number): string => {

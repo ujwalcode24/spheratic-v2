@@ -52,6 +52,7 @@ export function formatDate(date: string | Date): string {
 }
 
 // Debounce function
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function debounce<T extends (...args: any[]) => any>(
   func: T,
   wait: number
@@ -64,6 +65,7 @@ export function debounce<T extends (...args: any[]) => any>(
 }
 
 // Throttle function
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function throttle<T extends (...args: any[]) => any>(
   func: T,
   limit: number
@@ -128,14 +130,14 @@ export function animateNumber(
     const progress = Math.min(elapsed / duration, 1);
     const easeOutQuart = 1 - Math.pow(1 - progress, 4);
     const current = start + difference * easeOutQuart;
-    
+
     callback(Math.round(current));
-    
+
     if (progress < 1) {
       requestAnimationFrame(step);
     }
   }
-  
+
   requestAnimationFrame(step);
 }
 
@@ -152,6 +154,7 @@ export const storage = {
     }
     return null;
   },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   set: (key: string, value: any) => {
     if (typeof window !== 'undefined') {
       try {

@@ -1,4 +1,4 @@
-import { NavItem, Product, Solution, Partner } from '@/types';
+import { NavItem } from '@/types';
 
 // Navigation structure
 export const NAVIGATION: NavItem[] = [
@@ -255,22 +255,22 @@ export const ANIMATIONS = {
   fadeInUp: {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: 'easeOut' }
+    transition: { duration: 0.6 }
   },
   fadeInLeft: {
     initial: { opacity: 0, x: -60 },
     animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.6, ease: 'easeOut' }
+    transition: { duration: 0.6 }
   },
   fadeInRight: {
     initial: { opacity: 0, x: 60 },
     animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.6, ease: 'easeOut' }
+    transition: { duration: 0.6 }
   },
   scaleIn: {
     initial: { opacity: 0, scale: 0.8 },
     animate: { opacity: 1, scale: 1 },
-    transition: { duration: 0.5, ease: 'easeOut' }
+    transition: { duration: 0.5 }
   },
   staggerChildren: {
     animate: {

@@ -112,7 +112,7 @@ const AIPlatformPage = () => {
       <FeatureHighlight
         title="Powerful AI Capabilities"
         subtitle="Our AI platform provides comprehensive tools and services to build intelligent applications"
-        variant="blue"
+        variant="orange"
         features={features.map(feature => ({
           title: feature.title,
           description: feature.description,

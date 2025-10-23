@@ -1,12 +1,11 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, type JSX } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { NAVIGATION, COMPANY_INFO } from '@/lib/constants';
-import { NavItem } from '@/types';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);

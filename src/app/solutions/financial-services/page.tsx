@@ -72,15 +72,15 @@ const FinancialServicesPage = () => {
               <span className="text-2xl mr-2">🏦</span>
               Financial Services Solutions
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="text-primary-500">Transform</span> Financial Services
               <br />
               <span className="gradient-text">With Digital Innovation</span>
             </h1>
-            
+
             <p className="text-lg md:text-xl text-accent-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Comprehensive digital solutions for banks, fintech companies, and financial institutions. 
+              Comprehensive digital solutions for banks, fintech companies, and financial institutions.
               Build secure, scalable, and compliant financial services.
             </p>
 
@@ -244,7 +244,7 @@ const FinancialServicesPage = () => {
               Ready to Modernize Your Financial Services?
             </h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-              Let's discuss how our solutions can help you stay competitive in the digital finance landscape.
+              Let&apos;s discuss how our solutions can help you stay competitive in the digital finance landscape.
             </p>
             <Link href="/company/contact">
               <Button variant="outline" size="lg" className="px-8 py-3 bg-white text-primary-500 border-white hover:bg-accent-gray-50">

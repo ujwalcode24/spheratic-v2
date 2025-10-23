@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Button } from '@/components/ui';
+
 import ParticleSystem from '@/components/3d/ParticleSystem';
 import { ANIMATIONS } from '@/lib/constants';
 
