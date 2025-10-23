@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Button } from '@/components/ui';
-import { AnimatedBackground } from '@/components/3d';
+import ParticleSystem from '@/components/3d/ParticleSystem';
 import { ANIMATIONS } from '@/lib/constants';
 
 const HeroSection = () => {
@@ -37,8 +37,8 @@ const HeroSection = () => {
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
     >
-      {/* 3D Animated Background */}
-      <AnimatedBackground />
+      {/* Particle System Background */}
+      <ParticleSystem />
 
       {/* Gradient overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/60 to-white/80 z-0"></div>
@@ -95,28 +95,25 @@ const HeroSection = () => {
             We create applications that matter, anywhere, anytime with real-time impact.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            className="flex justify-center items-center mb-16"
           >
             <Link href="/company/contact">
-              <Button size="lg" className="px-8 py-4 text-lg">
+              <button
+                style={{ backgroundColor: '#FF6B35', color: 'white' }}
+                className="px-8 py-4 text-lg rounded-md font-medium transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-1"
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#E74C3C'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FF6B35'}
+              >
                 Schedule Demo
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </Button>
-            </Link>
-            <Link href="/customers/case-studies">
-              <Button variant="outline" size="lg" className="px-8 py-4 text-lg">
-                View Case Studies
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </Button>
+              </button>
             </Link>
           </motion.div>
 
@@ -143,20 +140,7 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="flex flex-col items-center">
-          <span className="text-sm text-accent-gray-500 mb-2">Scroll to explore</span>
-          <div className="w-6 h-10 border-2 border-accent-gray-300 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-accent-gray-400 rounded-full mt-2 animate-bounce"></div>
-          </div>
-        </div>
-      </motion.div>
+
     </section>
   );
 };

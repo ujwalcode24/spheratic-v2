@@ -1,23 +1,20 @@
-import { HeroSection, DomainsSection, AboutSection } from '@/components/sections';
+import { HeroSection, AboutSection, TrustedBySection } from '@/components/sections';
+import StickyDomainsSection from '@/components/sections/StickyDomainsSection';
 import MissionSection from '@/components/sections/MissionSection';
-import ScrollExploreSection from '@/components/sections/ScrollExploreSection';
-import { OverlapScrollSection, ParallaxSection } from '@/components/animations';
+import { ParallaxSection } from '@/components/animations';
 
 export default function Home() {
   return (
-    <div className="pt-16 relative overflow-hidden">
+    <div className="pt-16 relative overflow-visible">
       {/* Hero Section */}
       <ParallaxSection speed={0.2} className="relative z-30">
         <HeroSection />
       </ParallaxSection>
 
-      {/* Scroll to Explore Section with Stats */}
-      <ScrollExploreSection />
-
-      {/* Domains Section with Parallax */}
-      <ParallaxSection speed={0.4} className="relative z-20">
-        <DomainsSection />
-      </ParallaxSection>
+      {/* Sticky Domains Section */}
+      <div className="relative z-20">
+        <StickyDomainsSection />
+      </div>
 
       {/* Mission Section */}
       <MissionSection />
@@ -26,6 +23,11 @@ export default function Home() {
       <ParallaxSection speed={0.6} className="relative z-10">
         <AboutSection />
       </ParallaxSection>
+
+      {/* Trusted by Industry Leaders Section */}
+      <div className="relative z-10">
+        <TrustedBySection />
+      </div>
     </div>
   );
 }

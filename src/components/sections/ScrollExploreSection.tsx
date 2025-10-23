@@ -47,7 +47,7 @@ const ScrollExploreSection: React.FC<ScrollExploreSectionProps> = ({ className }
                   <div className="aspect-[4/3] p-8 flex flex-col justify-center items-center text-center relative">
                     {/* Background gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-orange-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    
+
                     {/* Content */}
                     <div className="relative z-10">
                       <motion.div
@@ -61,7 +61,7 @@ const ScrollExploreSection: React.FC<ScrollExploreSectionProps> = ({ className }
                           {stat.number}
                         </span>
                       </motion.div>
-                      
+
                       <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -94,18 +94,18 @@ const ScrollExploreSection: React.FC<ScrollExploreSectionProps> = ({ className }
             <p className="text-lg text-gray-600 mb-6">
               Trusted by Industry Leaders
             </p>
-            
+
             <button
               onClick={scrollToNext}
-              className="group flex flex-col items-center space-y-2 text-gray-500 hover:text-primary-500 transition-colors duration-300"
+              className="group flex flex-col items-center space-y-2 text-gray-700 hover:text-primary-500 transition-colors duration-300"
             >
               <span className="text-sm font-medium">Scroll to explore</span>
               <motion.div
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="p-2 rounded-full border-2 border-gray-300 group-hover:border-primary-500 transition-colors duration-300"
+                className="p-2 rounded-full border-2 border-gray-600 group-hover:border-primary-500 transition-colors duration-300"
               >
-                <ChevronDown className="w-5 h-5" />
+                <ChevronDown className="w-5 h-5 text-gray-700 group-hover:text-primary-500" />
               </motion.div>
             </button>
           </motion.div>

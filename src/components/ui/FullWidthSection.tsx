@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { PulsingWaveform, AnimatedWallet, AnimatedAR, AnimatedBrain, AnimatedGears } from '@/components/3d';
 
 interface FullWidthSectionProps {
   children: React.ReactNode;
@@ -155,17 +156,39 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
             reverse ? 'lg:col-start-1 lg:row-start-1' : ''
           )}
         >
-          <div className={cn(
-            "w-64 h-64 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-105",
-            variant === "white" ? "bg-gray-100" : "bg-white/10 backdrop-blur-sm border border-white/20"
-          )}>
-            <div className={cn(
-              "text-8xl font-bold opacity-20",
-              variant === "white" ? "text-gray-400" : "text-white"
-            )}>
-              {title.charAt(0)}
+          {title === "Empathy Tech" ? (
+            <div className="w-full h-full flex items-center justify-center">
+              <PulsingWaveform />
             </div>
-          </div>
+          ) : title === "FinTech" ? (
+            <div className="w-full h-full flex items-center justify-center">
+              <AnimatedWallet />
+            </div>
+          ) : title === "Human Tech" ? (
+            <div className="w-full h-full flex items-center justify-center">
+              <AnimatedAR />
+            </div>
+          ) : title === "AI & Innovation" ? (
+            <div className="w-full h-full flex items-center justify-center">
+              <AnimatedBrain />
+            </div>
+          ) : title === "Deep Tech" ? (
+            <div className="w-full h-full flex items-center justify-center">
+              <AnimatedGears />
+            </div>
+          ) : (
+            <div className={cn(
+              "w-64 h-64 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-105",
+              variant === "white" ? "bg-gray-100" : "bg-white/10 backdrop-blur-sm border border-white/20"
+            )}>
+              <div className={cn(
+                "text-8xl font-bold opacity-20",
+                variant === "white" ? "text-gray-400" : "text-white"
+              )}>
+                {title.charAt(0)}
+              </div>
+            </div>
+          )}
         </motion.div>
       </div>
     </FullWidthSection>

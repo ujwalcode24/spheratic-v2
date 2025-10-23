@@ -20,12 +20,12 @@ const MissionSection: React.FC<MissionSectionProps> = ({ className }) => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
             Our Mission
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            To revolutionize the way businesses operate through innovative technology solutions 
-            that prioritize human connection, empathy, and meaningful impact. We believe technology 
+          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed">
+            To revolutionize the way businesses operate through innovative technology solutions
+            that prioritize human connection, empathy, and meaningful impact. We believe technology
             should enhance human potential, not replace it.
           </p>
         </motion.div>
@@ -39,20 +39,20 @@ const MissionSection: React.FC<MissionSectionProps> = ({ className }) => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+            <h3 className="text-2xl md:text-3xl font-bold text-black mb-6">
               Building Tomorrow's Solutions Today
             </h3>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              At Spheratic, we're not just creating software – we're crafting experiences that 
-              matter. Our mission drives us to develop technology that understands, adapts, and 
+            <p className="text-lg text-black mb-6 leading-relaxed">
+              At Spheratic, we're not just creating software – we're crafting experiences that
+              matter. Our mission drives us to develop technology that understands, adapts, and
               evolves with human needs.
             </p>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Every line of code we write, every solution we design, and every partnership we 
-              forge is guided by our commitment to making technology more human, more accessible, 
+            <p className="text-lg text-black mb-8 leading-relaxed">
+              Every line of code we write, every solution we design, and every partnership we
+              forge is guided by our commitment to making technology more human, more accessible,
               and more impactful.
             </p>
-            
+
             {/* Mission Pillars */}
             <div className="space-y-4">
               {[
@@ -67,7 +67,7 @@ const MissionSection: React.FC<MissionSectionProps> = ({ className }) => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center text-lg text-gray-700"
+                  className="flex items-center text-lg text-black"
                 >
                   <div className="w-2 h-2 bg-primary-500 rounded-full mr-4"></div>
                   {pillar}
@@ -86,16 +86,16 @@ const MissionSection: React.FC<MissionSectionProps> = ({ className }) => {
           >
             {/* Vision */}
             <div className="bg-gray-50 rounded-2xl p-8">
-              <h4 className="text-xl font-bold text-gray-900 mb-4">Our Vision</h4>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                To be the global leader in empathy-driven technology, creating a world where 
+              <h4 className="text-xl font-bold text-black mb-4">Our Vision</h4>
+              <p className="text-lg text-black leading-relaxed">
+                To be the global leader in empathy-driven technology, creating a world where
                 innovation serves humanity's greatest challenges and opportunities.
               </p>
             </div>
 
             {/* Values */}
             <div className="bg-gray-50 rounded-2xl p-8">
-              <h4 className="text-xl font-bold text-gray-900 mb-4">Core Values</h4>
+              <h4 className="text-xl font-bold text-black mb-4">Core Values</h4>
               <div className="space-y-3">
                 {[
                   { title: "Empathy First", desc: "Understanding human needs drives our innovation" },
@@ -104,8 +104,8 @@ const MissionSection: React.FC<MissionSectionProps> = ({ className }) => {
                   { title: "Integrity", desc: "Transparent and ethical in all we do" }
                 ].map((value, index) => (
                   <div key={index} className="border-l-4 border-primary-500 pl-4">
-                    <h5 className="font-semibold text-gray-900">{value.title}</h5>
-                    <p className="text-gray-600">{value.desc}</p>
+                    <h5 className="font-semibold text-black">{value.title}</h5>
+                    <p className="text-black">{value.desc}</p>
                   </div>
                 ))}
               </div>
@@ -121,7 +121,7 @@ const MissionSection: React.FC<MissionSectionProps> = ({ className }) => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-lg text-black mb-6">
             Ready to be part of our mission?
           </p>
           <button className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">

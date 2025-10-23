@@ -6,6 +6,19 @@ import { DomainSection, FullWidthSection, FeatureHighlight } from '@/components/
 import { ANIMATIONS } from '@/lib/constants';
 
 const AboutSection = () => {
+  // Different images for each core value section
+  const getImageForIndex = (index: number): string => {
+    const images = [
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop", // Innovation First
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop", // Human-Centered Design
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop", // Quality Excellence
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop", // Scalable Solutions
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop", // Expert Team
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"  // Future Ready
+    ];
+    return images[index] || images[0];
+  };
+
   const coreValues = [
     {
       title: "Innovation First",
@@ -76,6 +89,10 @@ const AboutSection = () => {
     { value: "24/7", label: "Support Available" }
   ];
 
+  const getOverlayColor = (index: number): string => {
+    return index % 2 === 0 ? 'rgba(0, 0, 0, 0.6)' : 'rgba(255, 107, 53, 0.6)';
+  };
+
   return (
     <>
       {/* About Header Section */}
@@ -97,25 +114,61 @@ const AboutSection = () => {
         </motion.div>
       </FullWidthSection>
 
-      {/* Core Values Sections */}
-      {coreValues.map((value, index) => {
-        const variants: Array<'orange' | 'black' | 'white'> = ['orange', 'black', 'white', 'orange', 'black', 'white'];
-        const variant = variants[index % variants.length];
-        return (
-          <DomainSection
-            key={value.title}
-            title={value.title}
-            description={value.description}
-            features={value.features}
-            variant={variant}
+      {/* Core Values Sections - 6 Full Width Sections Side by Side */}
+      <div className="w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+          {coreValues.map((value, index) => {
+            const coverImage = getImageForIndex(index);
 
-            reverse={index % 2 === 1}
-          />
-        );
-      })}
+            return (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                className="group relative h-80 overflow-hidden cursor-pointer"
+              >
+                {/* Background image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  style={{
+                    backgroundImage: `url('${coverImage}')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                />
+
+                {/* Alternating Overlay */}
+                <div
+                  className="absolute inset-0 transition-opacity duration-300"
+                  style={{
+                    backgroundColor: getOverlayColor(index)
+                  }}
+                />
+
+                {/* Content - Title and description at bottom */}
+                <div className="relative h-full flex flex-col justify-end p-6 text-white">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.05 + 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <h3 className="text-xl font-bold mb-2">{value.title}</h3>
+                    <p className="text-xs leading-relaxed opacity-90 line-clamp-2">
+                      {value.description}
+                    </p>
+                  </motion.div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
 
       {/* Stats Section */}
-      <FullWidthSection variant="purple">
+      {/* <FullWidthSection variant="purple">
         <motion.div
           initial={ANIMATIONS.fadeInUp.initial}
           whileInView={ANIMATIONS.fadeInUp.animate}
@@ -146,27 +199,7 @@ const AboutSection = () => {
             ))}
           </div>
         </motion.div>
-      </FullWidthSection>
-
-      {/* Mission Statement */}
-      <FullWidthSection variant="orange">
-        <motion.div
-          initial={ANIMATIONS.fadeInUp.initial}
-          whileInView={ANIMATIONS.fadeInUp.animate}
-          transition={{ ...ANIMATIONS.fadeInUp.transition, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h3 className="text-2xl md:text-3xl font-bold mb-6">
-            Our Mission
-          </h3>
-          <p className="text-lg max-w-4xl mx-auto leading-relaxed opacity-90">
-            To empower businesses and individuals with cutting-edge technology solutions that are not only
-            innovative but also deeply human-centered. We believe that the best technology is the one that
-            enhances human potential and creates meaningful connections.
-          </p>
-        </motion.div>
-      </FullWidthSection>
+      </FullWidthSection> */}
     </>
   );
 };
