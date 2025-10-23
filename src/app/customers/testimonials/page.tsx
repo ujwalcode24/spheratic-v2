@@ -101,7 +101,7 @@ const TestimonialsPage = () => {
 
                     {/* Quote */}
                     <p className="text-accent-gray-700 italic leading-relaxed">
-                      "{testimonial.quote}"
+                      &quot;{testimonial.quote}&quot;
                     </p>
 
                     {/* Author */}
@@ -163,7 +163,7 @@ const TestimonialsPage = () => {
             Join Our Community of Satisfied Customers
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Experience the Spheratic difference. Let's start your transformation today.
+            Experience the Spheratic difference. Let&apos;s start your transformation today.
           </p>
         </motion.div>
       </FullWidthSection>

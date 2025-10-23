@@ -108,7 +108,7 @@ const AboutSection = () => {
             Why Choose <span className="text-primary-500">Spheratic</span>
           </h2>
           <p className="text-lg text-accent-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We're <strong>not another tech company</strong> - we're your partners in digital transformation,
+            We&apos;re <strong>not another tech company</strong> - we&apos;re your partners in digital transformation,
             committed to creating solutions that truly make a difference.
           </p>
         </motion.div>

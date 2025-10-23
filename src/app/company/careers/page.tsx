@@ -75,7 +75,7 @@ const CareersPage = () => {
               Join <span className="text-primary-500">Spheratic</span>
             </h1>
             <p className="text-lg md:text-xl text-accent-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Help us build the future of technology. We're looking for talented individuals who are passionate about innovation and making an impact.
+              Help us build the future of technology. We&apos;re looking for talented individuals who are passionate about innovation and making an impact.
             </p>
           </motion.div>
         </div>
@@ -93,7 +93,7 @@ const CareersPage = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Open Positions</h2>
             <p className="text-lg text-accent-gray-600">
-              We're hiring talented people across all departments.
+              We&apos;re hiring talented people across all departments.
             </p>
           </motion.div>
 
@@ -180,10 +180,10 @@ const CareersPage = () => {
           className="text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Don't See Your Role?
+            Don&apos;t See Your Role?
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Send us your resume and let us know how you'd like to contribute to our mission.
+            Send us your resume and let us know how you&apos;d like to contribute to our mission.
           </p>
         </motion.div>
       </FullWidthSection>

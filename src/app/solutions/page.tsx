@@ -65,15 +65,15 @@ const SolutionsPage = () => {
               <span className="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></span>
               Industry Solutions
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="text-primary-500">Industry-Specific</span> Solutions
               <br />
               <span className="gradient-text">Built for Your Business</span>
             </h1>
-            
+
             <p className="text-lg md:text-xl text-accent-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Tailored technology solutions designed for specific industries. 
+              Tailored technology solutions designed for specific industries.
               We understand your unique challenges and deliver solutions that drive results.
             </p>
           </motion.div>
@@ -96,8 +96,8 @@ const SolutionsPage = () => {
                 variants={ANIMATIONS.fadeInUp}
                 className="group"
               >
-                <Card 
-                  hover 
+                <Card
+                  hover
                   className="h-full border-2 hover:border-primary-500/50 transition-all duration-300 relative overflow-hidden"
                 >
                   <CardHeader>
@@ -108,12 +108,12 @@ const SolutionsPage = () => {
                       {solution.name}
                     </CardTitle>
                   </CardHeader>
-                  
+
                   <CardContent className="space-y-4">
                     <p className="text-accent-gray-600 leading-relaxed">
                       {solution.description}
                     </p>
-                    
+
                     <div>
                       <h4 className="font-medium text-accent-gray-900 mb-2">Key Features:</h4>
                       <ul className="space-y-1">
@@ -125,13 +125,13 @@ const SolutionsPage = () => {
                         ))}
                       </ul>
                     </div>
-                    
+
                     <div>
                       <h4 className="font-medium text-accent-gray-900 mb-2">Industries:</h4>
                       <div className="flex flex-wrap gap-1">
                         {solution.industries.map((industry, idx) => (
-                          <span 
-                            key={idx} 
+                          <span
+                            key={idx}
                             className="px-2 py-1 bg-primary-50 text-primary-600 text-xs rounded-full"
                           >
                             {industry}
@@ -139,7 +139,7 @@ const SolutionsPage = () => {
                         ))}
                       </div>
                     </div>
-                    
+
                     <div className="pt-4">
                       <Link href={`/solutions/${solution.id}`}>
                         <Button className="w-full">
@@ -215,7 +215,7 @@ const SolutionsPage = () => {
               Ready to Transform Your Industry?
             </h2>
             <p className="text-lg text-accent-gray-600 mb-8 max-w-2xl mx-auto">
-              Let's discuss how our industry-specific solutions can help you achieve your business goals.
+              Let&apos;s discuss how our industry-specific solutions can help you achieve your business goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/company/contact">

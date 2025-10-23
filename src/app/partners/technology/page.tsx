@@ -170,7 +170,7 @@ const TechnologyPartnersPage = () => {
             Interested in Partnering?
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Let's explore partnership opportunities together.
+            Let&apos;s explore partnership opportunities together.
           </p>
         </motion.div>
       </FullWidthSection>

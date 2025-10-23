@@ -76,8 +76,8 @@ const CustomersPage = () => {
                 variants={ANIMATIONS.fadeInUp}
               >
                 <Link href={link.href}>
-                  <Card 
-                    hover 
+                  <Card
+                    hover
                     className="h-full border-2 hover:border-primary-500/50 transition-all duration-300 cursor-pointer"
                   >
                     <CardHeader>
@@ -88,7 +88,7 @@ const CustomersPage = () => {
                         {link.name}
                       </CardTitle>
                     </CardHeader>
-                    
+
                     <CardContent>
                       <p className="text-accent-gray-600 leading-relaxed">
                         {link.description}
@@ -143,7 +143,7 @@ const CustomersPage = () => {
             Ready to Join Our Customers?
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Let's discuss how we can help transform your business.
+            Let&apos;s discuss how we can help transform your business.
           </p>
           <Link href="/company/contact">
             <button className="bg-white text-primary-500 px-8 py-3 rounded-lg font-medium hover:bg-accent-gray-50 transition-all duration-300 hover:scale-105">

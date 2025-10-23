@@ -205,7 +205,7 @@ const InsuranceSolutionPage = () => {
             Ready to Transform Your Insurance Operations?
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Let's discuss how we can help your insurance company.
+            Let&apos;s discuss how we can help your insurance company.
           </p>
         </motion.div>
       </FullWidthSection>

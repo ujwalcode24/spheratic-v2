@@ -53,7 +53,7 @@ const AboutPage = () => {
               About <span className="text-primary-500">Spheratic</span>
             </h1>
             <p className="text-lg md:text-xl text-accent-gray-600 max-w-4xl mx-auto leading-relaxed">
-              We're on a mission to transform businesses through innovative technology solutions that are human-centered, scalable, and impactful.
+              We&apos;re on a mission to transform businesses through innovative technology solutions that are human-centered, scalable, and impactful.
             </p>
           </motion.div>
         </div>
@@ -172,7 +172,7 @@ const AboutPage = () => {
             Ready to Partner with Us?
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Let's work together to transform your business with innovative technology solutions.
+            Let&apos;s work together to transform your business with innovative technology solutions.
           </p>
         </motion.div>
       </FullWidthSection>

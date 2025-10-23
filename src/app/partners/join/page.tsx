@@ -183,7 +183,7 @@ const BecomePartnerPage = () => {
             Ready to Get Started?
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Apply now and let's grow together.
+            Apply now and let&apos;s grow together.
           </p>
           <button className="bg-white text-primary-500 px-8 py-3 rounded-lg font-medium hover:bg-accent-gray-50 transition-all duration-300 hover:scale-105">
             Apply Now

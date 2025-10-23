@@ -28,7 +28,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
     message: '',
     type: 'general'
   });
-  
+
   const [errors, setErrors] = useState<Partial<ContactFormType>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -36,7 +36,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    
+
     // Clear error when user starts typing
     if (errors[name as keyof ContactFormType]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
@@ -45,7 +45,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
   const validateForm = (): boolean => {
     const newErrors: Partial<ContactFormType> = {};
-    
+
     if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
     if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
     if (!formData.email.trim()) {
@@ -55,18 +55,18 @@ const ContactForm: React.FC<ContactFormProps> = ({
     }
     if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
     if (!formData.message.trim()) newErrors.message = 'Message is required';
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) return;
-    
+
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -75,7 +75,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
         },
         body: JSON.stringify(formData),
       });
-      
+
       if (response.ok) {
         setIsSubmitted(true);
         setFormData({
@@ -114,7 +114,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
         </div>
         <h3 className="text-2xl font-bold text-accent-gray-900 mb-2">Thank You!</h3>
         <p className="text-accent-gray-600 mb-6">
-          Your message has been sent successfully. We'll get back to you within 24 hours.
+          Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
         </p>
         <Button onClick={() => setIsSubmitted(false)} variant="outline">
           Send Another Message

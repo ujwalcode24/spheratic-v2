@@ -205,7 +205,7 @@ const HealthcareSolutionPage = () => {
             Ready to Transform Healthcare Delivery?
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Let's discuss how we can help your healthcare organization.
+            Let&apos;s discuss how we can help your healthcare organization.
           </p>
         </motion.div>
       </FullWidthSection>

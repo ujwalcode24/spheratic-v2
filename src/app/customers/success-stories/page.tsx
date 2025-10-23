@@ -170,7 +170,7 @@ const SuccessStoriesPage = () => {
             Your Success Story Starts Here
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Let's create your next success story together.
+            Let&apos;s create your next success story together.
           </p>
         </motion.div>
       </FullWidthSection>

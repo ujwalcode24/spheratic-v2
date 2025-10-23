@@ -200,7 +200,7 @@ const TeamPage = () => {
             Join Our Team
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            We're always looking for talented individuals to join us on our mission.
+            We&apos;re always looking for talented individuals to join us on our mission.
           </p>
         </motion.div>
       </FullWidthSection>

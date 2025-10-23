@@ -43,7 +43,7 @@ const MissionSection: React.FC<MissionSectionProps> = ({ className }) => {
               Building Tomorrow's Solutions Today
             </h3>
             <p className="text-lg text-black mb-6 leading-relaxed">
-              At Spheratic, we're not just creating software – we're crafting experiences that
+              At Spheratic, we&apos;re not just creating software &ndash; we&apos;re crafting experiences that
               matter. Our mission drives us to develop technology that understands, adapts, and
               evolves with human needs.
             </p>

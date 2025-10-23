@@ -205,7 +205,7 @@ const RetailEcommerceSolutionPage = () => {
             Ready to Transform Your Retail Business?
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Let's discuss how we can help your retail or e-commerce business.
+            Let&apos;s discuss how we can help your retail or e-commerce business.
           </p>
         </motion.div>
       </FullWidthSection>

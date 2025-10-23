@@ -83,8 +83,8 @@ const CompanyPage = () => {
                 variants={ANIMATIONS.fadeInUp}
               >
                 <Link href={link.href}>
-                  <Card 
-                    hover 
+                  <Card
+                    hover
                     className="h-full border-2 hover:border-primary-500/50 transition-all duration-300 cursor-pointer"
                   >
                     <CardHeader>
@@ -95,7 +95,7 @@ const CompanyPage = () => {
                         {link.name}
                       </CardTitle>
                     </CardHeader>
-                    
+
                     <CardContent>
                       <p className="text-accent-gray-600 leading-relaxed">
                         {link.description}
@@ -122,7 +122,7 @@ const CompanyPage = () => {
             Get in Touch
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Have questions? We'd love to hear from you. Contact our team today.
+            Have questions? We&apos;d love to hear from you. Contact our team today.
           </p>
           <Link href="/company/contact">
             <Button className="bg-white text-primary-500 hover:bg-accent-gray-50">
