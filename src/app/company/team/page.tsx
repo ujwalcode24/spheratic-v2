@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { Cog, Target, TrendingUp, Headphones } from 'lucide-react';
 
 const TeamPage = () => {
   const teamMembers = [
@@ -50,25 +51,25 @@ const TeamPage = () => {
     {
       name: 'Engineering',
       description: 'Building robust and scalable technology solutions',
-      icon: '⚙️',
+      icon: Cog,
       count: '45 engineers'
     },
     {
       name: 'Product',
       description: 'Designing products that solve real problems',
-      icon: '🎯',
+      icon: Target,
       count: '12 product specialists'
     },
     {
       name: 'Sales & Marketing',
       description: 'Connecting with clients and growing our business',
-      icon: '📈',
+      icon: TrendingUp,
       count: '20 professionals'
     },
     {
       name: 'Support',
       description: 'Ensuring customer success and satisfaction',
-      icon: '🤝',
+      icon: Headphones,
       count: '15 support specialists'
     }
   ];
@@ -151,21 +152,24 @@ const TeamPage = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {departments.map((dept, index) => (
-              <motion.div
-                key={dept.name}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-              >
-                <div className="text-4xl mb-4">{dept.icon}</div>
-                <h3 className="text-2xl font-bold mb-2">{dept.name}</h3>
-                <p className="text-accent-gray-600 mb-4">{dept.description}</p>
-                <p className="text-primary-500 font-medium">{dept.count}</p>
-              </motion.div>
-            ))}
+            {departments.map((dept, index) => {
+              const IconComponent = dept.icon;
+              return (
+                <motion.div
+                  key={dept.name}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-accent-gray-200"
+                >
+                  <IconComponent className="w-10 h-10 text-primary-500 mb-4" />
+                  <h3 className="text-2xl font-bold mb-2">{dept.name}</h3>
+                  <p className="text-accent-gray-600 mb-4">{dept.description}</p>
+                  <p className="text-primary-500 font-medium">{dept.count}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
