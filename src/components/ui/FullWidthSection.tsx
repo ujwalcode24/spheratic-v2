@@ -101,15 +101,15 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
             <div className="text-6xl mb-6">{icon}</div>
           )}
 
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
             {title}
           </h2>
 
-          <p className="text-lg md:text-xl opacity-90 leading-relaxed mb-8">
+          <p className="text-lg md:text-lg opacity-90 leading-relaxed mb-6">
             {description}
           </p>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -120,10 +120,10 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
                 className="flex items-center text-lg"
               >
                 <div className={cn(
-                  "w-2 h-2 rounded-full mr-4",
+                  "w-3 h-3 rounded-full mr-3 flex-shrink-0",
                   variant === "white" ? "bg-black" : "bg-white"
                 )}></div>
-                {feature}
+                <span>{feature}</span>
               </motion.div>
             ))}
           </div>
@@ -133,11 +133,11 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="mt-8"
+            className="mt-6"
           >
-            <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105">
+            <button className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center">
               Explore Solutions
-              <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </button>
