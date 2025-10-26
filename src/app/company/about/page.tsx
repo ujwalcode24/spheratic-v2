@@ -5,28 +5,29 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { Lightbulb, Handshake, Star, Rocket } from 'lucide-react';
 
 const AboutPage = () => {
   const values = [
     {
       title: 'Innovation',
       description: 'We constantly push boundaries and explore new possibilities to create breakthrough solutions.',
-      icon: '💡'
+      icon: Lightbulb
     },
     {
       title: 'Integrity',
       description: 'We operate with transparency and honesty in all our business dealings and relationships.',
-      icon: '🤝'
+      icon: Handshake
     },
     {
       title: 'Excellence',
       description: 'We strive for the highest quality in everything we do, from products to customer service.',
-      icon: '⭐'
+      icon: Star
     },
     {
       title: 'Impact',
       description: 'We measure success by the positive impact we create for our clients and communities.',
-      icon: '🚀'
+      icon: Rocket
     }
   ];
 
@@ -108,20 +109,23 @@ const AboutPage = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-              >
-                <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                <p className="text-accent-gray-600">{value.description}</p>
-              </motion.div>
-            ))}
+            {values.map((value, index) => {
+              const IconComponent = value.icon;
+              return (
+                <motion.div
+                  key={value.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-accent-gray-200"
+                >
+                  <IconComponent className="w-10 h-10 text-primary-500 mb-4" />
+                  <h3 className="text-xl font-bold mb-3">{value.title}</h3>
+                  <p className="text-accent-gray-600">{value.description}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
