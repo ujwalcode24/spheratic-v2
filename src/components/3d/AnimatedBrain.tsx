@@ -116,9 +116,11 @@ const AnimatedBrain: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="w-full h-full"
+      className="max-w-xs max-h-xs"
       style={{
         filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.5))',
+        width: '280px',
+        height: '280px',
       }}
     />
   );
