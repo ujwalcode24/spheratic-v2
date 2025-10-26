@@ -247,12 +247,17 @@ const FinancialServicesPage = () => {
               Let&apos;s discuss how our solutions can help you stay competitive in the digital finance landscape.
             </p>
             <Link href="/company/contact">
-              <Button variant="outline" size="lg" className="px-8 py-3 bg-white text-primary-500 border-white hover:bg-accent-gray-50">
+              <button
+                style={{ backgroundColor: 'white', color: '#FF6B35', borderRadius: '2px' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f3f4f6'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
+                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
+              >
                 Start Your Digital Transformation
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </Button>
+              </button>
             </Link>
           </motion.div>
         </div>

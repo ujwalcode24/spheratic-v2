@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { FullWidthSection, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
 
@@ -208,8 +209,21 @@ const BlockchainToolsPage = () => {
             Interested in Blockchain Solutions?
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Get notified when Blockchain Tools becomes available.
+            Explore secure blockchain solutions for your enterprise.
           </p>
+          <Link href="/company/contact">
+            <button
+              style={{ backgroundColor: 'white', color: '#FF6B35', borderRadius: '2px' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f3f4f6'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
+              className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
+            >
+              Learn More
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </button>
+          </Link>
         </motion.div>
       </FullWidthSection>
     </div>
