@@ -111,14 +111,15 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="w-full h-full min-h-[500px] lg:min-h-[600px] rounded-lg overflow-hidden"
+            className="rounded-lg overflow-hidden"
+            style={{ width: '100%', height: '600px' }}
           >
             <iframe
               title="Worker 12"
               frameBorder={0}
               allowFullScreen
               allow="autoplay; fullscreen; xr-spatial-tracking"
-              src="https://sketchfab.com/models/9688985db84d447580d40e40e1649407/embed?autospin=1&autostart=1&preload=1&transparent=1&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"
+              src="https://sketchfab.com/models/9688985db84d447580d40e40e1649407/embed?autospin=1&autostart=1&preload=1&transparent=1&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1&camera=0&scrollzoom=0"
               className="w-full h-full"
               style={{ border: 'none' }}
             />
