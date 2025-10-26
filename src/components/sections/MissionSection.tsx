@@ -136,6 +136,71 @@ const MissionSection: React.FC<MissionSectionProps> = ({ className }) => {
             </svg>
           </button>
         </motion.div>
+
+        {/* Solutions Grid - 6 Containers */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-20 pt-12"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Onboard anchors and counterparties",
+                icon: "🏢",
+                color: "#FF6B35"
+              },
+              {
+                title: "Manage SCF transactions",
+                icon: "📊",
+                color: "#8B5CF6"
+              },
+              {
+                title: "AI-powered debt recovery",
+                icon: "📦",
+                color: "#3B82F6"
+              },
+              {
+                title: "Orchestrate multi-lender asset distribution",
+                icon: "✨",
+                color: "#F59E0B"
+              },
+              {
+                title: "Real-time settlement tracking",
+                icon: "⚡",
+                color: "#10B981"
+              },
+              {
+                title: "Compliance and reporting",
+                icon: "✅",
+                color: "#EF4444"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
+                viewport={{ once: true }}
+                className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all duration-300 hover:border-gray-300"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="text-4xl">{item.icon}</div>
+                </div>
+                <h3 className="text-lg font-semibold text-black mb-4">
+                  {item.title}
+                </h3>
+                <button className="inline-flex items-center justify-center w-8 h-8 border border-gray-300 rounded hover:border-gray-400 transition-colors">
+                  <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
