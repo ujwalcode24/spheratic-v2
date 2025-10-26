@@ -219,17 +219,27 @@ const SolutionsPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/company/contact">
-                <Button size="lg" className="px-8 py-3">
+                <button
+                  style={{ backgroundColor: '#FF6B35', color: 'white', borderRadius: '2px' }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#E74C3C'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FF6B35'}
+                  className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
+                >
                   Schedule Consultation
                   <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                </Button>
+                </button>
               </Link>
               <Link href="/customers/case-studies">
-                <Button variant="outline" size="lg" className="px-8 py-3">
+                <button
+                  style={{ backgroundColor: 'transparent', color: '#FF6B35', border: '2px solid #FF6B35', borderRadius: '2px' }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#fef2f2'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                  className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 inline-flex items-center"
+                >
                   View Success Stories
-                </Button>
+                </button>
               </Link>
             </div>
           </motion.div>

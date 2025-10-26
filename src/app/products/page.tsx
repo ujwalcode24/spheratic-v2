@@ -149,7 +149,12 @@ const ProductsPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/company/contact">
-              <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105">
+              <button
+                style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white', borderRadius: '2px' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105"
+              >
                 Schedule Demo
                 <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -157,7 +162,12 @@ const ProductsPage = () => {
               </button>
             </Link>
             <Link href="/customers/case-studies">
-              <button className="bg-white text-primary-500 px-8 py-3 rounded-lg font-medium hover:bg-accent-gray-50 transition-all duration-300 hover:scale-105">
+              <button
+                style={{ backgroundColor: 'white', color: '#FF6B35', borderRadius: '2px' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f3f4f6'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
+                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+              >
                 View Case Studies
               </button>
             </Link>

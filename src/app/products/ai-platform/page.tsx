@@ -90,14 +90,24 @@ const AIPlatformPage = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/company/contact">
-                <button className="bg-primary-500 text-white px-8 py-3 rounded-lg font-medium hover:bg-primary-600 transition-all duration-300 hover:scale-105 inline-flex items-center">
+                <button
+                  style={{ backgroundColor: '#FF6B35', color: 'white', borderRadius: '2px' }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#E74C3C'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FF6B35'}
+                  className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 inline-flex items-center shadow-lg"
+                >
                   Start Free Trial
                   <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </button>
               </Link>
-              <button className="border border-primary-500 text-primary-500 px-8 py-3 rounded-lg font-medium hover:bg-primary-50 transition-all duration-300 hover:scale-105 inline-flex items-center">
+              <button
+                style={{ backgroundColor: 'transparent', color: '#FF6B35', border: '2px solid #FF6B35', borderRadius: '2px' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#fef2f2'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 inline-flex items-center"
+              >
                 View Demo
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -180,12 +190,22 @@ const AIPlatformPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/company/contact">
-              <button className="bg-white text-purple-600 px-8 py-3 rounded-lg font-medium hover:bg-accent-gray-50 transition-all duration-300 hover:scale-105">
+              <button
+                style={{ backgroundColor: 'white', color: '#FF6B35', borderRadius: '2px' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f3f4f6'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
+                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+              >
                 Get Started Today
               </button>
             </Link>
             <Link href="/customers/case-studies">
-              <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105">
+              <button
+                style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white', borderRadius: '2px' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105"
+              >
                 View Success Stories
               </button>
             </Link>

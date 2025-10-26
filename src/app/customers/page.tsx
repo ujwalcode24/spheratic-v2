@@ -146,7 +146,12 @@ const CustomersPage = () => {
             Let&apos;s discuss how we can help transform your business.
           </p>
           <Link href="/company/contact">
-            <button className="bg-white text-primary-500 px-8 py-3 rounded-lg font-medium hover:bg-accent-gray-50 transition-all duration-300 hover:scale-105">
+            <button
+              style={{ backgroundColor: 'white', color: '#FF6B35', borderRadius: '2px' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f3f4f6'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
+              className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
+            >
               Get Started
               <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
