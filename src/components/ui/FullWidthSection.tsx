@@ -117,12 +117,12 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex items-center text-lg"
+                className="flex items-start text-lg"
               >
-                <div className={cn(
-                  "w-3 h-3 rounded-full mr-3 flex-shrink-0",
-                  variant === "white" ? "bg-black" : "bg-white"
-                )}></div>
+                <span className={cn(
+                  "text-2xl mr-3 flex-shrink-0 leading-none",
+                  variant === "white" || variant === "orange" ? "text-primary-500" : "text-white"
+                )}>•</span>
                 <span>{feature}</span>
               </motion.div>
             ))}
@@ -135,7 +135,12 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
             viewport={{ once: true }}
             className="mt-6"
           >
-            <button className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center">
+            <button className={cn(
+              "px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center",
+              variant === "white" || variant === "orange"
+                ? "bg-primary-500 hover:bg-primary-600 text-white"
+                : "bg-white hover:bg-gray-100 text-primary-500"
+            )}>
               Explore Solutions
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
