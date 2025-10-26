@@ -2,7 +2,11 @@
 
 import React, { useEffect, useRef } from 'react';
 
-const AnimatedBrain: React.FC = () => {
+interface AnimatedBrainProps {
+  isDarkMode?: boolean;
+}
+
+const AnimatedBrain: React.FC<AnimatedBrainProps> = ({ isDarkMode = true }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -25,6 +29,7 @@ const AnimatedBrain: React.FC = () => {
 
       // Draw neural network nodes
       const nodeCount = 12;
+      const nodeColor = isDarkMode ? 'rgba(255, 255, 255, ' : 'rgba(55, 65, 81, ';
       const nodes: Array<{ x: number; y: number; angle: number }> = [];
 
       for (let i = 0; i < nodeCount; i++) {
@@ -67,13 +72,13 @@ const AnimatedBrain: React.FC = () => {
         const nodeSize = 4 + pulse * 3;
 
         // Node glow
-        ctx.fillStyle = `rgba(255, 255, 255, ${0.3 * pulse})`;
+        ctx.fillStyle = `${nodeColor}${0.3 * pulse})`;
         ctx.beginPath();
         ctx.arc(node.x, node.y, nodeSize + 4, 0, Math.PI * 2);
         ctx.fill();
 
         // Node core
-        ctx.fillStyle = `rgba(255, 255, 255, ${0.8 + pulse * 0.2})`;
+        ctx.fillStyle = `${nodeColor}${0.8 + pulse * 0.2})`;
         ctx.beginPath();
         ctx.arc(node.x, node.y, nodeSize, 0, Math.PI * 2);
         ctx.fill();
@@ -81,12 +86,12 @@ const AnimatedBrain: React.FC = () => {
 
       // Draw central brain core
       const corePulse = Math.sin(time * 1.5) * 0.3 + 0.7;
-      ctx.fillStyle = `rgba(255, 255, 255, ${0.4 * corePulse})`;
+      ctx.fillStyle = `${nodeColor}${0.4 * corePulse})`;
       ctx.beginPath();
       ctx.arc(centerX, centerY, 25, 0, Math.PI * 2);
       ctx.fill();
 
-      ctx.fillStyle = `rgba(255, 255, 255, ${0.7 + corePulse * 0.2})`;
+      ctx.fillStyle = `${nodeColor}${0.7 + corePulse * 0.2})`;
       ctx.beginPath();
       ctx.arc(centerX, centerY, 15, 0, Math.PI * 2);
       ctx.fill();
@@ -96,7 +101,7 @@ const AnimatedBrain: React.FC = () => {
         const ringRadius = 120 + r * 20;
         const ringOpacity = (0.3 - r * 0.1) * Math.sin(time * 1.2 + r * 0.5);
 
-        ctx.strokeStyle = `rgba(255, 255, 255, ${Math.max(0, ringOpacity)})`;
+        ctx.strokeStyle = `${nodeColor}${Math.max(0, ringOpacity)})`;
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.arc(centerX, centerY, ringRadius, 0, Math.PI * 2);

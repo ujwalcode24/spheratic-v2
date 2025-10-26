@@ -161,7 +161,7 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
             </div>
           ) : title === "FinTech" ? (
             <div className="w-full h-full flex items-center justify-center">
-              <AnimatedWallet />
+              <AnimatedWallet isDarkMode={false} />
             </div>
           ) : title === "Human Tech" ? (
             <div className="w-full h-full flex items-center justify-center">
@@ -169,7 +169,7 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
             </div>
           ) : title === "AI & Innovation" ? (
             <div className="w-full h-full flex items-center justify-center">
-              <AnimatedBrain />
+              <AnimatedBrain isDarkMode={false} />
             </div>
           ) : title === "Deep Tech" ? (
             <div className="w-full h-full flex items-center justify-center">

@@ -2,7 +2,11 @@
 
 import React, { useEffect, useRef } from 'react';
 
-const AnimatedWallet: React.FC = () => {
+interface AnimatedWalletProps {
+  isDarkMode?: boolean;
+}
+
+const AnimatedWallet: React.FC<AnimatedWalletProps> = ({ isDarkMode = true }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -40,13 +44,18 @@ const AnimatedWallet: React.FC = () => {
       const cardX = centerX - cardWidth / 2;
       const cardY = centerY - cardHeight / 2;
 
-      // Card background with gradient
+      // Card background with gradient - use dark gray for light mode
       const gradient = ctx.createLinearGradient(cardX, cardY, cardX, cardY + cardHeight);
-      gradient.addColorStop(0, 'rgba(255, 255, 255, 0.15)');
-      gradient.addColorStop(1, 'rgba(255, 255, 255, 0.05)');
+      if (isDarkMode) {
+        gradient.addColorStop(0, 'rgba(255, 255, 255, 0.15)');
+        gradient.addColorStop(1, 'rgba(255, 255, 255, 0.05)');
+      } else {
+        gradient.addColorStop(0, 'rgba(55, 65, 81, 0.15)');
+        gradient.addColorStop(1, 'rgba(55, 65, 81, 0.05)');
+      }
 
       ctx.fillStyle = gradient;
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
+      ctx.strokeStyle = isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(55, 65, 81, 0.6)';
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.roundRect(cardX, cardY, cardWidth, cardHeight, 8);
@@ -54,8 +63,10 @@ const AnimatedWallet: React.FC = () => {
       ctx.stroke();
 
       // Card chip (top left)
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
+      const chipFill = isDarkMode ? 'rgba(255, 255, 255, 0.4)' : 'rgba(55, 65, 81, 0.4)';
+      const chipStroke = isDarkMode ? 'rgba(255, 255, 255, 0.7)' : 'rgba(55, 65, 81, 0.7)';
+      ctx.fillStyle = chipFill;
+      ctx.strokeStyle = chipStroke;
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.roundRect(cardX + 12, cardY + 12, 20, 20, 2);
@@ -63,7 +74,7 @@ const AnimatedWallet: React.FC = () => {
       ctx.stroke();
 
       // Chip grid pattern
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+      ctx.strokeStyle = isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(55, 65, 81, 0.5)';
       ctx.lineWidth = 0.5;
       for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
@@ -74,7 +85,8 @@ const AnimatedWallet: React.FC = () => {
       }
 
       // Card number dots
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+      const dotColor = isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(55, 65, 81, 0.5)';
+      ctx.fillStyle = dotColor;
       const dotPositions = [
         { x: cardX + 30, y: cardY + 60 },
         { x: cardX + 50, y: cardY + 60 },
@@ -84,14 +96,15 @@ const AnimatedWallet: React.FC = () => {
 
       dotPositions.forEach((pos, index) => {
         const pulse = Math.sin(time * 2 + index * 0.5) * 0.3 + 0.7;
-        ctx.fillStyle = `rgba(255, 255, 255, ${0.5 * pulse})`;
+        const baseColor = isDarkMode ? 'rgba(255, 255, 255, ' : 'rgba(55, 65, 81, ';
+        ctx.fillStyle = `${baseColor}${0.5 * pulse})`;
         ctx.beginPath();
         ctx.arc(pos.x, pos.y, 3, 0, Math.PI * 2);
         ctx.fill();
       });
 
       // Card holder name
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+      ctx.fillStyle = isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(55, 65, 81, 0.6)';
       ctx.font = 'bold 8px Arial';
       ctx.fillText('CARDHOLDER', cardX + 12, cardY + 78);
 
@@ -114,21 +127,22 @@ const AnimatedWallet: React.FC = () => {
         ctx.rotate(coinRotation);
 
         // Coin circle
-        ctx.strokeStyle = `rgba(255, 255, 255, ${0.7 + Math.sin(time * 2 + i) * 0.2})`;
+        const coinBaseColor = isDarkMode ? 'rgba(255, 255, 255, ' : 'rgba(55, 65, 81, ';
+        ctx.strokeStyle = `${coinBaseColor}${0.7 + Math.sin(time * 2 + i) * 0.2})`;
         ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.arc(0, 0, 12, 0, Math.PI * 2);
         ctx.stroke();
 
         // Coin symbol ($ or €)
-        ctx.fillStyle = `rgba(255, 255, 255, ${0.8 + Math.sin(time * 2 + i) * 0.2})`;
+        ctx.fillStyle = `${coinBaseColor}${0.8 + Math.sin(time * 2 + i) * 0.2})`;
         ctx.font = 'bold 10px Arial';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText('$', 0, 0);
 
         // Coin shine
-        ctx.strokeStyle = `rgba(255, 255, 255, ${0.3 + Math.sin(time * 3 + i) * 0.2})`;
+        ctx.strokeStyle = `${coinBaseColor}${0.3 + Math.sin(time * 3 + i) * 0.2})`;
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.arc(0, -3, 8, 0, Math.PI);
@@ -150,7 +164,8 @@ const AnimatedWallet: React.FC = () => {
         const flowX = coinX + (centerX - coinX) * flowProgress;
         const flowY = coinY + (centerY - coinY) * flowProgress;
 
-        ctx.strokeStyle = `rgba(255, 255, 255, ${0.4 * (1 - flowProgress)})`;
+        const flowColor = isDarkMode ? 'rgba(255, 255, 255, ' : 'rgba(55, 65, 81, ';
+        ctx.strokeStyle = `${flowColor}${0.4 * (1 - flowProgress)})`;
         ctx.lineWidth = 1.5;
         ctx.setLineDash([3, 3]);
         ctx.beginPath();
@@ -160,7 +175,7 @@ const AnimatedWallet: React.FC = () => {
         ctx.setLineDash([]);
 
         // Flow particle
-        ctx.fillStyle = `rgba(255, 255, 255, ${0.8 * (1 - flowProgress)})`;
+        ctx.fillStyle = `${flowColor}${0.8 * (1 - flowProgress)})`;
         ctx.beginPath();
         ctx.arc(flowX, flowY, 2, 0, Math.PI * 2);
         ctx.fill();
