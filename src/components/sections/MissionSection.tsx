@@ -124,9 +124,14 @@ const MissionSection: React.FC<MissionSectionProps> = ({ className }) => {
           <p className="text-lg text-black mb-6">
             Ready to be part of our mission?
           </p>
-          <button className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+          <button
+            style={{ backgroundColor: '#FF6B35', color: 'white', borderRadius: '2px' }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#E74C3C'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FF6B35'}
+            className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center"
+          >
             Join Our Journey
-            <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </button>
