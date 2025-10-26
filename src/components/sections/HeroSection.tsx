@@ -111,7 +111,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="w-full h-full min-h-[500px] lg:min-h-[600px] rounded-lg overflow-hidden shadow-2xl"
+            className="w-full h-full min-h-[500px] lg:min-h-[600px] rounded-lg overflow-hidden"
           >
             <iframe
               title="Worker 12"
