@@ -11,7 +11,7 @@ const AboutSection = () => {
       title: "Innovation First",
       description: "We push the boundaries of what's possible with cutting-edge technology and creative solutions that transform industries.",
       icon: "bulb",
-      color: "#F59E0B"
+      color: "#FCD34D"
     },
     {
       title: "Human-Centered Design",
@@ -68,8 +68,8 @@ const AboutSection = () => {
 
     const icons: { [key: string]: JSX.Element } = {
       bulb: (
-        <svg {...iconProps}>
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15h4v2h-4zm0-8h4v6h-4zm0-4h4v2h-4z" />
+        <svg viewBox="0 0 8 8" width="32" height="32" fill={color} style={{ opacity: 1 }}>
+          <path d="M4.41 0a.5.5 0 0 0-.13.06l-3 1.5a.5.5 0 1 0 .44.88l3-1.5A.5.5 0 0 0 4.41 0m1 1.5a.5.5 0 0 0-.13.06l-4 2a.5.5 0 1 0 .44.88l4-2a.5.5 0 0 0-.31-.94m0 2a.5.5 0 0 0-.13.06l-3 1.5A.5.5 0 0 0 2.5 6h2a.506.506 0 0 0 .16-1l1.06-.56a.5.5 0 0 0-.31-.94M2.85 7a.506.506 0 0 0 .16 1h1a.5.5 0 1 0 0-1h-1a.5.5 0 0 0-.09 0h-.06z" />
         </svg>
       ),
       users: (
