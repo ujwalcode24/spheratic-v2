@@ -12,8 +12,8 @@ const AnimatedAR: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    canvas.width = 400;
-    canvas.height = 400;
+    canvas.width = 300;
+    canvas.height = 300;
 
     let animationTime = 0;
 

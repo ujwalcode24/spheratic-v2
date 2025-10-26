@@ -12,8 +12,8 @@ const AnimatedGears: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    canvas.width = 400;
-    canvas.height = 400;
+    canvas.width = 300;
+    canvas.height = 300;
 
     let animationTime = 0;
 
@@ -113,7 +113,7 @@ const AnimatedGears: React.FC = () => {
       for (let g = 0; g < 2; g++) {
         const glowRadius = 130 + g * 20;
         const glowOpacity = (0.2 - g * 0.1) * Math.sin(time * 1.5 + g * 0.5);
-        
+
         ctx.strokeStyle = `rgba(255, 255, 255, ${Math.max(0, glowOpacity)})`;
         ctx.lineWidth = 1;
         ctx.beginPath();

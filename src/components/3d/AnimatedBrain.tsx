@@ -12,8 +12,8 @@ const AnimatedBrain: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    canvas.width = 400;
-    canvas.height = 400;
+    canvas.width = 300;
+    canvas.height = 300;
 
     let animationTime = 0;
 
@@ -41,14 +41,14 @@ const AnimatedBrain: React.FC = () => {
           if (Math.abs(i - j) <= 2 || Math.abs(i - j) >= nodeCount - 2) {
             const node1 = nodes[i];
             const node2 = nodes[j];
-            
+
             const distance = Math.hypot(node2.x - node1.x, node2.y - node1.y);
             const maxDistance = 150;
-            
+
             if (distance < maxDistance) {
               const opacity = (1 - distance / maxDistance) * 0.5;
               const pulse = Math.sin(time * 2 + i + j) * 0.3 + 0.7;
-              
+
               ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * pulse})`;
               ctx.lineWidth = 1;
               ctx.beginPath();
@@ -65,7 +65,7 @@ const AnimatedBrain: React.FC = () => {
         const node = nodes[i];
         const pulse = Math.sin(time * 2.5 + i * 0.5) * 0.4 + 0.6;
         const nodeSize = 4 + pulse * 3;
-        
+
         // Node glow
         ctx.fillStyle = `rgba(255, 255, 255, ${0.3 * pulse})`;
         ctx.beginPath();
@@ -95,7 +95,7 @@ const AnimatedBrain: React.FC = () => {
       for (let r = 0; r < 3; r++) {
         const ringRadius = 120 + r * 20;
         const ringOpacity = (0.3 - r * 0.1) * Math.sin(time * 1.2 + r * 0.5);
-        
+
         ctx.strokeStyle = `rgba(255, 255, 255, ${Math.max(0, ringOpacity)})`;
         ctx.lineWidth = 1;
         ctx.beginPath();

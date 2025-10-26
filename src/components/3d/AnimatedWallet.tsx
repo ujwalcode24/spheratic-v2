@@ -13,8 +13,8 @@ const AnimatedWallet: React.FC = () => {
     if (!ctx) return;
 
     // Set canvas size
-    canvas.width = 400;
-    canvas.height = 400;
+    canvas.width = 300;
+    canvas.height = 300;
 
     let animationTime = 0;
 
@@ -27,7 +27,7 @@ const AnimatedWallet: React.FC = () => {
 
       // Main card rotation
       const cardRotation = Math.sin(time * 0.5) * 0.3;
-      
+
       // Save context for rotation
       ctx.save();
       ctx.translate(centerX, centerY);
@@ -44,7 +44,7 @@ const AnimatedWallet: React.FC = () => {
       const gradient = ctx.createLinearGradient(cardX, cardY, cardX, cardY + cardHeight);
       gradient.addColorStop(0, 'rgba(255, 255, 255, 0.15)');
       gradient.addColorStop(1, 'rgba(255, 255, 255, 0.05)');
-      
+
       ctx.fillStyle = gradient;
       ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
       ctx.lineWidth = 2;
@@ -81,7 +81,7 @@ const AnimatedWallet: React.FC = () => {
         { x: cardX + 70, y: cardY + 60 },
         { x: cardX + 90, y: cardY + 60 }
       ];
-      
+
       dotPositions.forEach((pos, index) => {
         const pulse = Math.sin(time * 2 + index * 0.5) * 0.3 + 0.7;
         ctx.fillStyle = `rgba(255, 255, 255, ${0.5 * pulse})`;
@@ -102,13 +102,13 @@ const AnimatedWallet: React.FC = () => {
       for (let i = 0; i < coinCount; i++) {
         const angle = (time * 1.5 + (i / coinCount) * Math.PI * 2);
         const distance = 120 + Math.sin(time * 1.2 + i) * 20;
-        
+
         const coinX = centerX + Math.cos(angle) * distance;
         const coinY = centerY + Math.sin(angle) * distance;
 
         // Coin rotation
         const coinRotation = time * 3 + i * (Math.PI / coinCount);
-        
+
         ctx.save();
         ctx.translate(coinX, coinY);
         ctx.rotate(coinRotation);
@@ -141,7 +141,7 @@ const AnimatedWallet: React.FC = () => {
       for (let i = 0; i < coinCount; i++) {
         const startAngle = (time * 1.5 + (i / coinCount) * Math.PI * 2);
         const distance = 120 + Math.sin(time * 1.2 + i) * 20;
-        
+
         const coinX = centerX + Math.cos(startAngle) * distance;
         const coinY = centerY + Math.sin(startAngle) * distance;
 
