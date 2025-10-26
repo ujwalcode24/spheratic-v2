@@ -260,22 +260,19 @@ const CaseStudiesPage = () => {
             <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
               Let&apos;s discuss how we can help you achieve similar results for your business.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/company/contact">
-                <Button variant="outline" size="lg" className="px-8 py-3 bg-white text-primary-500 border-white hover:bg-accent-gray-50">
-                  Start Your Project
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </Button>
-              </Link>
-              <Button variant="ghost" size="lg" className="px-8 py-3 text-white border-white/30 hover:bg-white/10">
-                Download Case Studies
+            <Link href="/company/contact">
+              <button
+                style={{ backgroundColor: 'white', color: '#FF6B35', borderRadius: '2px' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f3f4f6'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
+                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
+              >
+                Start Your Project
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </Button>
-            </div>
+              </button>
+            </Link>
           </motion.div>
         </div>
       </section>
