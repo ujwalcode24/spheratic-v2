@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { PulsingWaveform, AnimatedWallet, AnimatedAR, AnimatedBrain, AnimatedGears } from '@/components/3d';
+import { PulsingWaveform, AnimatedWallet, AnimatedAR, AnimatedBrain, QuantumGrid } from '@/components/3d';
 
 interface FullWidthSectionProps {
   children: React.ReactNode;
@@ -194,7 +194,7 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
             </div>
           ) : title === "Deep Tech" ? (
             <div className="w-full h-full flex items-center justify-center">
-              <AnimatedGears />
+              <QuantumGrid />
             </div>
           ) : (
             <div className={cn(
