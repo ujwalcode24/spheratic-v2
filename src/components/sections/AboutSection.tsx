@@ -10,8 +10,8 @@ const AboutSection = () => {
     {
       title: "Innovation First",
       description: "We push the boundaries of what's possible with cutting-edge technology and creative solutions that transform industries.",
-      icon: "lightbulb",
-      color: "#FF6B35"
+      icon: "bulb",
+      color: "#F59E0B"
     },
     {
       title: "Human-Centered Design",
@@ -22,7 +22,7 @@ const AboutSection = () => {
     {
       title: "Quality Excellence",
       description: "We maintain the highest standards in everything we do, from code quality to customer service, delivering exceptional results.",
-      icon: "star",
+      icon: "badge",
       color: "#3B82F6"
     },
     {
@@ -34,14 +34,26 @@ const AboutSection = () => {
     {
       title: "Expert Team",
       description: "Our diverse team of experts brings decades of combined experience in technology and innovation to every project.",
-      icon: "briefcase",
-      color: "#F59E0B"
+      icon: "team",
+      color: "#FF6B35"
     },
     {
       title: "Future Ready",
       description: "We anticipate tomorrow's challenges and build solutions that remain relevant and powerful in an ever-evolving digital landscape.",
       icon: "zap",
       color: "#EF4444"
+    },
+    {
+      title: "Agile Methodology",
+      description: "We embrace agile practices to deliver solutions faster, adapt to changing requirements, and maintain continuous improvement throughout development.",
+      icon: "agile",
+      color: "#06B6D4"
+    },
+    {
+      title: "Strong Domain Foundation",
+      description: "Deep expertise across multiple industries and technology domains enables us to deliver solutions that truly understand your business challenges.",
+      icon: "foundation",
+      color: "#8B5CF6"
     }
   ];
 
@@ -55,9 +67,9 @@ const AboutSection = () => {
     };
 
     const icons: { [key: string]: JSX.Element } = {
-      lightbulb: (
+      bulb: (
         <svg {...iconProps}>
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
+          <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-20C5.9 1 3 3.9 3 7c0 2.05.84 3.89 2.2 5.23.16.21.31.42.46.63.37.57.76 1.12 1.17 1.64.41.52.82 1.04 1.2 1.58.38.54.76 1.08 1.1 1.63.34.55.67 1.1.97 1.66.3.56.58 1.12.84 1.68.26.56.5 1.12.71 1.68.21.56.4 1.12.56 1.68.16.56.3 1.12.41 1.68.11.56.2 1.12.25 1.68.05.56.08 1.12.08 1.68 0 .55.45 1 1 1s1-.45 1-1c0-.56-.03-1.12-.08-1.68-.05-.56-.14-1.12-.25-1.68-.11-.56-.25-1.12-.41-1.68-.16-.56-.35-1.12-.56-1.68-.21-.56-.45-1.12-.71-1.68-.26-.56-.54-1.12-.84-1.68-.3-.56-.63-1.11-.97-1.66-.34-.55-.72-1.09-1.1-1.63-.41-.52-.8-1.07-1.17-1.64-.15-.21-.3-.42-.46-.63C4.84 10.89 4 9.05 4 7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-.84 3.89-2.2 5.23-.16.21-.31.42-.46.63-.37.57-.76 1.12-1.17 1.64-.41.52-.82 1.04-1.2 1.58-.38.54-.76 1.08-1.1 1.63-.34.55-.67 1.1-.97 1.66-.3.56-.58 1.12-.84 1.68-.26.56-.5 1.12-.71 1.68-.21.56-.4 1.12-.56 1.68-.16.56-.3 1.12-.41 1.68-.11.56-.2 1.12-.25 1.68-.05.56-.08 1.12-.08 1.68 0 .55.45 1 1 1s1-.45 1-1c0-.56.03-1.12.08-1.68.05-.56.14-1.12.25-1.68.11-.56.25-1.12.41-1.68.16-.56.35-1.12.56-1.68.21-.56.45-1.12.71-1.68.26-.56.54-1.12.84-1.68.3-.56.63-1.11.97-1.66.34-.55.72-1.09 1.1-1.63.41-.52.8-1.07 1.17-1.64.15-.21.3-.42.46-.63C19.16 10.89 20 9.05 20 7c0-3.86-3.14-7-7-7z" />
         </svg>
       ),
       users: (
@@ -65,9 +77,9 @@ const AboutSection = () => {
           <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
         </svg>
       ),
-      star: (
+      badge: (
         <svg {...iconProps}>
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2l-2.81 6.63L2 9.24l5.46 4.73L5.82 21z" />
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
         </svg>
       ),
       "trending-up": (
@@ -75,14 +87,24 @@ const AboutSection = () => {
           <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18 10 11.41l4 4 6.3-6.29L22 12v-6z" />
         </svg>
       ),
-      briefcase: (
+      team: (
         <svg {...iconProps}>
-          <path d="M20 6h-2.18c.11-.89.36-1.75.72-2.54.37-.79.92-1.54 1.6-2.15.01-.01.02-.03.03-.04.91-.95 1.65-2.18 1.84-3.55.05-.3-.26-.56-.56-.56-.16 0-.31.08-.38.21-.8 1.33-1.72 2.53-2.77 3.52-.6.56-1.25 1.07-1.95 1.52-.7.45-1.46.84-2.25 1.12-.79.28-1.61.42-2.43.42-.82 0-1.64-.14-2.43-.42-.79-.28-1.55-.67-2.25-1.12-.7-.45-1.35-.96-1.95-1.52-1.05-.99-1.97-2.19-2.77-3.52-.07-.13-.22-.21-.38-.21-.3 0-.61.26-.56.56.19 1.37.93 2.6 1.84 3.55.01.01.02.03.03.04.68.61 1.23 1.36 1.6 2.15.36.79.61 1.65.72 2.54H4c-2.2 0-4 1.8-4 4v10c0 2.2 1.8 4 4 4h16c2.2 0 4-1.8 4-4V10c0-2.2-1.8-4-4-4zm0 14H4V10h16v10z" />
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
         </svg>
       ),
       zap: (
         <svg {...iconProps}>
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+        </svg>
+      ),
+      agile: (
+        <svg {...iconProps}>
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
+        </svg>
+      ),
+      foundation: (
+        <svg {...iconProps}>
+          <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 2.18l8 4v5.82c0 4.65-2.92 8.93-7 10.66-4.08-1.73-7-6.01-7-10.66V8.18l6-4z" />
         </svg>
       )
     };
