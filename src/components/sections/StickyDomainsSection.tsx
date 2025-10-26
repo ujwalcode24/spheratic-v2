@@ -60,7 +60,8 @@ const StickyDomainsSection = () => {
   return (
     <div className="relative overflow-visible">
       {domains.map((domain, index) => {
-        const variants = ['orange', 'black', 'white', 'black', 'black'] as const;
+        // Empathy Tech (0): black, FinTech (1): orange, Human Tech (2): black, AI & Innovation (3): orange, Deep Tech (4): black
+        const variants = ['black', 'orange', 'black', 'orange', 'black'] as const;
         const variant = variants[index % variants.length];
 
         return (
