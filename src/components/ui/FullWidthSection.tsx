@@ -138,8 +138,8 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
             <button
               style={
                 variant === "white" || variant === "orange"
-                  ? { backgroundColor: '#FF6B35', color: 'white' }
-                  : { backgroundColor: 'white', color: '#FF6B35' }
+                  ? { backgroundColor: '#FF6B35', color: 'white', borderRadius: '2px' }
+                  : { backgroundColor: 'white', color: '#FF6B35', borderRadius: '2px' }
               }
               onMouseEnter={(e) => {
                 if (variant === "white" || variant === "orange") {
@@ -155,7 +155,7 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
                   e.currentTarget.style.backgroundColor = 'white';
                 }
               }}
-              className="px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center"
+              className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center"
             >
               Explore Solutions
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
