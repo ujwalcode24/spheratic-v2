@@ -38,7 +38,7 @@ const HeroSection = () => {
     >
       {/* Main Content - Two Column Layout */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           {/* Left Column - Text Content */}
           <motion.div
             initial={ANIMATIONS.fadeInUp.initial}
@@ -111,8 +111,8 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="rounded-lg overflow-hidden"
-            style={{ width: '100%', height: '600px' }}
+            className="rounded-lg overflow-hidden w-full h-full"
+            style={{ minHeight: '600px' }}
           >
             <iframe
               title="Worker 12"
