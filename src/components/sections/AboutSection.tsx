@@ -44,15 +44,15 @@ const AboutSection = () => {
       color: "#EF4444"
     },
     {
-      title: "Agile Methodology",
-      description: "We embrace agile practices to deliver solutions faster, adapt to changing requirements, and maintain continuous improvement throughout development.",
-      icon: "agile",
+      title: "24/7 Support",
+      description: "Our dedicated support team is always available to help you succeed, providing responsive assistance whenever you need it.",
+      icon: "support",
       color: "#06B6D4"
     },
     {
-      title: "Strong Domain Foundation",
-      description: "Deep expertise across multiple industries and technology domains enables us to deliver solutions that truly understand your business challenges.",
-      icon: "foundation",
+      title: "Proven Track Record",
+      description: "We have successfully delivered hundreds of projects across diverse industries, earning the trust of leading organizations worldwide.",
+      icon: "trophy",
       color: "#8B5CF6"
     }
   ];
@@ -97,14 +97,14 @@ const AboutSection = () => {
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
         </svg>
       ),
-      agile: (
+      support: (
         <svg {...iconProps}>
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
+          <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12h-8v-2h8v2zm0-4h-8V8h8v2z" />
         </svg>
       ),
-      foundation: (
+      trophy: (
         <svg {...iconProps}>
-          <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 2.18l8 4v5.82c0 4.65-2.92 8.93-7 10.66-4.08-1.73-7-6.01-7-10.66V8.18l6-4z" />
+          <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1h2v6c0 1.1.9 2 2 2h1v2H8v2h8v-2h-1v-2h1c1.1 0 2-.9 2-2V8h2V7c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm6-6H5V7h14v6z" />
         </svg>
       )
     };
