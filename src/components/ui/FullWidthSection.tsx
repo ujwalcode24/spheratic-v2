@@ -139,7 +139,7 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
               style={
                 variant === "white" || variant === "orange"
                   ? { backgroundColor: '#FF6B35', color: 'white', borderRadius: '2px' }
-                  : { backgroundColor: 'white', color: '#FF6B35', borderRadius: '2px' }
+                  : { backgroundColor: 'white', color: 'black', borderRadius: '2px' }
               }
               onMouseEnter={(e) => {
                 if (variant === "white" || variant === "orange") {
