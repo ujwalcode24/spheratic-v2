@@ -135,12 +135,28 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
             viewport={{ once: true }}
             className="mt-6"
           >
-            <button className={cn(
-              "px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center",
-              variant === "white" || variant === "orange"
-                ? "bg-primary-500 hover:bg-primary-600 text-white"
-                : "bg-white hover:bg-gray-100 text-primary-500"
-            )}>
+            <button
+              style={
+                variant === "white" || variant === "orange"
+                  ? { backgroundColor: '#FF6B35', color: 'white' }
+                  : { backgroundColor: 'white', color: '#FF6B35' }
+              }
+              onMouseEnter={(e) => {
+                if (variant === "white" || variant === "orange") {
+                  e.currentTarget.style.backgroundColor = '#E74C3C';
+                } else {
+                  e.currentTarget.style.backgroundColor = '#f3f4f6';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (variant === "white" || variant === "orange") {
+                  e.currentTarget.style.backgroundColor = '#FF6B35';
+                } else {
+                  e.currentTarget.style.backgroundColor = 'white';
+                }
+              }}
+              className="px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center"
+            >
               Explore Solutions
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
