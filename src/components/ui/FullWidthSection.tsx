@@ -86,7 +86,7 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
   return (
     <FullWidthSection variant={variant} geometric id={id}>
       <div className={cn(
-        'grid grid-cols-1 lg:grid-cols-2 gap-8 items-center h-[300px] overflow-hidden',
+        'grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[400px] overflow-visible',
         reverse ? 'lg:grid-flow-col-dense' : ''
       )}>
         {/* Content */}
