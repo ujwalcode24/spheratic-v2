@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Card, Button } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { Building2, Stethoscope, ShoppingCart, Shield } from 'lucide-react';
 
 const CaseStudiesPage = () => {
   const caseStudies = [
@@ -22,7 +23,7 @@ const CaseStudiesPage = () => {
         '24/7 automated customer service'
       ],
       technologies: ['React Native', 'Node.js', 'AI/ML', 'Blockchain'],
-      image: '🏦',
+      image: Building2,
       timeline: '12 months',
       teamSize: '25 developers'
     },
@@ -40,7 +41,7 @@ const CaseStudiesPage = () => {
         '40% cost savings for patients'
       ],
       technologies: ['React', 'Python', 'TensorFlow', 'WebRTC'],
-      image: '⚕️',
+      image: Stethoscope,
       timeline: '8 months',
       teamSize: '18 developers'
     },
@@ -58,7 +59,7 @@ const CaseStudiesPage = () => {
         '60% faster page load times'
       ],
       technologies: ['Kubernetes', 'AWS', 'Redis', 'GraphQL'],
-      image: '🛒',
+      image: ShoppingCart,
       timeline: '6 months',
       teamSize: '20 developers'
     },
@@ -76,7 +77,7 @@ const CaseStudiesPage = () => {
         '95% customer satisfaction'
       ],
       technologies: ['Python', 'TensorFlow', 'OCR', 'RPA'],
-      image: '🛡️',
+      image: Shield,
       timeline: '10 months',
       teamSize: '15 developers'
     }
@@ -177,7 +178,7 @@ const CaseStudiesPage = () => {
                 {/* Visual Card */}
                 <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
                   <Card className="bg-gradient-to-br from-primary-50 to-white border-2 border-primary-100 p-8 text-center">
-                    <div className="text-6xl mb-6">{study.image}</div>
+                    {React.createElement(study.image, { className: 'w-16 h-16 text-primary-500 mb-6 mx-auto' })}
                     <h3 className="text-xl font-bold text-accent-gray-900 mb-2">
                       {study.client}
                     </h3>
