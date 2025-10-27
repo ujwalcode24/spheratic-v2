@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, Button } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { Building2, Stethoscope, Shield, ShoppingCart, Briefcase } from 'lucide-react';
 
 const SolutionsPage = () => {
   const solutions = [
@@ -12,7 +13,7 @@ const SolutionsPage = () => {
       id: 'financial-services',
       name: 'Financial Services',
       description: 'Digital banking, payment processing, and fintech solutions for modern financial institutions.',
-      icon: '🏦',
+      icon: Building2,
       features: ['Digital Banking', 'Payment Processing', 'Risk Management', 'Compliance Tools'],
       industries: ['Banking', 'Insurance', 'Investment', 'Payments']
     },
@@ -20,7 +21,7 @@ const SolutionsPage = () => {
       id: 'healthcare',
       name: 'Healthcare',
       description: 'Digital health platforms, telemedicine, and healthcare management systems.',
-      icon: '⚕️',
+      icon: Stethoscope,
       features: ['Telemedicine', 'Patient Management', 'Health Analytics', 'Medical AI'],
       industries: ['Hospitals', 'Clinics', 'Pharma', 'Health Tech']
     },
@@ -28,7 +29,7 @@ const SolutionsPage = () => {
       id: 'insurance',
       name: 'Insurance',
       description: 'InsurTech solutions for policy management, claims processing, and risk assessment.',
-      icon: '🛡️',
+      icon: Shield,
       features: ['Policy Management', 'Claims Processing', 'Risk Assessment', 'Customer Portal'],
       industries: ['Life Insurance', 'Health Insurance', 'Auto Insurance', 'Property Insurance']
     },
@@ -36,7 +37,7 @@ const SolutionsPage = () => {
       id: 'retail-ecommerce',
       name: 'Retail & E-commerce',
       description: 'Modern commerce platforms, inventory management, and customer experience solutions.',
-      icon: '🛒',
+      icon: ShoppingCart,
       features: ['E-commerce Platform', 'Inventory Management', 'Customer Analytics', 'Mobile Commerce'],
       industries: ['Retail', 'E-commerce', 'Fashion', 'Electronics']
     },
@@ -44,7 +45,7 @@ const SolutionsPage = () => {
       id: 'enterprise',
       name: 'Enterprise',
       description: 'Enterprise resource planning, workflow automation, and business intelligence.',
-      icon: '🏢',
+      icon: Briefcase,
       features: ['ERP Systems', 'Workflow Automation', 'Business Intelligence', 'Integration Platform'],
       industries: ['Manufacturing', 'Logistics', 'Professional Services', 'Government']
     }
@@ -102,7 +103,7 @@ const SolutionsPage = () => {
                 >
                   <CardHeader>
                     <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors duration-300">
-                      <span className="text-2xl">{solution.icon}</span>
+                      {React.createElement(solution.icon, { className: 'w-6 h-6 text-primary-500' })}
                     </div>
                     <CardTitle className="text-xl font-semibold group-hover:text-primary-500 transition-colors duration-300">
                       {solution.name}

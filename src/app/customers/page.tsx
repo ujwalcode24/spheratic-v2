@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { BarChart3, MessageSquare, Trophy } from 'lucide-react';
 
 const CustomersPage = () => {
   const customerLinks = [
@@ -12,21 +13,21 @@ const CustomersPage = () => {
       id: 'case-studies',
       name: 'Case Studies',
       description: 'Real-world success stories from our clients.',
-      icon: '📊',
+      icon: BarChart3,
       href: '/customers/case-studies'
     },
     {
       id: 'testimonials',
       name: 'Testimonials',
       description: 'What our clients say about working with us.',
-      icon: '💬',
+      icon: MessageSquare,
       href: '/customers/testimonials'
     },
     {
       id: 'success-stories',
       name: 'Success Stories',
       description: 'Inspiring stories of customer achievements.',
-      icon: '🏆',
+      icon: Trophy,
       href: '/customers/success-stories'
     }
   ];
@@ -82,7 +83,7 @@ const CustomersPage = () => {
                   >
                     <CardHeader>
                       <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
-                        <span className="text-2xl">{link.icon}</span>
+                        {React.createElement(link.icon, { className: 'w-6 h-6 text-primary-500' })}
                       </div>
                       <CardTitle className="text-xl font-semibold">
                         {link.name}

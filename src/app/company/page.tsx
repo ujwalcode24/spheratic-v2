@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection, Card, CardContent, CardHeader, CardTitle, Button } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { Star, Users, Briefcase, Newspaper } from 'lucide-react';
 
 const CompanyPage = () => {
   const companyLinks = [
@@ -12,28 +13,28 @@ const CompanyPage = () => {
       id: 'about',
       name: 'About Us',
       description: 'Learn about Spheratic\'s mission, vision, and values.',
-      icon: '🌟',
+      icon: Star,
       href: '/company/about'
     },
     {
       id: 'team',
       name: 'Our Team',
       description: 'Meet the talented people behind Spheratic.',
-      icon: '👥',
+      icon: Users,
       href: '/company/team'
     },
     {
       id: 'careers',
       name: 'Careers',
       description: 'Join our team and help shape the future of technology.',
-      icon: '💼',
+      icon: Briefcase,
       href: '/company/careers'
     },
     {
       id: 'news',
       name: 'News & Updates',
       description: 'Stay updated with our latest announcements and insights.',
-      icon: '📰',
+      icon: Newspaper,
       href: '/company/news'
     }
   ];
@@ -89,7 +90,7 @@ const CompanyPage = () => {
                   >
                     <CardHeader>
                       <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors duration-300">
-                        <span className="text-2xl">{link.icon}</span>
+                        {React.createElement(link.icon, { className: 'w-6 h-6 text-primary-500' })}
                       </div>
                       <CardTitle className="text-xl font-semibold">
                         {link.name}

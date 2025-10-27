@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { Brain, Link2, Sparkles } from 'lucide-react';
 
 const PartnersPage = () => {
   const partnerLinks = [
@@ -12,21 +13,21 @@ const PartnersPage = () => {
       id: 'technology',
       name: 'Technology Partners',
       description: 'Leading technology companies in our ecosystem.',
-      icon: '🤖',
+      icon: Brain,
       href: '/partners/technology'
     },
     {
       id: 'integration',
       name: 'Integration Partners',
       description: 'API and platform integration specialists.',
-      icon: '🔗',
+      icon: Link2,
       href: '/partners/integration'
     },
     {
       id: 'join',
       name: 'Become a Partner',
       description: 'Join our growing partner network.',
-      icon: '✨',
+      icon: Sparkles,
       href: '/partners/join'
     }
   ];
@@ -82,7 +83,7 @@ const PartnersPage = () => {
                   >
                     <CardHeader>
                       <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
-                        <span className="text-2xl">{link.icon}</span>
+                        {React.createElement(link.icon, { className: 'w-6 h-6 text-primary-500' })}
                       </div>
                       <CardTitle className="text-xl font-semibold">
                         {link.name}
