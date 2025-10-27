@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { Rocket, Trophy, Globe, Award, CreditCard, Handshake } from 'lucide-react';
 
 const NewsPage = () => {
   const news = [
@@ -13,42 +14,42 @@ const NewsPage = () => {
       date: 'December 2024',
       category: 'Product Launch',
       excerpt: 'We\'re excited to announce the launch of our latest AI Platform with advanced machine learning capabilities.',
-      icon: '🚀'
+      icon: Rocket
     },
     {
       title: 'Spheratic Reaches 500+ Enterprise Clients',
       date: 'November 2024',
       category: 'Milestone',
       excerpt: 'A major milestone as we celebrate serving over 500 enterprise clients worldwide.',
-      icon: '🎉'
+      icon: Trophy
     },
     {
       title: 'Expanding to European Markets',
       date: 'October 2024',
       category: 'Expansion',
       excerpt: 'We\'re opening new offices in London and Berlin to better serve our European clients.',
-      icon: '🌍'
+      icon: Globe
     },
     {
       title: 'Spheratic Wins Innovation Award',
       date: 'September 2024',
       category: 'Award',
       excerpt: 'Recognized for our innovative approach to technology solutions and customer success.',
-      icon: '🏆'
+      icon: Award
     },
     {
       title: 'New FinTech Suite Released',
       date: 'August 2024',
       category: 'Product Launch',
       excerpt: 'Our comprehensive FinTech Suite is now available with enhanced security and compliance features.',
-      icon: '💳'
+      icon: CreditCard
     },
     {
       title: 'Spheratic Joins Tech Alliance',
       date: 'July 2024',
       category: 'Partnership',
       excerpt: 'We\'ve joined a global tech alliance to collaborate on emerging technologies and industry standards.',
-      icon: '🤝'
+      icon: Handshake
     }
   ];
 
@@ -104,36 +105,39 @@ const NewsPage = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {news.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer">
-                  <CardHeader>
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="text-4xl">{item.icon}</div>
-                      <span className="text-xs font-medium bg-primary-100 text-primary-600 px-3 py-1 rounded-full">
-                        {item.category}
-                      </span>
-                    </div>
-                    <CardTitle className="text-xl">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-sm text-accent-gray-500">{item.date}</p>
-                    <p className="text-accent-gray-600 leading-relaxed">
-                      {item.excerpt}
-                    </p>
-                    <button className="text-primary-500 font-medium hover:text-primary-600 transition-colors">
-                      Read More →
-                    </button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+            {news.map((item, index) => {
+              const IconComponent = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer border border-accent-gray-200">
+                    <CardHeader>
+                      <div className="flex items-start justify-between mb-4">
+                        <IconComponent className="w-10 h-10 text-primary-500" />
+                        <span className="text-xs font-medium bg-primary-100 text-primary-600 px-3 py-1 rounded-full">
+                          {item.category}
+                        </span>
+                      </div>
+                      <CardTitle className="text-xl">{item.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="text-sm text-accent-gray-500">{item.date}</p>
+                      <p className="text-accent-gray-600 leading-relaxed">
+                        {item.excerpt}
+                      </p>
+                      <button className="text-primary-500 font-medium hover:text-primary-600 transition-colors">
+                        Read More →
+                      </button>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
