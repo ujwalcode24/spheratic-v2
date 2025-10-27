@@ -222,7 +222,7 @@ interface FeatureHighlightProps {
   features: Array<{
     title: string;
     description: string;
-    icon?: string;
+    icon?: string | React.ComponentType<{ className?: string }>;
     image?: string;
   }>;
   variant: 'orange' | 'black' | 'white';
@@ -270,7 +270,11 @@ export const FeatureHighlight: React.FC<FeatureHighlightProps> = ({
                 />
               ) : (
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-2xl">{feature.icon}</span>
+                  {typeof feature.icon === 'string' ? (
+                    <span className="text-2xl">{feature.icon}</span>
+                  ) : feature.icon ? (
+                    React.createElement(feature.icon, { className: 'w-8 h-8 text-white' })
+                  ) : null}
                 </div>
               )}
               <div className="absolute inset-0 bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>

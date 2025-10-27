@@ -6,29 +6,30 @@ import Link from 'next/link';
 import { FullWidthSection, FeatureHighlight } from '@/components/ui';
 import { AnimatedBackground } from '@/components/3d';
 import { ANIMATIONS } from '@/lib/constants';
+import { Brain, Eye, BarChart3, Zap } from 'lucide-react';
 
 const AIPlatformPage = () => {
   const features = [
     {
-      icon: '🧠',
+      icon: Brain,
       title: 'Natural Language Processing',
       description: 'Advanced NLP capabilities for text analysis, sentiment detection, and language understanding.',
       benefits: ['Real-time text analysis', 'Multi-language support', 'Custom model training']
     },
     {
-      icon: '👁️',
+      icon: Eye,
       title: 'Computer Vision',
       description: 'Powerful image and video analysis with object detection and recognition.',
       benefits: ['Object detection', 'Facial recognition', 'Image classification']
     },
     {
-      icon: '📊',
+      icon: BarChart3,
       title: 'Predictive Analytics',
       description: 'Machine learning models for forecasting and predictive insights.',
       benefits: ['Time series forecasting', 'Risk assessment', 'Trend analysis']
     },
     {
-      icon: '⚡',
+      icon: Zap,
       title: 'AutoML',
       description: 'Automated machine learning for rapid model development and deployment.',
       benefits: ['No-code ML', 'Automated feature engineering', 'Model optimization']
@@ -73,7 +74,7 @@ const AIPlatformPage = () => {
             className="text-center mb-16"
           >
             <div className="inline-flex items-center px-4 py-2 bg-primary-500/10 backdrop-blur-sm rounded-full text-sm font-medium mb-8 border border-primary-500/20 text-primary-600">
-              <span className="text-2xl mr-2">🤖</span>
+              <Brain className="w-5 h-5 mr-2" />
               AI Platform
             </div>
 
