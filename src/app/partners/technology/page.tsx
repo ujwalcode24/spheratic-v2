@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { Cloud, Brain, Briefcase, CreditCard, Phone, Database, Package, Container } from 'lucide-react';
 
 const TechnologyPartnersPage = () => {
   const partners = [
@@ -12,49 +13,49 @@ const TechnologyPartnersPage = () => {
       name: 'AWS',
       category: 'Cloud Infrastructure',
       description: 'Leveraging AWS for scalable cloud solutions',
-      icon: '☁️'
+      icon: Cloud
     },
     {
       name: 'Google Cloud',
       category: 'AI & Machine Learning',
       description: 'Powered by Google Cloud AI services',
-      icon: '🤖'
+      icon: Brain
     },
     {
       name: 'Microsoft Azure',
       category: 'Enterprise Solutions',
       description: 'Enterprise-grade solutions on Azure',
-      icon: '💼'
+      icon: Briefcase
     },
     {
       name: 'Stripe',
       category: 'Payment Processing',
       description: 'Secure payment solutions with Stripe',
-      icon: '💳'
+      icon: CreditCard
     },
     {
       name: 'Twilio',
       category: 'Communications',
       description: 'Communication APIs and services',
-      icon: '📞'
+      icon: Phone
     },
     {
       name: 'MongoDB',
       category: 'Database',
       description: 'NoSQL database solutions',
-      icon: '🗄️'
+      icon: Database
     },
     {
       name: 'Kubernetes',
       category: 'Container Orchestration',
       description: 'Container orchestration and management',
-      icon: '📦'
+      icon: Package
     },
     {
       name: 'Docker',
       category: 'Containerization',
       description: 'Application containerization',
-      icon: '🐳'
+      icon: Container
     }
   ];
 
@@ -91,9 +92,11 @@ const TechnologyPartnersPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow text-center">
+                <Card className="h-full hover:shadow-lg transition-shadow text-center border border-accent-gray-200">
                   <CardHeader>
-                    <div className="text-5xl mb-4">{partner.icon}</div>
+                    <div className="flex justify-center mb-4">
+                      {React.createElement(partner.icon, { className: 'w-12 h-12 text-primary-500' })}
+                    </div>
                     <CardTitle className="text-xl">{partner.name}</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-2">

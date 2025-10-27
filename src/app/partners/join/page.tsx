@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { Brain, BarChart3, Wrench, Handshake } from 'lucide-react';
 
 const BecomePartnerPage = () => {
   const partnerTypes = [
@@ -12,25 +13,25 @@ const BecomePartnerPage = () => {
       name: 'Technology Partner',
       description: 'Integrate your technology with Spheratic',
       benefits: ['API Access', 'Co-marketing', 'Revenue Share', 'Technical Support'],
-      icon: '🤖'
+      icon: Brain
     },
     {
       name: 'Reseller Partner',
       description: 'Resell Spheratic solutions to your customers',
       benefits: ['Competitive Pricing', 'Sales Support', 'Training', 'Marketing Materials'],
-      icon: '📊'
+      icon: BarChart3
     },
     {
       name: 'Implementation Partner',
       description: 'Implement Spheratic solutions for clients',
       benefits: ['Certification', 'Resources', 'Support', 'Lead Generation'],
-      icon: '🔧'
+      icon: Wrench
     },
     {
       name: 'Strategic Partner',
       description: 'Long-term strategic partnership',
       benefits: ['Custom Terms', 'Executive Access', 'Joint Ventures', 'Co-innovation'],
-      icon: '🤝'
+      icon: Handshake
     }
   ];
 
@@ -103,9 +104,11 @@ const BecomePartnerPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow">
+                <Card className="h-full hover:shadow-lg transition-shadow border border-accent-gray-200">
                   <CardHeader>
-                    <div className="text-4xl mb-4">{type.icon}</div>
+                    <div className="flex justify-start mb-4">
+                      {React.createElement(type.icon, { className: 'w-10 h-10 text-primary-500' })}
+                    </div>
                     <CardTitle className="text-xl">{type.name}</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { Cloud, Briefcase, MessageSquare, Zap, BarChart3, CheckSquare, TrendingUp, ShoppingCart } from 'lucide-react';
 
 const IntegrationPartnersPage = () => {
   const integrations = [
@@ -12,49 +13,49 @@ const IntegrationPartnersPage = () => {
       name: 'Salesforce',
       category: 'CRM Integration',
       description: 'Seamless integration with Salesforce CRM',
-      icon: '☁️'
+      icon: Cloud
     },
     {
       name: 'SAP',
       category: 'ERP Integration',
       description: 'Enterprise resource planning integration',
-      icon: '💼'
+      icon: Briefcase
     },
     {
       name: 'Slack',
       category: 'Communication',
       description: 'Slack workspace integration',
-      icon: '💬'
+      icon: MessageSquare
     },
     {
       name: 'Zapier',
       category: 'Automation',
       description: 'Workflow automation platform',
-      icon: '⚡'
+      icon: Zap
     },
     {
       name: 'HubSpot',
       category: 'Marketing',
       description: 'Marketing automation integration',
-      icon: '📊'
+      icon: BarChart3
     },
     {
       name: 'Jira',
       category: 'Project Management',
       description: 'Project management integration',
-      icon: '📋'
+      icon: CheckSquare
     },
     {
       name: 'Tableau',
       category: 'Analytics',
       description: 'Data visualization and analytics',
-      icon: '📈'
+      icon: TrendingUp
     },
     {
       name: 'Shopify',
       category: 'E-commerce',
       description: 'E-commerce platform integration',
-      icon: '🛒'
+      icon: ShoppingCart
     }
   ];
 
@@ -91,9 +92,11 @@ const IntegrationPartnersPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow text-center">
+                <Card className="h-full hover:shadow-lg transition-shadow text-center border border-accent-gray-200">
                   <CardHeader>
-                    <div className="text-5xl mb-4">{integration.icon}</div>
+                    <div className="flex justify-center mb-4">
+                      {React.createElement(integration.icon, { className: 'w-12 h-12 text-primary-500' })}
+                    </div>
                     <CardTitle className="text-xl">{integration.name}</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-2">
