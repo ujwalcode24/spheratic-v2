@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { Code, Target, Palette, TrendingUp, Headphones, Cog, DollarSign, Heart, Home, BookOpen, PieChart, Scale } from 'lucide-react';
 
 const CareersPage = () => {
   const openPositions = [
@@ -13,52 +14,52 @@ const CareersPage = () => {
       department: 'Engineering',
       location: 'Remote',
       type: 'Full-time',
-      icon: '💻'
+      icon: Code
     },
     {
       title: 'Product Manager',
       department: 'Product',
       location: 'San Francisco, CA',
       type: 'Full-time',
-      icon: '🎯'
+      icon: Target
     },
     {
       title: 'UX/UI Designer',
       department: 'Design',
       location: 'Remote',
       type: 'Full-time',
-      icon: '🎨'
+      icon: Palette
     },
     {
       title: 'Sales Executive',
       department: 'Sales',
       location: 'New York, NY',
       type: 'Full-time',
-      icon: '📈'
+      icon: TrendingUp
     },
     {
       title: 'Customer Success Manager',
       department: 'Support',
       location: 'Remote',
       type: 'Full-time',
-      icon: '🤝'
+      icon: Headphones
     },
     {
       title: 'DevOps Engineer',
       department: 'Engineering',
       location: 'Remote',
       type: 'Full-time',
-      icon: '⚙️'
+      icon: Cog
     }
   ];
 
   const benefits = [
-    { title: 'Competitive Salary', description: 'Industry-leading compensation packages', icon: '💰' },
-    { title: 'Health Insurance', description: 'Comprehensive health and wellness coverage', icon: '🏥' },
-    { title: 'Remote Work', description: 'Flexible work arrangements and remote options', icon: '🏠' },
-    { title: 'Professional Growth', description: 'Continuous learning and development opportunities', icon: '📚' },
-    { title: 'Equity Options', description: 'Share in our company\'s success', icon: '📊' },
-    { title: 'Work-Life Balance', description: 'Generous PTO and flexible schedules', icon: '⚖️' }
+    { title: 'Competitive Salary', description: 'Industry-leading compensation packages', icon: DollarSign },
+    { title: 'Health Insurance', description: 'Comprehensive health and wellness coverage', icon: Heart },
+    { title: 'Remote Work', description: 'Flexible work arrangements and remote options', icon: Home },
+    { title: 'Professional Growth', description: 'Continuous learning and development opportunities', icon: BookOpen },
+    { title: 'Equity Options', description: 'Share in our company\'s success', icon: PieChart },
+    { title: 'Work-Life Balance', description: 'Generous PTO and flexible schedules', icon: Scale }
   ];
 
   return (
@@ -99,39 +100,42 @@ const CareersPage = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {openPositions.map((position, index) => (
-              <motion.div
-                key={position.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="text-4xl mb-4">{position.icon}</div>
-                    <CardTitle className="text-xl">{position.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3">
-                    <div>
-                      <p className="text-sm text-accent-gray-600">Department</p>
-                      <p className="font-medium">{position.department}</p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-accent-gray-600">Location</p>
-                      <p className="font-medium">{position.location}</p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-accent-gray-600">Type</p>
-                      <p className="font-medium">{position.type}</p>
-                    </div>
-                    <button className="w-full mt-4 bg-primary-500 text-white py-2 rounded-lg hover:bg-primary-600 transition-colors">
-                      Apply Now
-                    </button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+            {openPositions.map((position, index) => {
+              const IconComponent = position.icon;
+              return (
+                <motion.div
+                  key={position.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="h-full hover:shadow-lg transition-shadow border border-accent-gray-200">
+                    <CardHeader>
+                      <IconComponent className="w-10 h-10 text-primary-500 mb-4" />
+                      <CardTitle className="text-xl">{position.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-3">
+                      <div>
+                        <p className="text-sm text-accent-gray-600">Department</p>
+                        <p className="font-medium">{position.department}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-accent-gray-600">Location</p>
+                        <p className="font-medium">{position.location}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-accent-gray-600">Type</p>
+                        <p className="font-medium">{position.type}</p>
+                      </div>
+                      <button style={{ backgroundColor: '#FF6B35', color: 'white', borderRadius: '2px' }} className="w-full mt-4 py-2 font-medium transition-all duration-300 hover:scale-105" onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#E74C3C'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FF6B35'}>
+                        Apply Now
+                      </button>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -153,20 +157,23 @@ const CareersPage = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center"
-              >
-                <div className="text-4xl mb-4">{benefit.icon}</div>
-                <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                <p className="text-accent-gray-600">{benefit.description}</p>
-              </motion.div>
-            ))}
+            {benefits.map((benefit, index) => {
+              const IconComponent = benefit.icon;
+              return (
+                <motion.div
+                  key={benefit.title}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center border border-accent-gray-200"
+                >
+                  <IconComponent className="w-10 h-10 text-primary-500 mb-4 mx-auto" />
+                  <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
+                  <p className="text-accent-gray-600">{benefit.description}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
