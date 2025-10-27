@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection, Card, CardContent } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { User, Star } from 'lucide-react';
 
 const TestimonialsPage = () => {
   const testimonials = [
@@ -13,48 +14,42 @@ const TestimonialsPage = () => {
       author: 'John Smith',
       role: 'CEO, TechCorp',
       company: 'TechCorp',
-      rating: 5,
-      icon: '👨‍💼'
+      rating: 5
     },
     {
       quote: 'The FinTech Suite has revolutionized our payment processing. We\'ve seen a 300% improvement in transaction speed.',
       author: 'Sarah Johnson',
       role: 'CFO, Global Banking',
       company: 'Global Banking',
-      rating: 5,
-      icon: '👩‍💼'
+      rating: 5
     },
     {
       quote: 'Outstanding support and innovative solutions. Spheratic is a true partner in our digital transformation journey.',
       author: 'Michael Chen',
       role: 'CTO, HealthPlus',
       company: 'HealthPlus',
-      rating: 5,
-      icon: '👨‍💻'
+      rating: 5
     },
     {
       quote: 'The scalability and reliability of their platform is unmatched. We can now handle 10x more traffic without issues.',
       author: 'Emily Rodriguez',
       role: 'VP Operations, RetailMax',
       company: 'RetailMax',
-      rating: 5,
-      icon: '👩‍💼'
+      rating: 5
     },
     {
       quote: 'Spheratic\'s team understood our unique challenges and delivered a solution that exceeded our expectations.',
       author: 'David Kumar',
       role: 'Director, DataInsights',
       company: 'DataInsights',
-      rating: 5,
-      icon: '👨‍💼'
+      rating: 5
     },
     {
       quote: 'Best investment we\'ve made in technology. The ROI has been incredible and the team is always responsive.',
       author: 'Lisa Anderson',
       role: 'CEO, SecureInsure',
       company: 'SecureInsure',
-      rating: 5,
-      icon: '👩‍💼'
+      rating: 5
     }
   ];
 
@@ -91,12 +86,12 @@ const TestimonialsPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow">
+                <Card className="h-full hover:shadow-lg transition-shadow border border-accent-gray-200">
                   <CardContent className="p-6 space-y-4">
                     {/* Rating */}
                     <div className="flex gap-1">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <span key={i} className="text-yellow-400">⭐</span>
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
 
@@ -107,7 +102,9 @@ const TestimonialsPage = () => {
 
                     {/* Author */}
                     <div className="flex items-center gap-4 pt-4 border-t border-accent-gray-200">
-                      <div className="text-3xl">{testimonial.icon}</div>
+                      <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <User className="w-6 h-6 text-primary-500" />
+                      </div>
                       <div>
                         <p className="font-bold text-accent-gray-900">{testimonial.author}</p>
                         <p className="text-sm text-accent-gray-600">{testimonial.role}</p>
