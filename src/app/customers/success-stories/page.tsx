@@ -5,48 +5,49 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { Building2, Hospital, ShoppingCart, BarChart3, Shield, Cog } from 'lucide-react';
 
 const SuccessStoriesPage = () => {
   const stories = [
     {
       title: 'From Legacy to Cloud: A Banking Revolution',
       company: 'Global Banking Corp',
-      icon: '🏦',
+      icon: Building2,
       story: 'Global Banking Corp migrated from legacy systems to our cloud-based FinTech Suite, resulting in 300% faster transactions and 50% cost reduction.',
       metrics: ['300% faster', '50% savings', '99.99% uptime']
     },
     {
       title: 'Healthcare Goes Digital',
       company: 'MedCare Hospital Network',
-      icon: '🏥',
+      icon: Hospital,
       story: 'MedCare implemented our telemedicine platform, enabling 500,000+ virtual consultations and reducing patient wait times by 80%.',
       metrics: ['500K+ consultations', '80% faster', '40% savings']
     },
     {
       title: 'E-commerce Scaling Success',
       company: 'RetailMax Inc',
-      icon: '🛒',
+      icon: ShoppingCart,
       story: 'RetailMax scaled their platform to handle 10x more traffic during peak seasons with zero downtime using our infrastructure solutions.',
       metrics: ['10x capacity', '99.9% uptime', '25% growth']
     },
     {
       title: 'AI-Powered Insights',
       company: 'DataInsights Ltd',
-      icon: '📊',
+      icon: BarChart3,
       story: 'DataInsights deployed our AI Platform to automate data analysis, reducing analysis time from weeks to hours.',
       metrics: ['80% faster', '60% savings', 'Real-time']
     },
     {
       title: 'Insurance Claims Automation',
       company: 'SecureInsure Group',
-      icon: '🛡️',
+      icon: Shield,
       story: 'SecureInsure automated their claims processing with AI, achieving 70% faster processing and 98% accuracy.',
       metrics: ['70% faster', '35% savings', '98% accurate']
     },
     {
       title: 'Manufacturing Excellence',
       company: 'TechManufacture Co',
-      icon: '⚙️',
+      icon: Cog,
       story: 'TechManufacture implemented IoT sensors with AI monitoring, achieving 45% efficiency gains and predictive maintenance.',
       metrics: ['45% efficiency', '30% waste reduction', 'Predictive']
     }
@@ -85,10 +86,10 @@ const SuccessStoriesPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow">
+                <Card className="h-full hover:shadow-lg transition-shadow border border-accent-gray-200">
                   <CardHeader>
                     <div className="flex items-start justify-between mb-4">
-                      <div className="text-4xl">{story.icon}</div>
+                      {React.createElement(story.icon, { className: 'w-10 h-10 text-primary-500' })}
                     </div>
                     <CardTitle className="text-xl">{story.title}</CardTitle>
                   </CardHeader>
