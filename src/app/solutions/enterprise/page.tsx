@@ -5,38 +5,39 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { Building2, Cog, BarChart3, Link2, Package, CheckCircle } from 'lucide-react';
 
 const EnterpriseSolutionPage = () => {
   const features = [
     {
       title: 'ERP Systems',
       description: 'Enterprise resource planning and management',
-      icon: '🏢'
+      icon: Building2
     },
     {
       title: 'Workflow Automation',
       description: 'Automate complex business processes',
-      icon: '⚙️'
+      icon: Cog
     },
     {
       title: 'Business Intelligence',
       description: 'Advanced analytics and reporting',
-      icon: '📊'
+      icon: BarChart3
     },
     {
       title: 'Integration Platform',
       description: 'Seamless system integration',
-      icon: '🔗'
+      icon: Link2
     },
     {
       title: 'Supply Chain',
       description: 'End-to-end supply chain management',
-      icon: '📦'
+      icon: Package
     },
     {
       title: 'Compliance Management',
       description: 'Regulatory compliance tools',
-      icon: '✅'
+      icon: CheckCircle
     }
   ];
 
@@ -106,9 +107,11 @@ const EnterpriseSolutionPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow">
+                <Card className="h-full hover:shadow-lg transition-shadow border border-accent-gray-200">
                   <CardHeader>
-                    <div className="text-4xl mb-4">{feature.icon}</div>
+                    <div className="flex justify-start mb-4">
+                      {React.createElement(feature.icon, { className: 'w-10 h-10 text-primary-500' })}
+                    </div>
                     <CardTitle className="text-xl">{feature.title}</CardTitle>
                   </CardHeader>
                   <CardContent>

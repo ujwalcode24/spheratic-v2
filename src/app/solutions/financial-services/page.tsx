@@ -5,29 +5,30 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, Button } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { Building2, CreditCard, Shield, BarChart3, Scale, Lock, Zap } from 'lucide-react';
 
 const FinancialServicesPage = () => {
   const solutions = [
     {
-      icon: '🏦',
+      icon: Building2,
       title: 'Digital Banking Platform',
       description: 'Complete digital banking solution with mobile apps, web portals, and backend systems.',
       features: ['Mobile banking', 'Online account management', 'Payment processing', 'KYC automation']
     },
     {
-      icon: '💳',
+      icon: CreditCard,
       title: 'Payment Processing',
       description: 'Secure and scalable payment processing for all types of transactions.',
       features: ['Real-time processing', 'Multi-currency support', 'Fraud detection', 'PCI compliance']
     },
     {
-      icon: '🛡️',
+      icon: Shield,
       title: 'Risk Management',
       description: 'Advanced risk assessment and management tools for financial institutions.',
       features: ['Credit scoring', 'Risk analytics', 'Compliance monitoring', 'Regulatory reporting']
     },
     {
-      icon: '📊',
+      icon: BarChart3,
       title: 'Trading Platform',
       description: 'High-performance trading platform for stocks, forex, and cryptocurrency.',
       features: ['Real-time data', 'Advanced charting', 'Algorithmic trading', 'Portfolio management']
@@ -38,22 +39,22 @@ const FinancialServicesPage = () => {
     {
       title: 'Regulatory Compliance',
       description: 'Built-in compliance with financial regulations including PCI DSS, SOX, and GDPR.',
-      icon: '⚖️'
+      icon: Scale
     },
     {
       title: 'Enhanced Security',
       description: 'Multi-layer security with encryption, fraud detection, and secure authentication.',
-      icon: '🔒'
+      icon: Lock
     },
     {
       title: 'Scalable Architecture',
       description: 'Cloud-native architecture that scales with your business growth.',
-      icon: '📈'
+      icon: Zap
     },
     {
       title: '24/7 Support',
       description: 'Round-the-clock technical support and monitoring for critical systems.',
-      icon: '🕐'
+      icon: BarChart3
     }
   ];
 
@@ -133,7 +134,7 @@ const FinancialServicesPage = () => {
                 <Card hover className="h-full border-2 hover:border-primary-500/50 transition-all duration-300">
                   <CardHeader>
                     <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
-                      <span className="text-2xl">{solution.icon}</span>
+                      {React.createElement(solution.icon, { className: 'w-6 h-6 text-primary-500' })}
                     </div>
                     <CardTitle className="text-xl font-semibold">
                       {solution.title}
@@ -188,7 +189,7 @@ const FinancialServicesPage = () => {
                 className="text-center"
               >
                 <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">{benefit.icon}</span>
+                  {React.createElement(benefit.icon, { className: 'w-8 h-8 text-primary-500' })}
                 </div>
                 <h3 className="text-lg font-semibold text-accent-gray-900 mb-2">
                   {benefit.title}

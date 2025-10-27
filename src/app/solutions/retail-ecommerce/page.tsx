@@ -5,38 +5,39 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { ShoppingCart, Package, BarChart3, Smartphone, CreditCard, FileText } from 'lucide-react';
 
 const RetailEcommerceSolutionPage = () => {
   const features = [
     {
       title: 'E-commerce Platform',
       description: 'Modern e-commerce platform with mobile support',
-      icon: '🛒'
+      icon: ShoppingCart
     },
     {
       title: 'Inventory Management',
       description: 'Real-time inventory tracking and management',
-      icon: '📦'
+      icon: Package
     },
     {
       title: 'Customer Analytics',
       description: 'Advanced customer behavior analytics',
-      icon: '📊'
+      icon: BarChart3
     },
     {
       title: 'Mobile Commerce',
       description: 'Optimized mobile shopping experience',
-      icon: '📱'
+      icon: Smartphone
     },
     {
       title: 'Payment Integration',
       description: 'Multiple payment gateway integration',
-      icon: '💳'
+      icon: CreditCard
     },
     {
       title: 'Order Management',
       description: 'End-to-end order fulfillment system',
-      icon: '📋'
+      icon: FileText
     }
   ];
 
@@ -106,9 +107,11 @@ const RetailEcommerceSolutionPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow">
+                <Card className="h-full hover:shadow-lg transition-shadow border border-accent-gray-200">
                   <CardHeader>
-                    <div className="text-4xl mb-4">{feature.icon}</div>
+                    <div className="flex justify-start mb-4">
+                      {React.createElement(feature.icon, { className: 'w-10 h-10 text-primary-500' })}
+                    </div>
                     <CardTitle className="text-xl">{feature.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
