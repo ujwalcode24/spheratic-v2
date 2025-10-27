@@ -5,38 +5,39 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { BarChart3, FileText, TrendingUp, Link2, Brain, Bell } from 'lucide-react';
 
 const AnalyticsDashboardPage = () => {
   const features = [
     {
       title: 'Real-time Monitoring',
       description: 'Monitor your business metrics in real-time',
-      icon: '📊'
+      icon: BarChart3
     },
     {
       title: 'Custom Reports',
       description: 'Create custom reports tailored to your needs',
-      icon: '📋'
+      icon: FileText
     },
     {
       title: 'Data Visualization',
       description: 'Beautiful charts and visualizations',
-      icon: '📈'
+      icon: TrendingUp
     },
     {
       title: 'API Integration',
       description: 'Seamless integration with your data sources',
-      icon: '🔗'
+      icon: Link2
     },
     {
       title: 'Predictive Analytics',
       description: 'AI-powered forecasting and predictions',
-      icon: '🤖'
+      icon: Brain
     },
     {
       title: 'Alerts & Notifications',
       description: 'Get notified of important metrics changes',
-      icon: '🔔'
+      icon: Bell
     }
   ];
 
@@ -104,9 +105,11 @@ const AnalyticsDashboardPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow">
+                <Card className="h-full hover:shadow-lg transition-shadow border border-accent-gray-200">
                   <CardHeader>
-                    <div className="text-4xl mb-4">{feature.icon}</div>
+                    <div className="flex justify-start mb-4">
+                      {React.createElement(feature.icon, { className: 'w-10 h-10 text-primary-500' })}
+                    </div>
                     <CardTitle className="text-xl">{feature.title}</CardTitle>
                   </CardHeader>
                   <CardContent>

@@ -5,38 +5,39 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
+import { FileText, DollarSign, Palette, TrendingUp, Lock, BarChart3 } from 'lucide-react';
 
 const BlockchainToolsPage = () => {
   const features = [
     {
       title: 'Smart Contracts',
       description: 'Deploy and manage smart contracts securely',
-      icon: '📝'
+      icon: FileText
     },
     {
       title: 'DeFi Solutions',
       description: 'Decentralized finance platform and tools',
-      icon: '💰'
+      icon: DollarSign
     },
     {
       title: 'NFT Platforms',
       description: 'Create and manage NFT marketplaces',
-      icon: '🎨'
+      icon: Palette
     },
     {
       title: 'Crypto Trading',
       description: 'Advanced trading and exchange features',
-      icon: '📈'
+      icon: TrendingUp
     },
     {
       title: 'Wallet Integration',
       description: 'Secure wallet management and integration',
-      icon: '🔐'
+      icon: Lock
     },
     {
       title: 'Blockchain Analytics',
       description: 'Real-time blockchain monitoring and analytics',
-      icon: '📊'
+      icon: BarChart3
     }
   ];
 
@@ -104,9 +105,11 @@ const BlockchainToolsPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow">
+                <Card className="h-full hover:shadow-lg transition-shadow border border-accent-gray-200">
                   <CardHeader>
-                    <div className="text-4xl mb-4">{feature.icon}</div>
+                    <div className="flex justify-start mb-4">
+                      {React.createElement(feature.icon, { className: 'w-10 h-10 text-primary-500' })}
+                    </div>
                     <CardTitle className="text-xl">{feature.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
