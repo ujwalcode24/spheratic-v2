@@ -3,49 +3,201 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { FullWidthSection, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
+import { FullWidthSection } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
-import { FileText, DollarSign, Palette, TrendingUp, Lock, BarChart3 } from 'lucide-react';
 
 const BlockchainToolsPage = () => {
   const features = [
     {
       title: 'Smart Contracts',
-      description: 'Deploy and manage smart contracts securely',
-      icon: FileText
+      description: 'Deploy and manage smart contracts securely with automated execution and verification.',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      ),
+      iconColor: 'text-blue-500',
+      iconBg: 'bg-blue-50'
     },
     {
       title: 'DeFi Solutions',
-      description: 'Decentralized finance platform and tools',
-      icon: DollarSign
+      description: 'Decentralized finance platform with lending, staking, and yield farming capabilities.',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      iconColor: 'text-green-500',
+      iconBg: 'bg-green-50'
     },
     {
       title: 'NFT Platforms',
-      description: 'Create and manage NFT marketplaces',
-      icon: Palette
+      description: 'Create and manage NFT marketplaces with minting, trading, and royalty features.',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      ),
+      iconColor: 'text-purple-500',
+      iconBg: 'bg-purple-50'
     },
     {
       title: 'Crypto Trading',
-      description: 'Advanced trading and exchange features',
-      icon: TrendingUp
+      description: 'Advanced trading and exchange features with real-time market data and analytics.',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        </svg>
+      ),
+      iconColor: 'text-orange-500',
+      iconBg: 'bg-orange-50'
     },
     {
       title: 'Wallet Integration',
-      description: 'Secure wallet management and integration',
-      icon: Lock
+      description: 'Secure wallet management with multi-signature support and hardware wallet integration.',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+      ),
+      iconColor: 'text-red-500',
+      iconBg: 'bg-red-50'
     },
     {
       title: 'Blockchain Analytics',
-      description: 'Real-time blockchain monitoring and analytics',
-      icon: BarChart3
+      description: 'Real-time blockchain monitoring with transaction tracking and network insights.',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      ),
+      iconColor: 'text-cyan-500',
+      iconBg: 'bg-cyan-50'
+    },
+    {
+      title: 'Token Management',
+      description: 'Create, deploy, and manage custom tokens with built-in governance features.',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+      iconColor: 'text-indigo-500',
+      iconBg: 'bg-indigo-50'
+    },
+    {
+      title: 'Cross-Chain Bridge',
+      description: 'Seamlessly transfer assets across multiple blockchain networks with secure bridges.',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+        </svg>
+      ),
+      iconColor: 'text-yellow-500',
+      iconBg: 'bg-yellow-50'
     }
   ];
 
   const benefits = [
-    { number: '100%', label: 'Secure' },
-    { number: '24/7', label: 'Available' },
-    { number: '0ms', label: 'Latency' },
-    { number: '∞', label: 'Scalable' }
+    {
+      number: '100%',
+      label: 'Secure',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+      iconColor: 'text-green-500',
+      iconBg: 'bg-green-50'
+    },
+    {
+      number: '24/7',
+      label: 'Available',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      iconColor: 'text-blue-500',
+      iconBg: 'bg-blue-50'
+    },
+    {
+      number: '0ms',
+      label: 'Latency',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+      iconColor: 'text-orange-500',
+      iconBg: 'bg-orange-50'
+    },
+    {
+      number: '∞',
+      label: 'Scalable',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+      ),
+      iconColor: 'text-purple-500',
+      iconBg: 'bg-purple-50'
+    }
+  ];
+
+  const useCases = [
+    {
+      title: 'DeFi Platforms',
+      description: 'Build decentralized finance applications with lending, borrowing, and yield optimization.',
+      category: 'Finance',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      iconColor: 'text-blue-500',
+      iconBg: 'bg-blue-100',
+      benefits: ['Liquidity pools', 'Yield farming', 'Flash loans', 'Governance tokens']
+    },
+    {
+      title: 'NFT Marketplaces',
+      description: 'Create NFT trading platforms with minting, auctions, and royalty distribution.',
+      category: 'Digital Assets',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      ),
+      iconColor: 'text-purple-500',
+      iconBg: 'bg-purple-100',
+      benefits: ['NFT minting', 'Auction system', 'Royalty tracking', 'Collection management']
+    },
+    {
+      title: 'Enterprise Blockchain',
+      description: 'Private blockchain solutions for supply chain, identity, and document verification.',
+      category: 'Enterprise',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      ),
+      iconColor: 'text-green-500',
+      iconBg: 'bg-green-100',
+      benefits: ['Supply chain tracking', 'Identity verification', 'Document notarization', 'Audit trails']
+    },
+    {
+      title: 'Crypto Exchanges',
+      description: 'Build secure cryptocurrency exchanges with advanced trading features and liquidity.',
+      category: 'Trading',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+        </svg>
+      ),
+      iconColor: 'text-orange-500',
+      iconBg: 'bg-orange-100',
+      benefits: ['Order matching', 'Liquidity management', 'Multi-asset support', 'Compliance tools']
+    }
   ];
 
   return (
@@ -60,20 +212,26 @@ const BlockchainToolsPage = () => {
             className="text-center"
           >
             <div className="inline-flex items-center px-4 py-2 bg-primary-500/10 backdrop-blur-sm rounded-full text-sm font-medium mb-8 border border-primary-500/20 text-primary-600">
-              <span className="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></span>
+              <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>
               Blockchain & Web3
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Blockchain <span className="text-primary-500">Tools</span>
+              <br />
+              <span className="gradient-text">For Web3 Innovation</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-accent-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Secure and scalable blockchain solutions for enterprise.
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+              Secure and scalable blockchain solutions for enterprise applications, DeFi, and NFT platforms.
             </p>
 
-            <div className="inline-flex items-center px-4 py-2 bg-yellow-100 text-yellow-800 rounded-lg text-sm font-medium mt-8">
-              <span className="mr-2">⏰</span>
+            <div className="inline-flex items-center px-4 py-2 bg-yellow-100 text-yellow-800 rounded-lg text-sm font-medium">
+              <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
               Coming Soon
             </div>
           </motion.div>
@@ -81,7 +239,7 @@ const BlockchainToolsPage = () => {
       </section>
 
       {/* Features Grid */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={ANIMATIONS.fadeInUp.initial}
@@ -90,13 +248,13 @@ const BlockchainToolsPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Key Features</h2>
-            <p className="text-lg text-accent-gray-600">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Key Features</h2>
+            <p className="text-lg text-gray-600">
               Enterprise-grade blockchain solutions.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -104,18 +262,13 @@ const BlockchainToolsPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
               >
-                <Card className="h-full hover:shadow-lg transition-shadow border border-accent-gray-200">
-                  <CardHeader>
-                    <div className="flex justify-start mb-4">
-                      {React.createElement(feature.icon, { className: 'w-10 h-10 text-primary-500' })}
-                    </div>
-                    <CardTitle className="text-xl">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-accent-gray-600">{feature.description}</p>
-                  </CardContent>
-                </Card>
+                <div className={`inline-flex p-2 rounded-lg ${feature.iconBg} ${feature.iconColor} mb-4`}>
+                  {feature.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -123,7 +276,7 @@ const BlockchainToolsPage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-accent-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={ANIMATIONS.fadeInUp.initial}
@@ -132,26 +285,29 @@ const BlockchainToolsPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Key Benefits</h2>
-            <p className="text-lg text-accent-gray-600">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Key Benefits</h2>
+            <p className="text-lg text-gray-600">
               Enterprise-grade security and performance.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={benefit.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 rounded-lg shadow-md text-center"
+                className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center hover:shadow-md transition-shadow flex flex-col items-center"
               >
-                <div className="text-4xl font-bold text-primary-500 mb-2">
+                <div className={`inline-flex p-3 rounded-lg ${benefit.iconBg} ${benefit.iconColor} mb-4`}>
+                  {benefit.icon}
+                </div>
+                <div className="text-3xl md:text-4xl font-bold text-primary-500 mb-2">
                   {benefit.number}
                 </div>
-                <div className="text-accent-gray-600">
+                <div className="text-gray-600 text-sm font-medium">
                   {benefit.label}
                 </div>
               </motion.div>
@@ -161,7 +317,7 @@ const BlockchainToolsPage = () => {
       </section>
 
       {/* Use Cases */}
-      <section className="py-20">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={ANIMATIONS.fadeInUp.initial}
@@ -170,29 +326,46 @@ const BlockchainToolsPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Use Cases</h2>
-            <p className="text-lg text-accent-gray-600">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Use Cases</h2>
+            <p className="text-lg text-gray-600">
               Perfect for blockchain and Web3 applications.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: 'DeFi Platforms', description: 'Build decentralized finance apps', icon: '💳' },
-              { title: 'NFT Marketplaces', description: 'Create NFT trading platforms', icon: '🎨' },
-              { title: 'Enterprise Blockchain', description: 'Private blockchain solutions', icon: '🔐' }
-            ].map((useCase, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {useCases.map((useCase, index) => (
               <motion.div
                 key={useCase.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-accent-gray-50 p-8 rounded-lg hover:shadow-lg transition-shadow"
+                className="group relative overflow-hidden rounded-xl border border-gray-200 hover:border-gray-300 transition-all duration-300"
               >
-                <div className="text-4xl mb-4">{useCase.icon}</div>
-                <h3 className="text-xl font-bold mb-2">{useCase.title}</h3>
-                <p className="text-accent-gray-600">{useCase.description}</p>
+                <div className="flex flex-col md:flex-row h-full">
+                  <div className={`${useCase.iconBg} p-8 flex flex-col items-center justify-center md:w-1/3 md:min-h-full`}>
+                    <div className={`p-4 rounded-xl bg-white/80 ${useCase.iconColor} mb-4 shadow-sm`}>
+                      {useCase.icon}
+                    </div>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-gray-600">
+                      {useCase.category}
+                    </span>
+                  </div>
+                  <div className="p-8 md:w-2/3 bg-white flex-1">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{useCase.title}</h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">{useCase.description}</p>
+                    <div className="grid grid-cols-2 gap-3">
+                      {useCase.benefits.map((benefit, idx) => (
+                        <div key={idx} className="flex items-center text-sm text-gray-700">
+                          <svg className="w-4 h-4 mr-2 text-primary-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                          {benefit}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -208,25 +381,37 @@ const BlockchainToolsPage = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
             Interested in Blockchain Solutions?
           </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+          <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-600">
             Explore secure blockchain solutions for your enterprise.
           </p>
-          <Link href="/company/contact">
-            <button
-              style={{ backgroundColor: 'white', color: '#FF6B35', borderRadius: '2px' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f3f4f6'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
-              className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
-            >
-              Learn More
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </button>
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/company/contact">
+              <button
+                style={{ backgroundColor: '#FF6B35', color: 'white', borderRadius: '2px' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#E74C3C'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FF6B35'}
+                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
+              >
+                Get Notified
+                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                </svg>
+              </button>
+            </Link>
+            <Link href="/products/fintech-suite">
+              <button
+                style={{ backgroundColor: 'transparent', color: '#FF6B35', border: '2px solid #FF6B35', borderRadius: '2px' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#fef2f2'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105"
+              >
+                Explore FinTech Suite
+              </button>
+            </Link>
+          </div>
         </motion.div>
       </FullWidthSection>
     </div>
