@@ -60,8 +60,8 @@ const StickyDomainsSection = () => {
   return (
     <div className="relative overflow-visible">
       {domains.map((domain, index) => {
-        // Empathy Tech (0): black, FinTech (1): orange, Human Tech (2): black, AI & Innovation (3): orange, Deep Tech (4): black
-        const variants = ['black', 'orange', 'black', 'orange', 'black'] as const;
+        // Alternating between white and light pastel variants for better readability
+        const variants = ['white', 'blue', 'white', 'purple', 'white'] as const;
         const variant = variants[index % variants.length];
 
         return (

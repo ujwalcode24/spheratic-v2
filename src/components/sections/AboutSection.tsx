@@ -11,49 +11,57 @@ const AboutSection = () => {
       title: "Innovation First",
       description: "We push the boundaries of what's possible with cutting-edge technology and creative solutions that transform industries.",
       icon: "bulb",
-      color: "#FCD34D"
+      color: "#3B82F6",
+      bgColor: "#E8F4FD"
     },
     {
       title: "Human-Centered Design",
       description: "Every solution we create puts human needs and experiences at the center of our design process, ensuring technology serves humanity.",
       icon: "users",
-      color: "#8B5CF6"
+      color: "#8B5CF6",
+      bgColor: "#F3E8FF"
     },
     {
       title: "Quality Excellence",
       description: "We maintain the highest standards in everything we do, from code quality to customer service, delivering exceptional results.",
       icon: "badge",
-      color: "#3B82F6"
+      color: "#0EA5E9",
+      bgColor: "#F0F9FF"
     },
     {
       title: "Scalable Solutions",
       description: "Our technologies are built to grow with your business, from startup to enterprise scale, ensuring long-term success.",
       icon: "trending-up",
-      color: "#10B981"
+      color: "#10B981",
+      bgColor: "#E8FDF5"
     },
     {
       title: "Expert Team",
       description: "Our diverse team of experts brings decades of combined experience in technology and innovation to every project.",
       icon: "team",
-      color: "#FF6B35"
+      color: "#6366F1",
+      bgColor: "#F0E8FF"
     },
     {
       title: "Future Ready",
       description: "We anticipate tomorrow's challenges and build solutions that remain relevant and powerful in an ever-evolving digital landscape.",
       icon: "zap",
-      color: "#EF4444"
+      color: "#EC4899",
+      bgColor: "#FFF0F3"
     },
     {
       title: "24/7 Support",
       description: "Our dedicated support team is always available to help you succeed, providing responsive assistance whenever you need it.",
       icon: "support",
-      color: "#06B6D4"
+      color: "#06B6D4",
+      bgColor: "#E8F4FD"
     },
     {
       title: "Proven Track Record",
       description: "We have successfully delivered hundreds of projects across diverse industries, earning the trust of leading organizations worldwide.",
       icon: "trophy",
-      color: "#A78BFA"
+      color: "#A78BFA",
+      bgColor: "#F3E8FF"
     }
   ];
 
@@ -115,26 +123,31 @@ const AboutSection = () => {
   return (
     <>
       {/* About Header Section */}
-      <FullWidthSection variant="white">
-        <motion.div
-          initial={ANIMATIONS.fadeInUp.initial}
-          whileInView={ANIMATIONS.fadeInUp.animate}
-          transition={ANIMATIONS.fadeInUp.transition}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Why Choose <span className="text-primary-500">Spheratic</span>
-          </h2>
-          <p className="text-lg text-accent-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We&apos;re <strong>not another tech company</strong> - we&apos;re your partners in digital transformation,
-            committed to creating solutions that truly make a difference.
-          </p>
-        </motion.div>
-      </FullWidthSection>
+      <section className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={ANIMATIONS.fadeInUp.initial}
+            whileInView={ANIMATIONS.fadeInUp.animate}
+            transition={ANIMATIONS.fadeInUp.transition}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-800">
+              Why Choose <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Spheratic</span>
+            </h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              We&apos;re <strong className="text-slate-800">not another tech company</strong> - we&apos;re your partners in digital transformation,
+              committed to creating solutions that truly make a difference.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
-      {/* Core Values Cards - Light Gray Background with White Cards */}
-      <section className="w-full py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#f3f4f6' }}>
+      {/* Core Values Cards - Subtle Pastel Background with White Cards */}
+      <section
+        className="w-full py-16 px-4 sm:px-6 lg:px-8"
+        style={{ background: 'linear-gradient(135deg, #F3E8FF 0%, #E8F4FD 50%, #F0F9FF 100%)' }}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {coreValues.map((value, index) => (
@@ -144,20 +157,23 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-lg p-6 border border-gray-300 hover:shadow-lg transition-all duration-300"
+                className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-white/50 hover:shadow-lg hover:bg-white transition-all duration-300 group"
               >
                 {/* Icon */}
-                <div className="mb-4">
+                <div
+                  className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
+                  style={{ backgroundColor: value.bgColor }}
+                >
                   {getIconSVG(value.icon, value.color)}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-semibold text-black mb-3">
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">
                   {value.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   {value.description}
                 </p>
               </motion.div>

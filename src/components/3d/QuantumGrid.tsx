@@ -2,7 +2,11 @@
 
 import React, { useEffect, useRef } from 'react';
 
-const QuantumGrid: React.FC = () => {
+interface QuantumGridProps {
+  isDarkMode?: boolean;
+}
+
+const QuantumGrid: React.FC<QuantumGridProps> = ({ isDarkMode = true }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -16,6 +20,9 @@ const QuantumGrid: React.FC = () => {
     canvas.height = 300;
 
     let animationTime = 0;
+
+    // Color based on mode
+    const baseColor = isDarkMode ? '255, 255, 255' : '59, 130, 246'; // white or blue-500
 
     // Particle system for quantum visualization
     interface Particle {
@@ -53,7 +60,7 @@ const QuantumGrid: React.FC = () => {
       const cellSize = 30;
 
       // Draw grid lines with wave effect
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+      ctx.strokeStyle = `rgba(${baseColor}, 0.2)`;
       ctx.lineWidth = 1;
 
       for (let i = 0; i < gridSize; i++) {
@@ -100,13 +107,13 @@ const QuantumGrid: React.FC = () => {
 
           // Node color with intensity based on distance
           const intensity = 0.5 + (1 - normalizedDistance) * 0.5;
-          ctx.fillStyle = `rgba(255, 255, 255, ${intensity * (0.6 + pulse * 0.4)})`;
+          ctx.fillStyle = `rgba(${baseColor}, ${intensity * (0.6 + pulse * 0.4)})`;
           ctx.beginPath();
           ctx.arc(x, y, nodeSize, 0, Math.PI * 2);
           ctx.fill();
 
           // Glow effect
-          ctx.strokeStyle = `rgba(255, 255, 255, ${intensity * 0.3 * pulse})`;
+          ctx.strokeStyle = `rgba(${baseColor}, ${intensity * 0.3 * pulse})`;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.arc(x, y, nodeSize + 3, 0, Math.PI * 2);
@@ -132,7 +139,7 @@ const QuantumGrid: React.FC = () => {
         }
 
         const opacity = p.life * 0.6;
-        ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+        ctx.fillStyle = `rgba(${baseColor}, ${opacity})`;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
@@ -144,7 +151,7 @@ const QuantumGrid: React.FC = () => {
         const ringOpacity = (0.3 - ring * 0.08) * (0.5 + Math.sin(time * 1.5 + ring) * 0.5);
         const rotation = time * (0.5 - ring * 0.1);
 
-        ctx.strokeStyle = `rgba(255, 255, 255, ${ringOpacity})`;
+        ctx.strokeStyle = `rgba(${baseColor}, ${ringOpacity})`;
         ctx.lineWidth = 1;
 
         ctx.save();
@@ -165,13 +172,13 @@ const QuantumGrid: React.FC = () => {
       const coreSize = 15 + Math.sin(time * 2.5) * 5;
       const coreOpacity = 0.7 + Math.sin(time * 2) * 0.3;
 
-      ctx.fillStyle = `rgba(255, 255, 255, ${coreOpacity})`;
+      ctx.fillStyle = `rgba(${baseColor}, ${coreOpacity})`;
       ctx.beginPath();
       ctx.arc(centerX, centerY, coreSize, 0, Math.PI * 2);
       ctx.fill();
 
       // Core glow
-      ctx.strokeStyle = `rgba(255, 255, 255, ${coreOpacity * 0.5})`;
+      ctx.strokeStyle = `rgba(${baseColor}, ${coreOpacity * 0.5})`;
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.arc(centerX, centerY, coreSize + 5, 0, Math.PI * 2);
@@ -185,14 +192,16 @@ const QuantumGrid: React.FC = () => {
     };
 
     animate();
-  }, []);
+  }, [isDarkMode]);
+
+  const shadowColor = isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(59, 130, 246, 0.4)';
 
   return (
     <canvas
       ref={canvasRef}
       className="max-w-xs max-h-xs"
       style={{
-        filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.5))',
+        filter: `drop-shadow(0 0 30px ${shadowColor})`,
         width: '280px',
         height: '280px',
       }}

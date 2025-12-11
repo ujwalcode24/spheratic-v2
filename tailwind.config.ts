@@ -10,23 +10,34 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          50: '#fef2f2',
-          100: '#fee2e2',
-          200: '#fecaca',
-          300: '#fca5a5',
-          400: '#f87171',
-          500: '#FF6B35', // Main primary orange color
-          600: '#E74C3C', // Darker orange for hover
-          700: '#b91c1c',
-          800: '#991b1b',
-          900: '#7f1d1d',
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9', // Main primary - sky blue
+          600: '#0284c7', // Darker for hover
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+        },
+        // Pastel color palette
+        pastel: {
+          blue: '#E8F4FD',
+          purple: '#F3E8FF',
+          mint: '#E8FDF5',
+          peach: '#FFF5F0',
+          lavender: '#F0E8FF',
+          rose: '#FFF0F3',
+          cream: '#FFFBF5',
+          sky: '#F0F9FF',
         },
         background: {
           DEFAULT: '#ffffff',
           secondary: '#f8fafc',
         },
         accent: {
-          black: '#000000',
+          black: '#1e293b', // Softer dark
           gray: {
             50: '#f9fafb',
             100: '#f3f4f6',

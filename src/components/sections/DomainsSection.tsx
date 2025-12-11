@@ -60,7 +60,8 @@ const DomainsSection = () => {
   return (
     <>
       {domains.map((domain, index) => {
-        const variants = ['orange', 'black', 'white', 'black', 'black'] as const;
+        // Alternating between white and light pastel variants for better readability
+        const variants = ['white', 'blue', 'white', 'purple', 'white'] as const;
         const variant = variants[index % variants.length];
 
         return (

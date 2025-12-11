@@ -1,17 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --primary-color: #FF6B35;
-  --primary-orange: #FF6B35;
+  --primary-color: #0ea5e9;
+  --primary-blue: #0ea5e9;
   --deep-blue: #1E3A8A;
   --vibrant-purple: #8B5CF6;
-  --tech-black: #0F172A;
+  --tech-slate: #1e293b;
   --gradient-blue: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
   --gradient-purple: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
-  --gradient-orange: linear-gradient(135deg, #FF6B35 0%, #E74C3C 100%);
-  --gradient-black: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #8B5CF6 100%);
+  --gradient-slate: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+  /* Pastel backgrounds */
+  --pastel-blue: #E8F4FD;
+  --pastel-purple: #F3E8FF;
+  --pastel-mint: #E8FDF5;
+  --pastel-lavender: #F0E8FF;
   --background: #ffffff;
-  --foreground: #000000;
+  --foreground: #1e293b;
   --accent-gray: #6b7280;
 }
 
@@ -60,16 +65,16 @@ main {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c0392b;
+  background: #0284c7;
 }
 
 /* Custom gradient backgrounds */
 .gradient-primary {
-  background: linear-gradient(135deg, var(--primary-color) 0%, #c0392b 100%);
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary-color) 0%, #000000 100%);
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -113,15 +118,15 @@ main {
 
 /* Button hover effects */
 .btn-primary {
-  background: var(--primary-color);
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
   color: white;
   transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background: #c0392b;
+  background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
 }
 
 /* Card hover effects */
@@ -142,23 +147,24 @@ main {
   overflow: hidden;
 }
 
+/* Pastel section variants */
 .section-orange {
-  background: #f3f4f6;
-  color: #374151;
+  background: linear-gradient(135deg, #F3E8FF 0%, #E8F4FD 100%);
+  color: #1e293b;
 }
 
 .section-blue {
-  background: var(--gradient-blue);
-  color: white;
+  background: linear-gradient(135deg, #E8F4FD 0%, #F0F9FF 100%);
+  color: #1e293b;
 }
 
 .section-purple {
-  background: var(--gradient-purple);
-  color: white;
+  background: linear-gradient(135deg, #F3E8FF 0%, #F0E8FF 100%);
+  color: #1e293b;
 }
 
 .section-black {
-  background: #000000;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   color: white;
 }
 

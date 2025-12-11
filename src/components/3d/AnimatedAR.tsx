@@ -2,7 +2,11 @@
 
 import React, { useEffect, useRef } from 'react';
 
-const AnimatedAR: React.FC = () => {
+interface AnimatedARProps {
+  isDarkMode?: boolean;
+}
+
+const AnimatedAR: React.FC<AnimatedARProps> = ({ isDarkMode = true }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -17,6 +21,9 @@ const AnimatedAR: React.FC = () => {
 
     let animationTime = 0;
 
+    // Color based on mode
+    const baseColor = isDarkMode ? '255, 255, 255' : '59, 130, 246'; // white or blue-500
+
     const drawAR = (time: number) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -28,7 +35,7 @@ const AnimatedAR: React.FC = () => {
       const cornerLength = 20;
       const cornerWidth = 2;
 
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.8)';
+      ctx.strokeStyle = `rgba(${baseColor}, 0.8)`;
       ctx.lineWidth = cornerWidth;
 
       // Top-left corner
@@ -123,7 +130,7 @@ const AnimatedAR: React.FC = () => {
         [0, 4], [1, 5], [2, 6], [3, 7]
       ];
 
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
+      ctx.strokeStyle = `rgba(${baseColor}, 0.6)`;
       ctx.lineWidth = 2;
 
       edges.forEach(edge => {
@@ -137,7 +144,7 @@ const AnimatedAR: React.FC = () => {
       // Draw vertices
       projectedVertices.forEach((vertex, index) => {
         const pulse = Math.sin(time * 2 + index) * 0.3 + 0.7;
-        ctx.fillStyle = `rgba(255, 255, 255, ${0.8 * pulse})`;
+        ctx.fillStyle = `rgba(${baseColor}, ${0.8 * pulse})`;
         ctx.beginPath();
         ctx.arc(vertex[0], vertex[1], 3, 0, Math.PI * 2);
         ctx.fill();
@@ -145,7 +152,7 @@ const AnimatedAR: React.FC = () => {
 
       // Draw scanning line
       const scanY = centerY - frameSize + ((time * 100) % (frameSize * 2));
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+      ctx.strokeStyle = `rgba(${baseColor}, 0.3)`;
       ctx.lineWidth = 1;
       ctx.setLineDash([5, 5]);
       ctx.beginPath();
@@ -163,12 +170,12 @@ const AnimatedAR: React.FC = () => {
         const y = centerY + Math.sin(angle) * distance;
 
         const pulse = Math.sin(time * 2 + i) * 0.3 + 0.7;
-        ctx.fillStyle = `rgba(255, 255, 255, ${0.5 * pulse})`;
+        ctx.fillStyle = `rgba(${baseColor}, ${0.5 * pulse})`;
         ctx.beginPath();
         ctx.arc(x, y, 4, 0, Math.PI * 2);
         ctx.fill();
 
-        ctx.strokeStyle = `rgba(255, 255, 255, ${0.3 * pulse})`;
+        ctx.strokeStyle = `rgba(${baseColor}, ${0.3 * pulse})`;
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.arc(x, y, 8, 0, Math.PI * 2);
@@ -183,14 +190,16 @@ const AnimatedAR: React.FC = () => {
     };
 
     animate();
-  }, []);
+  }, [isDarkMode]);
+
+  const shadowColor = isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(59, 130, 246, 0.4)';
 
   return (
     <canvas
       ref={canvasRef}
       className="max-w-xs max-h-xs"
       style={{
-        filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.5))',
+        filter: `drop-shadow(0 0 30px ${shadowColor})`,
         width: '280px',
         height: '280px',
       }}

@@ -67,7 +67,7 @@ interface DomainSectionProps {
   title: string;
   description: string;
   features: string[];
-  variant: 'orange' | 'black' | 'white';
+  variant: 'orange' | 'black' | 'white' | 'blue' | 'purple';
   icon?: string;
   image?: string | React.ReactNode;
   reverse?: boolean;
@@ -83,6 +83,9 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
   reverse = false,
   id
 }) => {
+  // Determine if this is a light background variant
+  const isLightVariant = variant === "white" || variant === "orange" || variant === "blue" || variant === "purple";
+
   return (
     <FullWidthSection variant={variant} geometric id={id}>
       <div className={cn(
@@ -101,11 +104,17 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
             <div className="text-6xl mb-6">{icon}</div>
           )}
 
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+          <h2 className={cn(
+            "text-4xl md:text-5xl font-bold leading-tight mb-4",
+            isLightVariant ? "text-slate-900" : "text-white"
+          )}>
             {title}
           </h2>
 
-          <p className="text-lg md:text-lg opacity-90 leading-relaxed mb-6">
+          <p className={cn(
+            "text-lg md:text-lg leading-relaxed mb-6",
+            isLightVariant ? "text-slate-600" : "text-white/90"
+          )}>
             {description}
           </p>
 
@@ -117,11 +126,14 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex items-start text-lg"
+                className={cn(
+                  "flex items-start text-lg",
+                  isLightVariant ? "text-slate-700" : "text-white"
+                )}
               >
                 <span className={cn(
                   "text-2xl mr-3 flex-shrink-0 leading-none",
-                  variant === "white" || variant === "orange" ? "text-primary-500" : "text-white"
+                  isLightVariant ? "text-blue-500" : "text-white"
                 )}>•</span>
                 <span>{feature}</span>
               </motion.div>
@@ -136,26 +148,12 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
             className="mt-6"
           >
             <button
-              style={
-                variant === "white" || variant === "orange"
-                  ? { backgroundColor: '#FF6B35', color: 'white', borderRadius: '2px' }
-                  : { backgroundColor: 'white', color: 'black', borderRadius: '2px' }
-              }
-              onMouseEnter={(e) => {
-                if (variant === "white" || variant === "orange") {
-                  e.currentTarget.style.backgroundColor = '#E74C3C';
-                } else {
-                  e.currentTarget.style.backgroundColor = '#f3f4f6';
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (variant === "white" || variant === "orange") {
-                  e.currentTarget.style.backgroundColor = '#FF6B35';
-                } else {
-                  e.currentTarget.style.backgroundColor = 'white';
-                }
-              }}
-              className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center"
+              className={cn(
+                "px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center rounded-lg",
+                isLightVariant
+                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700"
+                  : "bg-white text-slate-800 hover:bg-gray-100"
+              )}
             >
               Explore Solutions
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -178,32 +176,32 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
         >
           {title === "Empathy Tech" ? (
             <div className="w-full h-full flex items-center justify-center">
-              <PulsingWaveform />
+              <PulsingWaveform isDarkMode={!isLightVariant} />
             </div>
           ) : title === "FinTech" ? (
             <div className="w-full h-full flex items-center justify-center">
-              <AnimatedWallet isDarkMode={false} />
+              <AnimatedWallet isDarkMode={!isLightVariant} />
             </div>
           ) : title === "Human Tech" ? (
             <div className="w-full h-full flex items-center justify-center">
-              <AnimatedAR />
+              <AnimatedAR isDarkMode={!isLightVariant} />
             </div>
           ) : title === "AI & Innovation" ? (
             <div className="w-full h-full flex items-center justify-center">
-              <AnimatedBrain isDarkMode={false} />
+              <AnimatedBrain isDarkMode={!isLightVariant} />
             </div>
           ) : title === "Deep Tech" ? (
             <div className="w-full h-full flex items-center justify-center">
-              <QuantumGrid />
+              <QuantumGrid isDarkMode={!isLightVariant} />
             </div>
           ) : (
             <div className={cn(
               "w-64 h-64 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-105",
-              variant === "white" ? "bg-gray-100" : "bg-white/10 backdrop-blur-sm border border-white/20"
+              isLightVariant ? "bg-slate-100/80 backdrop-blur-sm border border-slate-200" : "bg-white/10 backdrop-blur-sm border border-white/20"
             )}>
               <div className={cn(
                 "text-8xl font-bold opacity-20",
-                variant === "white" ? "text-gray-400" : "text-white"
+                isLightVariant ? "text-slate-400" : "text-white"
               )}>
                 {title.charAt(0)}
               </div>

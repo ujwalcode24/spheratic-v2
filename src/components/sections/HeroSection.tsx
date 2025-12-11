@@ -34,8 +34,16 @@ const HeroSection = () => {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center overflow-hidden bg-white"
+      className="relative min-h-screen flex items-center overflow-hidden"
+      style={{ background: 'linear-gradient(135deg, #F0F9FF 0%, #E8F4FD 50%, #F3E8FF 100%)' }}
     >
+      {/* Decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="floating-element absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-3xl" />
+        <div className="floating-element absolute bottom-20 right-1/3 w-96 h-96 bg-gradient-to-br from-purple-200/20 to-pink-200/20 rounded-full blur-3xl" />
+        <div className="floating-element absolute top-1/3 left-1/4 w-48 h-48 bg-gradient-to-br from-cyan-200/25 to-blue-200/25 rounded-full blur-2xl" />
+      </div>
+
       {/* Left Column - Text Content */}
       <div className="relative z-10 w-full lg:w-1/2 px-4 sm:px-6 lg:px-8 lg:pl-16 xl:pl-24">
         <motion.div
@@ -44,29 +52,18 @@ const HeroSection = () => {
           transition={ANIMATIONS.fadeInUp.transition}
           className="text-left max-w-xl"
         >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-flex items-center px-4 py-2 bg-primary-500/10 backdrop-blur-sm rounded-full text-sm font-medium mb-8 border border-primary-500/20 text-primary-600"
-          >
-            <span className="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></span>
-            AI-Powered Innovation
-          </motion.div>
-
           {/* Main Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-slate-800"
           >
             Unlock the{' '}
-            <span className="gradient-text">Future</span>
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-violet-600 bg-clip-text text-transparent">Future</span>
             <br />
             of Technology with{' '}
-            <span className="text-primary-500">Spheratic</span>
+            <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">Spheratic</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -74,31 +71,31 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-lg md:text-xl text-accent-gray-600 mb-12 leading-relaxed"
+            className="text-lg md:text-xl text-slate-600 mb-12 leading-relaxed"
           >
             Experience innovative, human-first technology solutions.
             <br />
             We create applications that matter, anywhere, anytime with real-time impact.
           </motion.p>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex items-center"
+            className="flex flex-wrap items-center gap-4"
           >
             <Link href="/company/contact">
-              <button
-                style={{ backgroundColor: '#FF6B35', color: 'white', borderRadius: '2px' }}
-                className="px-8 py-3 text-lg font-medium transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-1"
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#E74C3C'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FF6B35'}
-              >
+              <button className="px-8 py-3 text-lg font-medium transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700">
                 Schedule Demo
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
+              </button>
+            </Link>
+            <Link href="/products/ai-platform">
+              <button className="px-8 py-3 text-lg font-medium transition-all duration-300 inline-flex items-center justify-center hover:-translate-y-1 rounded-lg bg-white/70 backdrop-blur-sm text-slate-700 border border-slate-200 hover:bg-white hover:shadow-md">
+                Explore Products
               </button>
             </Link>
           </motion.div>

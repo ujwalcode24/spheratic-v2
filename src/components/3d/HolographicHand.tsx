@@ -2,7 +2,11 @@
 
 import React, { useEffect, useRef } from 'react';
 
-const PulsingWaveform: React.FC = () => {
+interface PulsingWaveformProps {
+  isDarkMode?: boolean;
+}
+
+const PulsingWaveform: React.FC<PulsingWaveformProps> = ({ isDarkMode = true }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -17,6 +21,9 @@ const PulsingWaveform: React.FC = () => {
     canvas.height = 300;
 
     let animationTime = 0;
+
+    // Color based on mode
+    const baseColor = isDarkMode ? '255, 255, 255' : '59, 130, 246'; // white or blue-500
 
     const drawWaveform = (time: number) => {
       // Clear canvas completely (transparent)
@@ -39,7 +46,7 @@ const PulsingWaveform: React.FC = () => {
         const opacity = (1 - w / waveCount) * pulse;
 
         // Draw waveform circle with wave distortion
-        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+        ctx.strokeStyle = `rgba(${baseColor}, ${opacity})`;
         ctx.lineWidth = 2;
         ctx.beginPath();
 
@@ -68,7 +75,7 @@ const PulsingWaveform: React.FC = () => {
       const beatPulse = Math.sin(beatPhase * Math.PI * 2) * 0.5 + 0.5;
 
       // Inner pulsing circle
-      ctx.fillStyle = `rgba(255, 255, 255, ${0.6 * beatPulse})`;
+      ctx.fillStyle = `rgba(${baseColor}, ${0.6 * beatPulse})`;
       ctx.beginPath();
       ctx.arc(centerX, centerY, 8 + beatPulse * 5, 0, Math.PI * 2);
       ctx.fill();
@@ -87,7 +94,7 @@ const PulsingWaveform: React.FC = () => {
         const endX = centerX + Math.cos(angle) * (baseRadius + spikeLength);
         const endY = centerY + Math.sin(angle) * (baseRadius + spikeLength);
 
-        ctx.strokeStyle = `rgba(255, 255, 255, ${0.8 * (1 - spikePhase)})`;
+        ctx.strokeStyle = `rgba(${baseColor}, ${0.8 * (1 - spikePhase)})`;
         ctx.lineWidth = 2;
         ctx.lineCap = 'round';
         ctx.beginPath();
@@ -101,7 +108,7 @@ const PulsingWaveform: React.FC = () => {
         const glowRadius = baseRadius + waveCount * 25 + g * 15;
         const glowOpacity = (0.3 - g * 0.1) * Math.sin(time * 1.2 + g * 0.5);
 
-        ctx.strokeStyle = `rgba(255, 255, 255, ${Math.max(0, glowOpacity)})`;
+        ctx.strokeStyle = `rgba(${baseColor}, ${Math.max(0, glowOpacity)})`;
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.arc(centerX, centerY, glowRadius, 0, Math.PI * 2);
@@ -120,14 +127,16 @@ const PulsingWaveform: React.FC = () => {
     return () => {
       // Cleanup if needed
     };
-  }, []);
+  }, [isDarkMode]);
+
+  const shadowColor = isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(59, 130, 246, 0.4)';
 
   return (
     <canvas
       ref={canvasRef}
       className="max-w-xs max-h-xs"
       style={{
-        filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.5))',
+        filter: `drop-shadow(0 0 30px ${shadowColor})`,
         width: '280px',
         height: '280px',
       }}

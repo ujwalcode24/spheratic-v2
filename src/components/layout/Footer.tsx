@@ -78,11 +78,11 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black text-white relative overflow-hidden">
+    <footer className="bg-white text-slate-900 relative overflow-hidden border-t border-slate-200">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-transparent"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(0,0,0,0.05),transparent_50%)]"></div>
       </div>
 
       <div className="relative">
@@ -99,12 +99,12 @@ const Footer = () => {
                 viewport={{ once: true }}
               >
                 <Link href="/" className="inline-block mb-6">
-                  <div className="text-3xl font-bold text-white">
+                  <div className="text-3xl font-bold text-slate-900">
                     Spheratic
                   </div>
                 </Link>
 
-                <p className="text-gray-300 mb-8 leading-relaxed">
+                <p className="text-slate-600 mb-8 leading-relaxed">
                   Empowering the future through innovative technology solutions.
                   We create human-centered technology that transforms industries
                   and enhances lives.
@@ -119,7 +119,7 @@ const Footer = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="flex items-center space-x-2 text-sm text-gray-400"
+                      className="flex items-center space-x-2 text-sm text-slate-600"
                     >
                       <feature.icon className="w-4 h-4 text-primary-500" />
                       <span>{feature.text}</span>
@@ -139,9 +139,9 @@ const Footer = () => {
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors duration-300 group"
+                      className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300 group"
                     >
-                      <social.icon className="w-5 h-5 text-gray-300 group-hover:text-white" />
+                      <social.icon className="w-5 h-5 text-slate-600 group-hover:text-white" />
                     </motion.a>
                   ))}
                 </div>
@@ -159,7 +159,7 @@ const Footer = () => {
                     transition={{ duration: 0.6, delay: sectionIndex * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+                    <h3 className="text-slate-900 font-semibold mb-4 text-sm uppercase tracking-wider">
                       {section.title}
                     </h3>
                     <ul className="space-y-3">
@@ -173,7 +173,7 @@ const Footer = () => {
                         >
                           <Link
                             href={link.href}
-                            className="text-gray-400 hover:text-white transition-colors duration-200 text-sm group flex items-center"
+                            className="text-slate-600 hover:text-slate-900 transition-colors duration-200 text-sm group flex items-center"
                           >
                             <span>{link.name}</span>
                             <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-200" />
@@ -194,7 +194,7 @@ const Footer = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+                <h3 className="text-slate-900 font-semibold mb-4 text-sm uppercase tracking-wider">
                   Contact
                 </h3>
 
@@ -202,19 +202,9 @@ const Footer = () => {
                   <div className="flex items-start space-x-3">
                     <Mail className="w-4 h-4 text-primary-500 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-gray-400 text-sm">Email</p>
-                      <a href="mailto:hello@spheratic.com" className="text-white text-sm hover:text-primary-500 transition-colors">
-                        hello@spheratic.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-3">
-                    <Phone className="w-4 h-4 text-primary-500 mt-1 flex-shrink-0" />
-                    <div>
-                      <p className="text-gray-400 text-sm">Phone</p>
-                      <a href="tel:+1234567890" className="text-white text-sm hover:text-primary-500 transition-colors">
-                        +1 (234) 567-890
+                      <p className="text-slate-500 text-sm">Email</p>
+                      <a href="mailto:connect@spheratic.com" className="text-slate-600 text-sm hover:text-primary-500 transition-colors">
+                        connect@spheratic.com
                       </a>
                     </div>
                   </div>
@@ -222,10 +212,9 @@ const Footer = () => {
                   <div className="flex items-start space-x-3">
                     <MapPin className="w-4 h-4 text-primary-500 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-gray-400 text-sm">Address</p>
-                      <p className="text-white text-sm">
-                        123 Innovation Drive<br />
-                        Tech Valley, CA 94000
+                      <p className="text-slate-500 text-sm">Address</p>
+                      <p className="text-slate-600 text-sm">
+                        Kolkata, West Bengal, India
                       </p>
                     </div>
                   </div>
@@ -235,38 +224,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter Section */}
-        <div className="border-t border-gray-800">
-          <div className="container mx-auto px-6 py-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0"
-            >
-              <div>
-                <h3 className="text-white font-semibold mb-2">Stay Updated</h3>
-                <p className="text-gray-400 text-sm">Get the latest news and updates from Spheratic</p>
-              </div>
-
-              <div className="flex space-x-4">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="px-4 py-2 bg-white/10 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors"
-                />
-                <button className="px-6 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors duration-200 flex items-center space-x-2">
-                  <span>Subscribe</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800">
+        <div className="border-t border-slate-200">
           <div className="container mx-auto px-6 py-6">
             <motion.div
               initial={{ opacity: 0 }}
@@ -275,11 +234,11 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0"
             >
-              <p className="text-gray-400 text-sm">
+              <p className="text-slate-600 text-sm">
                 © {currentYear} Spheratic. All rights reserved.
               </p>
 
-              <div className="flex items-center space-x-6 text-sm text-gray-400">
+              <div className="flex items-center space-x-6 text-sm text-slate-600">
                 <span>Made with</span>
                 <Heart className="w-4 h-4 text-red-500" />
                 <span>for a better future</span>
