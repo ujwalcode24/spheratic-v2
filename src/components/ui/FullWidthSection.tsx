@@ -1,9 +1,33 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { PulsingWaveform, AnimatedWallet, AnimatedAR, AnimatedBrain, QuantumGrid } from '@/components/3d';
+import dynamic from 'next/dynamic';
+
+// Dynamically import 3D components only on client side
+const PulsingWaveform = dynamic(() => import('@/components/3d/HolographicHand'), { ssr: false });
+const AnimatedWallet = dynamic(() => import('@/components/3d/AnimatedWallet'), { ssr: false });
+const AnimatedAR = dynamic(() => import('@/components/3d/AnimatedAR'), { ssr: false });
+const AnimatedBrain = dynamic(() => import('@/components/3d/AnimatedBrain'), { ssr: false });
+const QuantumGrid = dynamic(() => import('@/components/3d/QuantumGrid'), { ssr: false });
+
+// Hook to detect if we're on desktop
+const useIsDesktop = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    checkIsDesktop();
+    window.addEventListener('resize', checkIsDesktop);
+    return () => window.removeEventListener('resize', checkIsDesktop);
+  }, []);
+
+  return isDesktop;
+};
 
 interface FullWidthSectionProps {
   children: React.ReactNode;
@@ -85,6 +109,9 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
 }) => {
   // Determine if this is a light background variant
   const isLightVariant = variant === "white" || variant === "orange" || variant === "blue" || variant === "purple";
+
+  // Only render 3D components on desktop to prevent mobile crashes
+  const isDesktop = useIsDesktop();
 
   return (
     <FullWidthSection variant={variant} geometric id={id}>
@@ -171,47 +198,49 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
             reverse ? 'lg:col-start-1 lg:row-start-1' : ''
           )}
         >
-          {/* Desktop: Show 3D canvas animations */}
-          <div className="hidden md:flex w-full h-full items-center justify-center">
-            {title === "Empathy Tech" ? (
-              <PulsingWaveform isDarkMode={!isLightVariant} />
-            ) : title === "FinTech" ? (
-              <AnimatedWallet isDarkMode={!isLightVariant} />
-            ) : title === "Human Tech" ? (
-              <AnimatedAR isDarkMode={!isLightVariant} />
-            ) : title === "AI & Innovation" ? (
-              <AnimatedBrain isDarkMode={!isLightVariant} />
-            ) : title === "Deep Tech" ? (
-              <QuantumGrid isDarkMode={!isLightVariant} />
-            ) : (
+          {/* Desktop: Show 3D canvas animations (only render when isDesktop is true) */}
+          {isDesktop ? (
+            <div className="w-full h-full flex items-center justify-center">
+              {title === "Empathy Tech" ? (
+                <PulsingWaveform isDarkMode={!isLightVariant} />
+              ) : title === "FinTech" ? (
+                <AnimatedWallet isDarkMode={!isLightVariant} />
+              ) : title === "Human Tech" ? (
+                <AnimatedAR isDarkMode={!isLightVariant} />
+              ) : title === "AI & Innovation" ? (
+                <AnimatedBrain isDarkMode={!isLightVariant} />
+              ) : title === "Deep Tech" ? (
+                <QuantumGrid isDarkMode={!isLightVariant} />
+              ) : (
+                <div className={cn(
+                  "w-64 h-64 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-105",
+                  isLightVariant ? "bg-slate-100/80 backdrop-blur-sm border border-slate-200" : "bg-white/10 backdrop-blur-sm border border-white/20"
+                )}>
+                  <div className={cn(
+                    "text-8xl font-bold opacity-20",
+                    isLightVariant ? "text-slate-400" : "text-white"
+                  )}>
+                    {title.charAt(0)}
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            /* Mobile: Show simple icon placeholder */
+            <div className="w-full h-full flex items-center justify-center">
               <div className={cn(
-                "w-64 h-64 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-105",
-                isLightVariant ? "bg-slate-100/80 backdrop-blur-sm border border-slate-200" : "bg-white/10 backdrop-blur-sm border border-white/20"
+                "w-32 h-32 rounded-2xl flex items-center justify-center",
+                isLightVariant ? "bg-gradient-to-br from-blue-100 to-purple-100 border border-slate-200" : "bg-white/10 backdrop-blur-sm border border-white/20"
               )}>
                 <div className={cn(
-                  "text-8xl font-bold opacity-20",
-                  isLightVariant ? "text-slate-400" : "text-white"
+                  "text-5xl font-bold",
+                  isLightVariant ? "bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent" : "text-white"
                 )}>
                   {title.charAt(0)}
                 </div>
               </div>
-            )}
-          </div>
-
-          {/* Mobile: Show simple icon placeholder */}
-          <div className="flex md:hidden w-full h-full items-center justify-center">
-            <div className={cn(
-              "w-32 h-32 rounded-2xl flex items-center justify-center",
-              isLightVariant ? "bg-gradient-to-br from-blue-100 to-purple-100 border border-slate-200" : "bg-white/10 backdrop-blur-sm border border-white/20"
-            )}>
-              <div className={cn(
-                "text-5xl font-bold",
-                isLightVariant ? "bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent" : "text-white"
-              )}>
-                {title.charAt(0)}
-              </div>
             </div>
-          </div>
+          )}
         </motion.div>
       </div>
     </FullWidthSection>

@@ -1,9 +1,26 @@
 'use client';
 
-import React, { useRef, useMemo } from 'react';
+import React, { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as THREE from 'three';
+
+// Hook to detect if we're on desktop
+const useIsDesktop = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    checkIsDesktop();
+    window.addEventListener('resize', checkIsDesktop);
+    return () => window.removeEventListener('resize', checkIsDesktop);
+  }, []);
+
+  return isDesktop;
+};
 
 // Floating particles component
 function FloatingParticles() {
@@ -131,9 +148,15 @@ interface AnimatedBackgroundProps {
 }
 
 const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({ className = "" }) => {
+  const isDesktop = useIsDesktop();
+
+  // Don't render anything on mobile to prevent crashes
+  if (!isDesktop) {
+    return null;
+  }
+
   return (
-    // Hidden on mobile (below md) to prevent crashes
-    <div className={`absolute inset-0 -z-10 hidden md:block ${className}`}>
+    <div className={`absolute inset-0 -z-10 ${className}`}>
       <Canvas
         camera={{ position: [0, 0, 5], fov: 75 }}
         style={{ background: 'transparent' }}

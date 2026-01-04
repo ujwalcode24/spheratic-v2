@@ -1,9 +1,28 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { DomainSection } from '@/components/ui';
 
+// Hook to detect if we're on desktop
+const useIsDesktop = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    checkIsDesktop();
+    window.addEventListener('resize', checkIsDesktop);
+    return () => window.removeEventListener('resize', checkIsDesktop);
+  }, []);
+
+  return isDesktop;
+};
+
 const StickyDomainsSection = () => {
+  const isDesktop = useIsDesktop();
+
   const domains = [
     {
       title: "Empathy Tech",
@@ -67,9 +86,12 @@ const StickyDomainsSection = () => {
         return (
           <div
             key={domain.title}
-            style={{
+            style={isDesktop ? {
               position: 'sticky',
               top: 64,
+              zIndex: index + 1,
+            } : {
+              position: 'relative',
               zIndex: index + 1,
             }}
           >

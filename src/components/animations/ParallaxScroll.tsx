@@ -1,8 +1,25 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+
+// Hook to detect if we're on desktop
+const useIsDesktop = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    checkIsDesktop();
+    window.addEventListener('resize', checkIsDesktop);
+    return () => window.removeEventListener('resize', checkIsDesktop);
+  }, []);
+
+  return isDesktop;
+};
 
 interface ParallaxSectionProps {
   children: React.ReactNode;
@@ -18,6 +35,8 @@ export const ParallaxSection: React.FC<ParallaxSectionProps> = ({
   offset = 0
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const isDesktop = useIsDesktop();
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
@@ -25,6 +44,15 @@ export const ParallaxSection: React.FC<ParallaxSectionProps> = ({
 
   const y = useTransform(scrollYProgress, [0, 1], [offset, offset - (speed * 100)]);
   const smoothY = useSpring(y, { stiffness: 100, damping: 30 });
+
+  // On mobile, disable parallax effect to improve performance
+  if (!isDesktop) {
+    return (
+      <div ref={ref} className={className}>
+        {children}
+      </div>
+    );
+  }
 
   return (
     <motion.div
