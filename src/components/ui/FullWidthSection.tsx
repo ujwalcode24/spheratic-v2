@@ -149,16 +149,13 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
           >
             <button
               className={cn(
-                "px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center rounded-lg",
+                "px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl rounded-lg",
                 isLightVariant
                   ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700"
                   : "bg-white text-slate-800 hover:bg-gray-100"
               )}
             >
               Explore Solutions
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
             </button>
           </motion.div>
         </motion.div>

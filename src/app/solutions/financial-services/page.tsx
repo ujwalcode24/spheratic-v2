@@ -3,77 +3,148 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle, Button } from '@/components/ui';
+import { FullWidthSection } from '@/components/ui';
+import { AnimatedBackground } from '@/components/3d';
 import { ANIMATIONS } from '@/lib/constants';
-import { Building2, CreditCard, Shield, BarChart3, Scale, Lock, Zap } from 'lucide-react';
 
 const FinancialServicesPage = () => {
   const solutions = [
     {
-      icon: Building2,
       title: 'Digital Banking Platform',
       description: 'Complete digital banking solution with mobile apps, web portals, and backend systems.',
-      features: ['Mobile banking', 'Online account management', 'Payment processing', 'KYC automation']
+      features: ['Mobile banking', 'Online account management', 'Payment processing', 'KYC automation'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+        </svg>
+      ),
+      iconColor: 'text-blue-500',
+      iconBg: 'bg-blue-50'
     },
     {
-      icon: CreditCard,
       title: 'Payment Processing',
       description: 'Secure and scalable payment processing for all types of transactions.',
-      features: ['Real-time processing', 'Multi-currency support', 'Fraud detection', 'PCI compliance']
+      features: ['Real-time processing', 'Multi-currency support', 'Fraud detection', 'PCI compliance'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+        </svg>
+      ),
+      iconColor: 'text-green-500',
+      iconBg: 'bg-green-50'
     },
     {
-      icon: Shield,
       title: 'Risk Management',
       description: 'Advanced risk assessment and management tools for financial institutions.',
-      features: ['Credit scoring', 'Risk analytics', 'Compliance monitoring', 'Regulatory reporting']
+      features: ['Credit scoring', 'Risk analytics', 'Compliance monitoring', 'Regulatory reporting'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+      iconColor: 'text-red-500',
+      iconBg: 'bg-red-50'
     },
     {
-      icon: BarChart3,
       title: 'Trading Platform',
       description: 'High-performance trading platform for stocks, forex, and cryptocurrency.',
-      features: ['Real-time data', 'Advanced charting', 'Algorithmic trading', 'Portfolio management']
+      features: ['Real-time data', 'Advanced charting', 'Algorithmic trading', 'Portfolio management'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      ),
+      iconColor: 'text-purple-500',
+      iconBg: 'bg-purple-50'
+    },
+    {
+      title: 'Compliance Tools',
+      description: 'Built-in compliance and regulatory reporting tools for KYC, AML, and other requirements.',
+      features: ['KYC automation', 'AML screening', 'Regulatory reporting', 'Audit trails'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+        </svg>
+      ),
+      iconColor: 'text-orange-500',
+      iconBg: 'bg-orange-50'
+    },
+    {
+      title: 'Fraud Detection',
+      description: 'AI-powered fraud detection and prevention system with real-time transaction monitoring.',
+      features: ['Real-time monitoring', 'ML-based detection', 'Alert management', 'Case investigation'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+        </svg>
+      ),
+      iconColor: 'text-yellow-500',
+      iconBg: 'bg-yellow-50'
+    },
+    {
+      title: 'API Integration',
+      description: 'Seamless integration with third-party services via RESTful APIs and webhooks.',
+      features: ['Open banking APIs', 'Webhook support', 'SDK libraries', 'Documentation'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+        </svg>
+      ),
+      iconColor: 'text-cyan-500',
+      iconBg: 'bg-cyan-50'
+    },
+    {
+      title: 'Analytics Dashboard',
+      description: 'Comprehensive financial analytics and reporting dashboards with actionable insights.',
+      features: ['Real-time analytics', 'Custom reports', 'Data visualization', 'Export options'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+        </svg>
+      ),
+      iconColor: 'text-indigo-500',
+      iconBg: 'bg-indigo-50'
     }
   ];
 
-  const benefits = [
+  const useCases = [
     {
-      title: 'Regulatory Compliance',
-      description: 'Built-in compliance with financial regulations including PCI DSS, SOX, and GDPR.',
-      icon: Scale
+      title: 'Traditional Banks',
+      description: 'Digital transformation solutions for modernizing legacy banking systems.',
+      industry: 'Banking'
     },
     {
-      title: 'Enhanced Security',
-      description: 'Multi-layer security with encryption, fraud detection, and secure authentication.',
-      icon: Lock
+      title: 'FinTech Startups',
+      description: 'Launch your fintech platform quickly with our ready-to-deploy solutions.',
+      industry: 'Startup'
     },
     {
-      title: 'Scalable Architecture',
-      description: 'Cloud-native architecture that scales with your business growth.',
-      icon: Zap
+      title: 'Investment Firms',
+      description: 'Portfolio management and trading solutions for investment companies.',
+      industry: 'Investment'
     },
     {
-      title: '24/7 Support',
-      description: 'Round-the-clock technical support and monitoring for critical systems.',
-      icon: BarChart3
+      title: 'Insurance Companies',
+      description: 'Streamline claims processing and policy management with automation.',
+      industry: 'Insurance'
     }
   ];
 
   return (
     <div className="pt-16 min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 overflow-hidden">
+        <AnimatedBackground />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-white/90 z-0"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={ANIMATIONS.fadeInUp.initial}
             animate={ANIMATIONS.fadeInUp.animate}
             transition={ANIMATIONS.fadeInUp.transition}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-primary-500/10 backdrop-blur-sm rounded-full text-sm font-medium mb-8 border border-primary-500/20 text-primary-600">
-              <span className="text-2xl mr-2">🏦</span>
-              Financial Services Solutions
-            </div>
-
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="text-primary-500">Transform</span> Financial Services
               <br />
@@ -85,27 +156,17 @@ const FinancialServicesPage = () => {
               Build secure, scalable, and compliant financial services.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/company/contact">
-                <Button size="lg" className="px-8 py-3">
-                  Schedule Consultation
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </Button>
-              </Link>
-              <Link href="/customers/case-studies">
-                <Button variant="outline" size="lg" className="px-8 py-3">
-                  View Case Studies
-                </Button>
-              </Link>
-            </div>
+            <Link href="/company/contact">
+              <button className="px-8 py-3 text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700">
+                Schedule Consultation
+              </button>
+            </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Solutions Grid */}
-      <section className="py-20">
+      {/* Features Section */}
+      <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={ANIMATIONS.fadeInUp.initial}
@@ -114,54 +175,37 @@ const FinancialServicesPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Our Financial Solutions
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
+              Powerful Financial Capabilities
             </h2>
-            <p className="text-lg text-accent-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
               Comprehensive suite of financial technology solutions designed for modern banking and finance.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {solutions.map((solution, index) => (
               <motion.div
                 key={solution.title}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                className="bg-white rounded-lg p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow"
               >
-                <Card hover className="h-full border-2 hover:border-primary-500/50 transition-all duration-300">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
-                      {React.createElement(solution.icon, { className: 'w-6 h-6 text-primary-500' })}
-                    </div>
-                    <CardTitle className="text-xl font-semibold">
-                      {solution.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-accent-gray-600 mb-4">
-                      {solution.description}
-                    </p>
-                    <div className="space-y-2">
-                      {solution.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-accent-gray-600">
-                          <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2"></span>
-                          {feature}
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                <div className={`inline-flex p-2 rounded-lg ${solution.iconBg} ${solution.iconColor} mb-4`}>
+                  {solution.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">{solution.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{solution.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-accent-gray-50">
+      {/* Use Cases Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={ANIMATIONS.fadeInUp.initial}
@@ -170,32 +214,32 @@ const FinancialServicesPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Why Choose Our Financial Solutions?
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
+              Real-World Applications
             </h2>
-            <p className="text-lg text-accent-gray-600 max-w-3xl mx-auto">
-              Built specifically for the financial industry with security, compliance, and performance in mind.
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              See how our financial solutions are transforming businesses across the industry.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {useCases.map((useCase, index) => (
               <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, y: 40 }}
+                key={useCase.title}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center"
+                className="bg-white rounded-lg p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow"
               >
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  {React.createElement(benefit.icon, { className: 'w-8 h-8 text-primary-500' })}
-                </div>
-                <h3 className="text-lg font-semibold text-accent-gray-900 mb-2">
-                  {benefit.title}
+                <span className="inline-block px-3 py-1 text-xs font-medium text-primary-500 bg-primary-50 rounded-full mb-3">
+                  {useCase.industry}
+                </span>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">
+                  {useCase.title}
                 </h3>
-                <p className="text-accent-gray-600 text-sm">
-                  {benefit.description}
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {useCase.description}
                 </p>
               </motion.div>
             ))}
@@ -233,36 +277,34 @@ const FinancialServicesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary-500 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={ANIMATIONS.fadeInUp.initial}
-            whileInView={ANIMATIONS.fadeInUp.animate}
-            transition={ANIMATIONS.fadeInUp.transition}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Modernize Your Financial Services?
-            </h2>
-            <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-              Let&apos;s discuss how our solutions can help you stay competitive in the digital finance landscape.
-            </p>
+      <FullWidthSection variant="orange">
+        <motion.div
+          initial={ANIMATIONS.fadeInUp.initial}
+          whileInView={ANIMATIONS.fadeInUp.animate}
+          transition={ANIMATIONS.fadeInUp.transition}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-800">
+            Ready to Modernize Your Financial Services?
+          </h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto text-slate-600">
+            Let&apos;s discuss how our solutions can help you stay competitive in the digital finance landscape.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/company/contact">
-              <button
-                style={{ backgroundColor: 'white', color: '#FF6B35', borderRadius: '2px' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f3f4f6'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
-                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
-              >
+              <button className="px-8 py-3 text-lg font-medium transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700">
                 Start Your Digital Transformation
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
               </button>
             </Link>
-          </motion.div>
-        </div>
-      </section>
+            <Link href="/customers/case-studies">
+              <button className="px-8 py-3 text-lg font-medium transition-all duration-300 inline-flex items-center justify-center hover:-translate-y-1 rounded-lg bg-white/70 backdrop-blur-sm text-slate-700 border border-slate-200 hover:bg-white hover:shadow-md">
+                View Success Stories
+              </button>
+            </Link>
+          </div>
+        </motion.div>
+      </FullWidthSection>
     </div>
   );
 };

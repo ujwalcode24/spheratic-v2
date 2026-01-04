@@ -8,7 +8,6 @@ interface PageTemplateProps {
   title: string;
   subtitle: string;
   description: string;
-  badge?: string;
   children: React.ReactNode;
 }
 
@@ -16,7 +15,6 @@ export const PageTemplate: React.FC<PageTemplateProps> = ({
   title,
   subtitle,
   description,
-  badge = 'Featured',
   children,
 }) => {
   return (
@@ -30,11 +28,6 @@ export const PageTemplate: React.FC<PageTemplateProps> = ({
             transition={ANIMATIONS.fadeInUp.transition}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-primary-500/10 backdrop-blur-sm rounded-full text-sm font-medium mb-8 border border-primary-500/20 text-primary-600">
-              <span className="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></span>
-              {badge}
-            </div>
-
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="text-primary-500">{title}</span>
               <br />

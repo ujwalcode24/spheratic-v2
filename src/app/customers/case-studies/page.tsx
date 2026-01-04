@@ -164,13 +164,6 @@ const CaseStudiesPage = () => {
             transition={ANIMATIONS.fadeInUp.transition}
             className="text-center"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-primary-500/10 backdrop-blur-sm rounded-full text-sm font-medium mb-8 border border-primary-500/20 text-primary-600">
-              <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-              </svg>
-              Success Stories
-            </div>
-
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="text-primary-500">Real</span> Success Stories
               <br />
@@ -350,25 +343,12 @@ const CaseStudiesPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/company/contact">
-              <button
-                style={{ backgroundColor: '#FF6B35', color: 'white', borderRadius: '2px' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#E74C3C'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FF6B35'}
-                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
-              >
+              <button className="px-8 py-3 text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700">
                 Start Your Project
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
               </button>
             </Link>
             <Link href="/products/ai-platform">
-              <button
-                style={{ backgroundColor: 'transparent', color: '#FF6B35', border: '2px solid #FF6B35', borderRadius: '2px' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#fef2f2'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105"
-              >
+              <button className="px-8 py-3 text-lg font-medium transition-all duration-300 inline-flex items-center justify-center hover:-translate-y-1 rounded-lg bg-white/70 backdrop-blur-sm text-slate-700 border border-slate-200 hover:bg-white hover:shadow-md">
                 Explore Solutions
               </button>
             </Link>

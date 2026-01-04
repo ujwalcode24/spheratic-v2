@@ -27,6 +27,8 @@ import {
   Newspaper,
   BookOpen,
   FileText,
+  Handshake,
+  UserPlus,
 } from 'lucide-react';
 
 const Navigation = () => {
@@ -59,30 +61,32 @@ const Navigation = () => {
 
   const getIconForTitle = (title: string): JSX.Element => {
     const iconMap: { [key: string]: JSX.Element } = {
-      'AI Platform': <Cpu className="w-5 h-5 text-black" />,
-      'FinTech Suite': <Wallet className="w-5 h-5 text-black" />,
-      'HealthTech Solutions': <Stethoscope className="w-5 h-5 text-black" />,
-      'Blockchain Tools': <Link2 className="w-5 h-5 text-black" />,
-      'Analytics Dashboard': <BarChart3 className="w-5 h-5 text-black" />,
-      'Financial Services': <Building2 className="w-5 h-5 text-black" />,
-      'Healthcare': <Heart className="w-5 h-5 text-black" />,
-      'Insurance': <Shield className="w-5 h-5 text-black" />,
-      'Retail & E-commerce': <ShoppingCart className="w-5 h-5 text-black" />,
-      'Enterprise': <Briefcase className="w-5 h-5 text-black" />,
-      'Case Studies': <TrendingUp className="w-5 h-5 text-black" />,
-      'Testimonials': <MessageSquare className="w-5 h-5 text-black" />,
-      'Success Stories': <Trophy className="w-5 h-5 text-black" />,
-      'About Us': <Info className="w-5 h-5 text-black" />,
-      'Team': <Users className="w-5 h-5 text-black" />,
-      'Careers': <BriefcaseIcon className="w-5 h-5 text-black" />,
-      'Contact': <Phone className="w-5 h-5 text-black" />,
-      'News': <Newspaper className="w-5 h-5 text-black" />,
-      'Resources': <BookOpen className="w-5 h-5 text-black" />,
-      'Blog': <FileText className="w-5 h-5 text-black" />,
-      'Documentation': <FileText className="w-5 h-5 text-black" />,
+      'AI Platform': <Cpu className="w-5 h-5 text-slate-400" />,
+      'FinTech Suite': <Wallet className="w-5 h-5 text-slate-400" />,
+      'HealthTech Solutions': <Stethoscope className="w-5 h-5 text-slate-400" />,
+      'Blockchain Tools': <Link2 className="w-5 h-5 text-slate-400" />,
+      'Analytics Dashboard': <BarChart3 className="w-5 h-5 text-slate-400" />,
+      'Financial Services': <Building2 className="w-5 h-5 text-slate-400" />,
+      'Healthcare': <Heart className="w-5 h-5 text-slate-400" />,
+      'Insurance': <Shield className="w-5 h-5 text-slate-400" />,
+      'Retail & E-commerce': <ShoppingCart className="w-5 h-5 text-slate-400" />,
+      'Enterprise': <Briefcase className="w-5 h-5 text-slate-400" />,
+      'Case Studies': <TrendingUp className="w-5 h-5 text-slate-400" />,
+      'Testimonials': <MessageSquare className="w-5 h-5 text-slate-400" />,
+      'Success Stories': <Trophy className="w-5 h-5 text-slate-400" />,
+      'About Us': <Info className="w-5 h-5 text-slate-400" />,
+      'Team': <Users className="w-5 h-5 text-slate-400" />,
+      'Careers': <BriefcaseIcon className="w-5 h-5 text-slate-400" />,
+      'Contact': <Phone className="w-5 h-5 text-slate-400" />,
+      'News': <Newspaper className="w-5 h-5 text-slate-400" />,
+      'Resources': <BookOpen className="w-5 h-5 text-slate-400" />,
+      'Blog': <FileText className="w-5 h-5 text-slate-400" />,
+      'Documentation': <FileText className="w-5 h-5 text-slate-400" />,
+      'Technology Partners': <Handshake className="w-5 h-5 text-slate-400" />,
+      'Become a Partner': <UserPlus className="w-5 h-5 text-slate-400" />,
     };
 
-    return iconMap[title] || <Cpu className="w-5 h-5 text-black" />;
+    return iconMap[title] || <Cpu className="w-5 h-5 text-slate-400" />;
   };
 
   return (
@@ -144,14 +148,14 @@ const Navigation = () => {
                           transition={{ duration: 0.2 }}
                           className="absolute top-full left-0 mt-2 w-80 bg-white shadow-2xl py-4 z-50 backdrop-blur-md"
                         >
-                          <div className="px-4 py-2 border-b border-accent-gray-100 mb-2">
+                          <div className="px-4 py-2 border-b border-slate-100 mb-2">
                             <h3 className="text-sm font-semibold text-accent-gray-900">{item.label}</h3>
                           </div>
                           {item.children.map((child) => (
                             <Link
                               key={child.href}
                               href={child.href}
-                              className="flex items-start px-4 py-3 text-sm hover:bg-primary-50 hover:border-l-4 hover:border-primary-500 transition-all duration-200 group"
+                              className="flex items-start px-4 py-3 text-sm hover:bg-slate-50 hover:border-l-4 hover:border-l-blue-500 transition-all duration-200 group"
                               onClick={closeDropdown}
                             >
                               <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center mr-3">

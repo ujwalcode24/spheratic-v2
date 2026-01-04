@@ -5,13 +5,8 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   Mail,
-  Phone,
   MapPin,
-  Linkedin,
-  Twitter,
-  Github,
   ArrowRight,
-  Heart,
   Globe,
   Shield,
   Zap,
@@ -23,51 +18,41 @@ const Footer = () => {
 
   const footerSections = [
     {
-      title: "Solutions",
+      title: "Products",
       links: [
         { name: "AI Platform", href: "/products/ai-platform" },
-        { name: "FinTech Suite", href: "/products/fintech" },
-        { name: "HealthTech", href: "/products/healthtech" },
-        { name: "Analytics Dashboard", href: "/products/analytics" },
-        { name: "Custom Development", href: "/solutions/custom" }
+        { name: "FinTech Suite", href: "/products/fintech-suite" },
+        { name: "HealthTech Solutions", href: "/products/healthtech-solutions" },
+        { name: "Blockchain Tools", href: "/products/blockchain-tools" },
+        { name: "Analytics Dashboard", href: "/products/analytics-dashboard" }
+      ]
+    },
+    {
+      title: "Solutions",
+      links: [
+        { name: "Financial Services", href: "/solutions/financial-services" },
+        { name: "Healthcare", href: "/solutions/healthcare" },
+        { name: "Insurance", href: "/solutions/insurance" },
+        { name: "Retail & E-commerce", href: "/solutions/retail-ecommerce" },
+        { name: "Enterprise", href: "/solutions/enterprise" }
+      ]
+    },
+    {
+      title: "Partners",
+      links: [
+        { name: "Technology Partners", href: "/partners/technology" },
+        { name: "Become a Partner", href: "/partners/join" },
+        { name: "Case Studies", href: "/customers/case-studies" }
       ]
     },
     {
       title: "Company",
       links: [
         { name: "About Us", href: "/company/about" },
-        { name: "Our Team", href: "/company/team" },
         { name: "Careers", href: "/company/careers" },
-        { name: "Research", href: "/research" },
-        { name: "News & Updates", href: "/company/news" }
-      ]
-    },
-    {
-      title: "Resources",
-      links: [
-        { name: "Documentation", href: "/resources/docs" },
-        { name: "API Reference", href: "/resources/api" },
-        { name: "Case Studies", href: "/customers/case-studies" },
-        { name: "White Papers", href: "/resources/whitepapers" },
-        { name: "Support Center", href: "/support" }
-      ]
-    },
-    {
-      title: "Legal",
-      links: [
-        { name: "Privacy Policy", href: "/legal/privacy" },
-        { name: "Terms of Service", href: "/legal/terms" },
-        { name: "Cookie Policy", href: "/legal/cookies" },
-        { name: "Security", href: "/legal/security" },
-        { name: "Compliance", href: "/legal/compliance" }
+        { name: "Contact", href: "/company/contact" }
       ]
     }
-  ];
-
-  const socialLinks = [
-    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/company/spheratic" },
-    { name: "Twitter", icon: Twitter, href: "https://twitter.com/spheratic" },
-    { name: "GitHub", icon: Github, href: "https://github.com/spheratic" }
   ];
 
   const features = [
@@ -124,25 +109,6 @@ const Footer = () => {
                       <feature.icon className="w-4 h-4 text-primary-500" />
                       <span>{feature.text}</span>
                     </motion.div>
-                  ))}
-                </div>
-
-                {/* Social Links */}
-                <div className="flex space-x-4">
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={social.name}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.4, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300 group"
-                    >
-                      <social.icon className="w-5 h-5 text-slate-600 group-hover:text-white" />
-                    </motion.a>
                   ))}
                 </div>
               </motion.div>
@@ -238,10 +204,8 @@ const Footer = () => {
                 © {currentYear} Spheratic. All rights reserved.
               </p>
 
-              <div className="flex items-center space-x-6 text-sm text-slate-600">
-                <span>Made with</span>
-                <Heart className="w-4 h-4 text-red-500" />
-                <span>for a better future</span>
+              <div className="flex items-center space-x-2 text-sm text-slate-600">
+                <span>made with a dream for better future</span>
               </div>
             </motion.div>
           </div>

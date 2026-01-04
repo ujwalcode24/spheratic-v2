@@ -211,44 +211,24 @@ const AnalyticsDashboardPage = () => {
             transition={ANIMATIONS.fadeInUp.transition}
             className="text-center"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-primary-500/10 backdrop-blur-sm rounded-full text-sm font-medium mb-8 border border-primary-500/20 text-primary-600">
-              <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
-              Business Intelligence
-            </div>
-
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Analytics <span className="text-primary-500">Dashboard</span>
               <br />
               <span className="gradient-text">For Smarter Decisions</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-8">
               Real-time analytics and business intelligence platform that transforms your data into actionable insights.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/company/contact">
-                <button
-                  style={{ backgroundColor: '#FF6B35', color: 'white', borderRadius: '2px' }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#E74C3C'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FF6B35'}
-                  className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
-                >
+                <button className="px-8 py-3 text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700">
                   Get Started
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
                 </button>
               </Link>
               <Link href="/customers/case-studies">
-                <button
-                  style={{ backgroundColor: 'transparent', color: '#FF6B35', border: '2px solid #FF6B35', borderRadius: '2px' }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#fef2f2'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                  className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105"
-                >
+                <button className="px-8 py-3 text-lg font-medium transition-all duration-300 inline-flex items-center justify-center hover:-translate-y-1 rounded-lg bg-white/70 backdrop-blur-sm text-slate-700 border border-slate-200 hover:bg-white hover:shadow-md">
                   View Case Studies
                 </button>
               </Link>
@@ -258,7 +238,7 @@ const AnalyticsDashboardPage = () => {
       </section>
 
       {/* Features Grid */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={ANIMATIONS.fadeInUp.initial}
@@ -267,8 +247,8 @@ const AnalyticsDashboardPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Key Features</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">Key Features</h2>
+            <p className="text-lg text-slate-600">
               Everything you need for data-driven decisions.
             </p>
           </motion.div>
@@ -281,13 +261,13 @@ const AnalyticsDashboardPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
+                className="bg-white rounded-lg p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow"
               >
                 <div className={`inline-flex p-2 rounded-lg ${feature.iconBg} ${feature.iconColor} mb-4`}>
                   {feature.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">{feature.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -304,8 +284,8 @@ const AnalyticsDashboardPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Proven Results</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">Proven Results</h2>
+            <p className="text-lg text-slate-600">
               See the impact of Analytics Dashboard on your business.
             </p>
           </motion.div>
@@ -318,7 +298,7 @@ const AnalyticsDashboardPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center hover:shadow-md transition-shadow flex flex-col items-center"
+                className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow flex flex-col items-center"
               >
                 <div className={`inline-flex p-3 rounded-lg ${benefit.iconBg} ${benefit.iconColor} mb-4`}>
                   {benefit.icon}
@@ -326,7 +306,7 @@ const AnalyticsDashboardPage = () => {
                 <div className="text-3xl md:text-4xl font-bold text-primary-500 mb-2">
                   {benefit.number}
                 </div>
-                <div className="text-gray-600 text-sm font-medium">
+                <div className="text-slate-600 text-sm font-medium">
                   {benefit.label}
                 </div>
               </motion.div>
@@ -345,8 +325,8 @@ const AnalyticsDashboardPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Use Cases</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">Use Cases</h2>
+            <p className="text-lg text-slate-600">
               Perfect for data-driven organizations.
             </p>
           </motion.div>
@@ -359,23 +339,23 @@ const AnalyticsDashboardPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-xl border border-gray-200 hover:border-gray-300 transition-all duration-300"
+                className="group relative overflow-hidden rounded-xl border border-slate-200 hover:border-slate-300 transition-all duration-300"
               >
                 <div className="flex flex-col md:flex-row h-full">
                   <div className={`${useCase.iconBg} p-8 flex flex-col items-center justify-center md:w-1/3 md:min-h-full`}>
                     <div className={`p-4 rounded-xl bg-white/80 ${useCase.iconColor} mb-4 shadow-sm`}>
                       {useCase.icon}
                     </div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-gray-600">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-600">
                       {useCase.category}
                     </span>
                   </div>
                   <div className="p-8 md:w-2/3 bg-white flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{useCase.title}</h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">{useCase.description}</p>
+                    <h3 className="text-xl font-bold text-slate-800 mb-3">{useCase.title}</h3>
+                    <p className="text-slate-600 mb-6 leading-relaxed">{useCase.description}</p>
                     <div className="grid grid-cols-2 gap-3">
                       {useCase.benefits.map((benefit, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-gray-700">
+                        <div key={idx} className="flex items-center text-sm text-slate-700">
                           <svg className="w-4 h-4 mr-2 text-primary-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                           </svg>
@@ -400,33 +380,20 @@ const AnalyticsDashboardPage = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-800">
             Ready for Data-Driven Insights?
           </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-600">
+          <p className="text-lg mb-8 max-w-2xl mx-auto text-slate-600">
             Transform your data into actionable insights with Analytics Dashboard.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/company/contact">
-              <button
-                style={{ backgroundColor: '#FF6B35', color: 'white', borderRadius: '2px' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#E74C3C'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FF6B35'}
-                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
-              >
+              <button className="px-8 py-3 text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700">
                 Get Notified
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                </svg>
               </button>
             </Link>
             <Link href="/products/ai-platform">
-              <button
-                style={{ backgroundColor: 'transparent', color: '#FF6B35', border: '2px solid #FF6B35', borderRadius: '2px' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#fef2f2'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105"
-              >
+              <button className="px-8 py-3 text-lg font-medium transition-all duration-300 inline-flex items-center justify-center hover:-translate-y-1 rounded-lg bg-white/70 backdrop-blur-sm text-slate-700 border border-slate-200 hover:bg-white hover:shadow-md">
                 Explore AI Platform
               </button>
             </Link>

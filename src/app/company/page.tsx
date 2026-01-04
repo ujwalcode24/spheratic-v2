@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection, Card, CardContent, CardHeader, CardTitle, Button } from '@/components/ui';
 import { ANIMATIONS } from '@/lib/constants';
-import { Star, Users, Briefcase, Newspaper } from 'lucide-react';
+import { Star, Briefcase, Phone } from 'lucide-react';
 
 const CompanyPage = () => {
   const companyLinks = [
@@ -17,13 +17,6 @@ const CompanyPage = () => {
       href: '/company/about'
     },
     {
-      id: 'team',
-      name: 'Our Team',
-      description: 'Meet the talented people behind Spheratic.',
-      icon: Users,
-      href: '/company/team'
-    },
-    {
       id: 'careers',
       name: 'Careers',
       description: 'Join our team and help shape the future of technology.',
@@ -31,11 +24,11 @@ const CompanyPage = () => {
       href: '/company/careers'
     },
     {
-      id: 'news',
-      name: 'News & Updates',
-      description: 'Stay updated with our latest announcements and insights.',
-      icon: Newspaper,
-      href: '/company/news'
+      id: 'contact',
+      name: 'Contact Us',
+      description: 'Get in touch with our team for inquiries and support.',
+      icon: Phone,
+      href: '/company/contact'
     }
   ];
 
@@ -50,11 +43,6 @@ const CompanyPage = () => {
             transition={ANIMATIONS.fadeInUp.transition}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-primary-500/10 backdrop-blur-sm rounded-full text-sm font-medium mb-8 border border-primary-500/20 text-primary-600">
-              <span className="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></span>
-              About Spheratic
-            </div>
-
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="text-primary-500">Building the Future</span>
               <br />
@@ -76,7 +64,7 @@ const CompanyPage = () => {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
             {companyLinks.map((link) => (
               <motion.div
@@ -126,12 +114,7 @@ const CompanyPage = () => {
             Have questions? We&apos;d love to hear from you. Contact our team today.
           </p>
           <Link href="/company/contact">
-            <button
-              style={{ backgroundColor: 'white', color: '#FF6B35', borderRadius: '2px' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f3f4f6'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
-              className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
-            >
+            <button className="px-8 py-3 text-lg font-medium transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-lg bg-white text-blue-600 hover:bg-slate-50">
               Contact Us
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

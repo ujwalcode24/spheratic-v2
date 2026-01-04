@@ -99,10 +99,50 @@ const FinTechSuitePage = () => {
   ];
 
   const benefits = [
-    { number: '300%', label: 'Faster Transactions' },
-    { number: '50%', label: 'Cost Reduction' },
-    { number: '99.99%', label: 'Uptime' },
-    { number: '24/7', label: 'Support' }
+    {
+      number: '300%',
+      label: 'Faster Transactions',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+      iconColor: 'text-blue-500',
+      iconBg: 'bg-blue-50'
+    },
+    {
+      number: '50%',
+      label: 'Cost Reduction',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      iconColor: 'text-green-500',
+      iconBg: 'bg-green-50'
+    },
+    {
+      number: '99.99%',
+      label: 'Uptime',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      iconColor: 'text-purple-500',
+      iconBg: 'bg-purple-50'
+    },
+    {
+      number: '24/7',
+      label: 'Support',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      ),
+      iconColor: 'text-orange-500',
+      iconBg: 'bg-orange-50'
+    }
   ];
 
   const useCases = [
@@ -171,52 +211,29 @@ const FinTechSuitePage = () => {
             transition={ANIMATIONS.fadeInUp.transition}
             className="text-center"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-primary-500/10 backdrop-blur-sm rounded-full text-sm font-medium mb-8 border border-primary-500/20 text-primary-600">
-              <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Financial Technology
-            </div>
-
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               FinTech <span className="text-primary-500">Suite</span>
               <br />
               <span className="gradient-text">For Modern Finance</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
+            <p className="text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-12">
               Complete financial technology solutions for modern banking, payments, and digital finance operations.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/company/contact">
-                <button
-                  style={{ backgroundColor: '#FF6B35', color: 'white', borderRadius: '2px' }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#E74C3C'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FF6B35'}
-                  className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 inline-flex items-center shadow-lg"
-                >
+                <button className="px-8 py-3 text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700">
                   Get Started
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
                 </button>
               </Link>
-              <button
-                style={{ backgroundColor: 'transparent', color: '#FF6B35', border: '2px solid #FF6B35', borderRadius: '2px' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#fef2f2'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 inline-flex items-center"
-              >
-                View Demo
-              </button>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Features Grid */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={ANIMATIONS.fadeInUp.initial}
@@ -225,8 +242,8 @@ const FinTechSuitePage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Key Features</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">Key Features</h2>
+            <p className="text-lg text-slate-600">
               Everything you need for modern financial operations.
             </p>
           </motion.div>
@@ -239,13 +256,13 @@ const FinTechSuitePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
+                className="bg-white rounded-lg p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow"
               >
                 <div className={`inline-flex p-2 rounded-lg ${feature.iconBg} ${feature.iconColor} mb-4`}>
                   {feature.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">{feature.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -262,13 +279,13 @@ const FinTechSuitePage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Proven Results</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">Proven Results</h2>
+            <p className="text-lg text-slate-600">
               See the impact of FinTech Suite on your business.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={benefit.label}
@@ -276,12 +293,15 @@ const FinTechSuitePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center hover:shadow-md transition-shadow"
+                className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow flex flex-col items-center"
               >
-                <div className="text-4xl font-bold text-primary-500 mb-2">
+                <div className={`inline-flex p-3 rounded-lg ${benefit.iconBg} ${benefit.iconColor} mb-4`}>
+                  {benefit.icon}
+                </div>
+                <div className="text-3xl md:text-4xl font-bold text-primary-500 mb-2">
                   {benefit.number}
                 </div>
-                <div className="text-gray-600 font-medium">
+                <div className="text-slate-600 text-sm font-medium">
                   {benefit.label}
                 </div>
               </motion.div>
@@ -300,8 +320,8 @@ const FinTechSuitePage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Use Cases</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">Use Cases</h2>
+            <p className="text-lg text-slate-600">
               Perfect for various financial institutions.
             </p>
           </motion.div>
@@ -314,7 +334,7 @@ const FinTechSuitePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-xl border border-gray-200 hover:border-gray-300 transition-all duration-300"
+                className="group relative overflow-hidden rounded-xl border border-slate-200 hover:border-slate-300 transition-all duration-300"
               >
                 <div className="flex flex-col md:flex-row h-full">
                   {/* Left side - Icon & Category */}
@@ -322,19 +342,19 @@ const FinTechSuitePage = () => {
                     <div className={`p-4 rounded-xl bg-white/80 ${useCase.iconColor} mb-4 shadow-sm`}>
                       {useCase.icon}
                     </div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-gray-600">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-600">
                       {useCase.category}
                     </span>
                   </div>
 
                   {/* Right side - Content */}
                   <div className="p-8 md:w-2/3 bg-white flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{useCase.title}</h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">{useCase.description}</p>
+                    <h3 className="text-xl font-bold text-slate-800 mb-3">{useCase.title}</h3>
+                    <p className="text-slate-600 mb-6 leading-relaxed">{useCase.description}</p>
 
                     <div className="grid grid-cols-2 gap-3">
                       {useCase.benefits.map((benefit, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-gray-700">
+                        <div key={idx} className="flex items-center text-sm text-slate-700">
                           <svg className="w-4 h-4 mr-2 text-primary-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                           </svg>
@@ -359,33 +379,20 @@ const FinTechSuitePage = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-800">
             Ready to Transform Your Financial Operations?
           </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-600">
+          <p className="text-lg mb-8 max-w-2xl mx-auto text-slate-600">
             Get started with FinTech Suite today and revolutionize your financial services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/company/contact">
-              <button
-                style={{ backgroundColor: '#FF6B35', color: 'white', borderRadius: '2px' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#E74C3C'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FF6B35'}
-                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
-              >
+              <button className="px-8 py-3 text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700">
                 Schedule Demo
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
               </button>
             </Link>
             <Link href="/customers/case-studies">
-              <button
-                style={{ backgroundColor: 'transparent', color: '#FF6B35', border: '2px solid #FF6B35', borderRadius: '2px' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#fef2f2'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105"
-              >
+              <button className="px-8 py-3 text-lg font-medium transition-all duration-300 inline-flex items-center justify-center hover:-translate-y-1 rounded-lg bg-white/70 backdrop-blur-sm text-slate-700 border border-slate-200 hover:bg-white hover:shadow-md">
                 View Case Studies
               </button>
             </Link>

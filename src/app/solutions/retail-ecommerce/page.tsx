@@ -3,87 +3,169 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { FullWidthSection, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
+import { FullWidthSection } from '@/components/ui';
+import { AnimatedBackground } from '@/components/3d';
 import { ANIMATIONS } from '@/lib/constants';
-import { ShoppingCart, Package, BarChart3, Smartphone, CreditCard, FileText } from 'lucide-react';
 
 const RetailEcommerceSolutionPage = () => {
-  const features = [
+  const solutions = [
     {
       title: 'E-commerce Platform',
-      description: 'Modern e-commerce platform with mobile support',
-      icon: ShoppingCart
+      description: 'Modern, scalable e-commerce platform with seamless checkout, product management, and mobile optimization.',
+      features: ['Product catalog', 'Shopping cart', 'Checkout flow', 'Mobile-first'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+      iconColor: 'text-orange-500',
+      iconBg: 'bg-orange-50'
     },
     {
       title: 'Inventory Management',
-      description: 'Real-time inventory tracking and management',
-      icon: Package
+      description: 'Real-time inventory tracking across all channels with automated replenishment and demand forecasting.',
+      features: ['Multi-channel sync', 'Auto-replenishment', 'Demand forecast', 'Stock alerts'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+        </svg>
+      ),
+      iconColor: 'text-blue-500',
+      iconBg: 'bg-blue-50'
     },
     {
       title: 'Customer Analytics',
-      description: 'Advanced customer behavior analytics',
-      icon: BarChart3
+      description: 'Advanced customer behavior analytics with segmentation, personalization, and predictive insights.',
+      features: ['Behavior tracking', 'Segmentation', 'Personalization', 'Predictive AI'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      ),
+      iconColor: 'text-green-500',
+      iconBg: 'bg-green-50'
     },
     {
       title: 'Mobile Commerce',
-      description: 'Optimized mobile shopping experience',
-      icon: Smartphone
+      description: 'Native mobile apps and PWAs for seamless shopping experiences on any device.',
+      features: ['Native apps', 'PWA support', 'Push notifications', 'Mobile payments'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+      ),
+      iconColor: 'text-purple-500',
+      iconBg: 'bg-purple-50'
     },
     {
-      title: 'Payment Integration',
-      description: 'Multiple payment gateway integration',
-      icon: CreditCard
+      title: 'Payment Processing',
+      description: 'Secure payment processing with multiple gateways, fraud protection, and global currency support.',
+      features: ['Multi-gateway', 'Fraud protection', 'Multi-currency', 'One-click pay'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+        </svg>
+      ),
+      iconColor: 'text-cyan-500',
+      iconBg: 'bg-cyan-50'
     },
     {
       title: 'Order Management',
-      description: 'End-to-end order fulfillment system',
-      icon: FileText
+      description: 'End-to-end order fulfillment with real-time tracking, returns management, and shipping integration.',
+      features: ['Order tracking', 'Returns portal', 'Shipping APIs', 'Fulfillment'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      ),
+      iconColor: 'text-red-500',
+      iconBg: 'bg-red-50'
+    },
+    {
+      title: 'Marketing Automation',
+      description: 'Automated marketing campaigns with email, SMS, and social media integration.',
+      features: ['Email campaigns', 'SMS marketing', 'Social integration', 'A/B testing'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+        </svg>
+      ),
+      iconColor: 'text-yellow-500',
+      iconBg: 'bg-yellow-50'
+    },
+    {
+      title: 'POS Integration',
+      description: 'Unified commerce with seamless integration between online and in-store point of sale systems.',
+      features: ['Unified inventory', 'BOPIS support', 'Staff tools', 'Real-time sync'],
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
+      iconColor: 'text-indigo-500',
+      iconBg: 'bg-indigo-50'
     }
   ];
 
-  const benefits = [
-    { number: '10x', label: 'Traffic Capacity' },
-    { number: '25%', label: 'Conversion Growth' },
-    { number: '99.9%', label: 'Uptime' },
-    { number: '24/7', label: 'Support' }
-  ];
-
-  const industries = [
-    { name: 'Retail', icon: '🏪' },
-    { name: 'E-commerce', icon: '🛍️' },
-    { name: 'Fashion', icon: '👗' },
-    { name: 'Electronics', icon: '💻' }
+  const useCases = [
+    {
+      title: 'Fashion & Apparel',
+      description: 'Complete fashion commerce solutions with size guides, virtual try-on, and trend analytics.',
+      industry: 'Fashion'
+    },
+    {
+      title: 'Electronics & Gadgets',
+      description: 'Tech retail solutions with product comparisons, specs management, and warranty tracking.',
+      industry: 'Electronics'
+    },
+    {
+      title: 'Grocery & Food',
+      description: 'Fresh commerce solutions with delivery scheduling, subscription boxes, and inventory freshness.',
+      industry: 'Grocery'
+    },
+    {
+      title: 'Home & Furniture',
+      description: 'Furniture retail with AR visualization, room planning, and white-glove delivery.',
+      industry: 'Home'
+    }
   ];
 
   return (
     <div className="pt-16 min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 overflow-hidden">
+        <AnimatedBackground />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-white/90 z-0"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={ANIMATIONS.fadeInUp.initial}
             animate={ANIMATIONS.fadeInUp.animate}
             transition={ANIMATIONS.fadeInUp.transition}
-            className="text-center"
+            className="text-center mb-16"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-primary-500/10 backdrop-blur-sm rounded-full text-sm font-medium mb-8 border border-primary-500/20 text-primary-600">
-              <span className="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></span>
-              Retail & E-commerce Solution
-            </div>
-
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Retail & <span className="text-primary-500">E-commerce</span>
+              <span className="text-primary-500">Transform</span> Retail
+              <br />
+              <span className="gradient-text">With Digital Commerce</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-accent-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Modern commerce platforms and customer experience solutions for retail and e-commerce.
+            <p className="text-lg md:text-xl text-accent-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+              Comprehensive e-commerce and retail solutions for modern businesses.
+              Create seamless shopping experiences that drive growth and customer loyalty.
             </p>
+
+            <Link href="/company/contact">
+              <button className="px-8 py-3 text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700">
+                Schedule Consultation
+              </button>
+            </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="py-20">
+      {/* Features Section */}
+      <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={ANIMATIONS.fadeInUp.initial}
@@ -92,40 +174,37 @@ const RetailEcommerceSolutionPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Key Features</h2>
-            <p className="text-lg text-accent-gray-600">
-              Comprehensive retail and e-commerce solutions.
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
+              Powerful Commerce Capabilities
+            </h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              Comprehensive suite of retail and e-commerce solutions designed for modern businesses.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {solutions.map((solution, index) => (
               <motion.div
-                key={feature.title}
+                key={solution.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                className="bg-white rounded-lg p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow"
               >
-                <Card className="h-full hover:shadow-lg transition-shadow border border-accent-gray-200">
-                  <CardHeader>
-                    <div className="flex justify-start mb-4">
-                      {React.createElement(feature.icon, { className: 'w-10 h-10 text-primary-500' })}
-                    </div>
-                    <CardTitle className="text-xl">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-accent-gray-600">{feature.description}</p>
-                  </CardContent>
-                </Card>
+                <div className={`inline-flex p-2 rounded-lg ${solution.iconBg} ${solution.iconColor} mb-4`}>
+                  {solution.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">{solution.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{solution.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-accent-gray-50">
+      {/* Use Cases Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={ANIMATIONS.fadeInUp.initial}
@@ -134,62 +213,62 @@ const RetailEcommerceSolutionPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Proven Results</h2>
-            <p className="text-lg text-accent-gray-600">
-              See the impact on sales and customer satisfaction.
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
+              Real-World Applications
+            </h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              See how our retail solutions are transforming businesses across industries.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {useCases.map((useCase, index) => (
               <motion.div
-                key={benefit.label}
+                key={useCase.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-lg p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow"
+              >
+                <span className="inline-block px-3 py-1 text-xs font-medium text-primary-500 bg-primary-50 rounded-full mb-3">
+                  {useCase.industry}
+                </span>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">
+                  {useCase.title}
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {useCase.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            {[
+              { number: '1,000+', label: 'Retail Brands' },
+              { number: '$5B+', label: 'GMV Processed' },
+              { number: '99.9%', label: 'Uptime Guarantee' },
+              { number: '24/7', label: 'Support Available' }
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 rounded-lg shadow-md text-center"
               >
-                <div className="text-4xl font-bold text-primary-500 mb-2">
-                  {benefit.number}
+                <div className="text-3xl md:text-4xl font-bold text-primary-500 mb-2">
+                  {stat.number}
                 </div>
                 <div className="text-accent-gray-600">
-                  {benefit.label}
+                  {stat.label}
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={ANIMATIONS.fadeInUp.initial}
-            whileInView={ANIMATIONS.fadeInUp.animate}
-            transition={ANIMATIONS.fadeInUp.transition}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Industries We Serve</h2>
-            <p className="text-lg text-accent-gray-600">
-              Solutions for all retail and e-commerce sectors.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {industries.map((industry, index) => (
-              <motion.div
-                key={industry.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-accent-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition-shadow"
-              >
-                <div className="text-5xl mb-4">{industry.icon}</div>
-                <h3 className="text-lg font-bold">{industry.name}</h3>
               </motion.div>
             ))}
           </div>
@@ -205,25 +284,24 @@ const RetailEcommerceSolutionPage = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-800">
             Ready to Transform Your Retail Business?
           </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Let&apos;s discuss how we can help your retail or e-commerce business.
+          <p className="text-lg mb-8 max-w-2xl mx-auto text-slate-600">
+            Let&apos;s discuss how our solutions can help you create exceptional shopping experiences.
           </p>
-          <Link href="/company/contact">
-            <button
-              style={{ backgroundColor: 'white', color: '#FF6B35', borderRadius: '2px' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f3f4f6'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
-              className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
-            >
-              Explore Solutions
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </button>
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/company/contact">
+              <button className="px-8 py-3 text-lg font-medium transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700">
+                Start Your Digital Transformation
+              </button>
+            </Link>
+            <Link href="/customers/case-studies">
+              <button className="px-8 py-3 text-lg font-medium transition-all duration-300 inline-flex items-center justify-center hover:-translate-y-1 rounded-lg bg-white/70 backdrop-blur-sm text-slate-700 border border-slate-200 hover:bg-white hover:shadow-md">
+                View Success Stories
+              </button>
+            </Link>
+          </div>
         </motion.div>
       </FullWidthSection>
     </div>

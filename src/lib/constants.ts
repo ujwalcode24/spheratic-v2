@@ -85,12 +85,6 @@ export const NAVIGATION: NavItem[] = [
         icon: '🤝'
       },
       {
-        label: 'Integration Partners',
-        href: '/partners/integration',
-        description: 'API and platform integrations',
-        icon: '🔗'
-      },
-      {
         label: 'Become a Partner',
         href: '/partners/join',
         description: 'Join our partner network',
@@ -108,48 +102,6 @@ export const NAVIGATION: NavItem[] = [
         description: 'Real-world success stories',
         icon: '📈'
       },
-      {
-        label: 'Testimonials',
-        href: '/customers/testimonials',
-        description: 'What our clients say',
-        icon: '💬'
-      },
-      {
-        label: 'Success Stories',
-        href: '/customers/success-stories',
-        description: 'Customer achievements',
-        icon: '🏆'
-      },
-    ]
-  },
-  {
-    label: 'Research',
-    href: '/research',
-    children: [
-      {
-        label: 'Whitepapers',
-        href: '/research/whitepapers',
-        description: 'Technical insights',
-        icon: '📄'
-      },
-      {
-        label: 'Blog',
-        href: '/research/blog',
-        description: 'Latest thoughts and trends',
-        icon: '✍️'
-      },
-      {
-        label: 'Innovation Lab',
-        href: '/research/innovation-lab',
-        description: 'Experimental projects',
-        icon: '🔬'
-      },
-      {
-        label: 'Publications',
-        href: '/research/publications',
-        description: 'Research papers',
-        icon: '📚'
-      },
     ]
   },
   {
@@ -163,12 +115,6 @@ export const NAVIGATION: NavItem[] = [
         icon: '🌟'
       },
       {
-        label: 'Team',
-        href: '/company/team',
-        description: 'Meet our experts',
-        icon: '👥'
-      },
-      {
         label: 'Careers',
         href: '/company/careers',
         description: 'Join our team',
@@ -179,12 +125,6 @@ export const NAVIGATION: NavItem[] = [
         href: '/company/contact',
         description: 'Get in touch',
         icon: '📞'
-      },
-      {
-        label: 'News',
-        href: '/company/news',
-        description: 'Latest updates',
-        icon: '📰'
       },
     ]
   },

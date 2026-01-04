@@ -147,11 +147,8 @@ const MissionSection: React.FC<MissionSectionProps> = ({ className }) => {
           <p className="text-lg text-slate-600 mb-6">
             Ready to be part of our mission?
           </p>
-          <button className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700">
+          <button className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700">
             Join Our Journey
-            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
           </button>
         </motion.div>
       </div>

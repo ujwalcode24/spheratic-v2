@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   description: SEO_DEFAULTS.description,
   keywords: SEO_DEFAULTS.keywords,
   metadataBase: new URL('https://spheratic.com'),
+  icons: {
+    icon: '/favicon.svg',
+  },
   openGraph: {
     title: SEO_DEFAULTS.title,
     description: SEO_DEFAULTS.description,

@@ -19,18 +19,13 @@ const ProductsPage = () => {
             transition={ANIMATIONS.fadeInUp.transition}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-primary-500/10 backdrop-blur-sm rounded-full text-sm font-medium mb-8 border border-primary-500/20 text-primary-600">
-              <span className="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></span>
-              Our Products
-            </div>
-
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="text-primary-500">Innovative</span> Products
               <br />
               <span className="gradient-text">Built for the Future</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-accent-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-600 mb-12 max-w-4xl mx-auto leading-relaxed">
               Discover our comprehensive suite of technology products designed to transform
               your business and drive innovation across multiple domains.
             </p>
@@ -162,12 +157,7 @@ const ProductsPage = () => {
               </button>
             </Link>
             <Link href="/customers/case-studies">
-              <button
-                style={{ backgroundColor: 'white', color: '#FF6B35', borderRadius: '2px' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f3f4f6'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
-                className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg"
-              >
+              <button className="px-8 py-3 text-lg font-medium transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-lg bg-white text-blue-600 hover:bg-slate-50">
                 View Case Studies
               </button>
             </Link>

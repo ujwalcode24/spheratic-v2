@@ -10,13 +10,13 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'primary', size = 'md', children, loading, disabled, ...props }, ref) => {
-    const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
-    
+    const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed';
+
     const variants = {
-      primary: 'bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500 shadow-lg hover:shadow-xl hover:-translate-y-1',
-      secondary: 'bg-accent-gray-100 text-accent-gray-900 hover:bg-accent-gray-200 focus:ring-accent-gray-500',
-      outline: 'border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white focus:ring-primary-500',
-      ghost: 'text-accent-gray-700 hover:bg-accent-gray-100 focus:ring-accent-gray-500'
+      primary: 'bg-primary-500 text-white hover:bg-primary-600 shadow-lg hover:shadow-xl hover:-translate-y-1',
+      secondary: 'bg-accent-gray-100 text-accent-gray-900 hover:bg-accent-gray-200',
+      outline: 'border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white',
+      ghost: 'text-accent-gray-700 hover:bg-accent-gray-100'
     };
     
     const sizes = {

@@ -164,12 +164,7 @@ const TestimonialsPage = () => {
             Experience the Spheratic difference. Let&apos;s start your transformation today.
           </p>
           <Link href="/company/contact">
-            <button
-              style={{ backgroundColor: 'white', color: '#FF6B35', borderRadius: '2px' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f3f4f6'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
-              className="px-8 py-3 font-medium transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
-            >
+            <button className="px-8 py-3 text-lg font-medium transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-lg bg-white text-blue-600 hover:bg-slate-50">
               Get Started Today
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
