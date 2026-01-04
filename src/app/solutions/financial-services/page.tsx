@@ -4,7 +4,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FullWidthSection } from '@/components/ui';
-import { AnimatedBackground } from '@/components/3d';
 import { ANIMATIONS } from '@/lib/constants';
 
 const FinancialServicesPage = () => {
@@ -135,8 +134,7 @@ const FinancialServicesPage = () => {
     <div className="pt-16 min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <AnimatedBackground />
-        <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-white/90 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 z-0"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
