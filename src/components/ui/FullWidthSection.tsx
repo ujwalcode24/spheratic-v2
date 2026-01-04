@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { Heart, Wallet, User, Brain, Cpu } from 'lucide-react';
 
 interface FullWidthSectionProps {
   children: React.ReactNode;
@@ -160,7 +160,7 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
           </motion.div>
         </motion.div>
 
-        {/* Visual/Image - Simple Icon Display */}
+        {/* Visual/Image - SVG Illustration Display */}
         <motion.div
           initial={{ opacity: 0, x: reverse ? -50 : 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -171,26 +171,51 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
             reverse ? 'lg:col-start-1 lg:row-start-1' : ''
           )}
         >
-          <div className="w-full h-full flex items-center justify-center">
-            <div className={cn(
-              "w-48 h-48 md:w-64 md:h-64 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-105",
-              isLightVariant
-                ? "bg-gradient-to-br from-blue-50 to-purple-50 border border-slate-200 shadow-lg"
-                : "bg-white/10 backdrop-blur-sm border border-white/20"
-            )}>
+          <div className="w-full h-full flex items-center justify-center p-4">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 transition-all duration-300 hover:scale-105">
               {title === "Empathy Tech" ? (
-                <Heart className={cn("w-20 h-20 md:w-28 md:h-28", isLightVariant ? "text-rose-500" : "text-rose-400")} />
+                <Image
+                  src="/empathy-tech.svg"
+                  alt="Empathy Tech Illustration"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               ) : title === "FinTech" ? (
-                <Wallet className={cn("w-20 h-20 md:w-28 md:h-28", isLightVariant ? "text-emerald-500" : "text-emerald-400")} />
+                <Image
+                  src="/fin-tech.svg"
+                  alt="FinTech Illustration"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               ) : title === "Human Tech" ? (
-                <User className={cn("w-20 h-20 md:w-28 md:h-28", isLightVariant ? "text-blue-500" : "text-blue-400")} />
+                <Image
+                  src="/human-technology.svg"
+                  alt="Human Technology Illustration"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               ) : title === "AI & Innovation" ? (
-                <Brain className={cn("w-20 h-20 md:w-28 md:h-28", isLightVariant ? "text-purple-500" : "text-purple-400")} />
+                <Image
+                  src="/ai-innovation.svg"
+                  alt="AI & Innovation Illustration"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               ) : title === "Deep Tech" ? (
-                <Cpu className={cn("w-20 h-20 md:w-28 md:h-28", isLightVariant ? "text-cyan-500" : "text-cyan-400")} />
+                <Image
+                  src="/deep-tech.svg"
+                  alt="Deep Tech Illustration"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               ) : (
                 <div className={cn(
-                  "text-6xl md:text-8xl font-bold",
+                  "w-full h-full flex items-center justify-center text-6xl md:text-8xl font-bold",
                   isLightVariant ? "text-slate-400" : "text-white/50"
                 )}>
                   {title.charAt(0)}

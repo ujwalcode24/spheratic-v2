@@ -3,30 +3,85 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Sparkles, Zap, Globe, Shield } from 'lucide-react';
+import { Sparkles, Zap } from 'lucide-react';
 
 import { ANIMATIONS } from '@/lib/constants';
 
 const HeroSection = () => {
   return (
     <section
-      className="relative min-h-screen flex items-center overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #F0F9FF 0%, #E8F4FD 50%, #F3E8FF 100%)' }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #F0F4FF 30%, #E8E0F0 60%, #F5E6F0 100%)' }}
     >
-      {/* Decorative elements */}
+      {/* Aurora/Wave Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-1/3 w-96 h-96 bg-gradient-to-br from-purple-200/20 to-pink-200/20 rounded-full blur-3xl" />
-        <div className="absolute top-1/3 left-1/4 w-48 h-48 bg-gradient-to-br from-cyan-200/25 to-blue-200/25 rounded-full blur-2xl" />
+        {/* Main wave effect - pink/purple */}
+        <div className="absolute top-1/4 -left-20 w-[120%] h-[400px] bg-gradient-to-r from-pink-300/40 via-purple-300/30 to-transparent rounded-[100%] blur-3xl transform -rotate-6" />
+
+        {/* Secondary wave - cyan/blue */}
+        <div className="absolute top-1/3 -right-20 w-[100%] h-[300px] bg-gradient-to-l from-cyan-300/30 via-blue-200/20 to-transparent rounded-[100%] blur-3xl transform rotate-3" />
+
+        {/* Bottom wave - pink gradient */}
+        <div className="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-pink-200/50 via-purple-100/30 to-transparent" />
+
+        {/* Flowing lines effect */}
+        <svg className="absolute inset-0 w-full h-full opacity-30" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#f9a8d4" stopOpacity="0.4" />
+              <stop offset="50%" stopColor="#c4b5fd" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#67e8f9" stopOpacity="0.2" />
+            </linearGradient>
+            <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#67e8f9" stopOpacity="0.3" />
+              <stop offset="50%" stopColor="#f9a8d4" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#c4b5fd" stopOpacity="0.2" />
+            </linearGradient>
+          </defs>
+          <path d="M0,200 Q250,150 500,200 T1000,200 T1500,180" fill="none" stroke="url(#wave1)" strokeWidth="2" />
+          <path d="M0,250 Q300,200 600,250 T1200,230" fill="none" stroke="url(#wave2)" strokeWidth="1.5" />
+        </svg>
       </div>
 
-      {/* Left Column - Text Content */}
-      <div className="relative z-10 w-full lg:w-1/2 px-4 sm:px-6 lg:px-8 lg:pl-16 xl:pl-24">
+      {/* Floating decorative icons */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        className="absolute top-24 left-[10%] text-purple-400"
+      >
+        <Sparkles className="w-6 h-6" />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 1.0 }}
+        className="absolute top-40 left-[8%] text-cyan-400"
+      >
+        <Zap className="w-5 h-5" />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.9 }}
+        className="absolute top-32 right-[12%] text-cyan-400"
+      >
+        <Sparkles className="w-5 h-5" />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 1.1 }}
+        className="absolute top-1/3 right-[8%] w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full"
+      />
+
+      {/* Centered Content */}
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={ANIMATIONS.fadeInUp.initial}
           animate={ANIMATIONS.fadeInUp.animate}
           transition={ANIMATIONS.fadeInUp.transition}
-          className="text-left max-w-xl"
+          className="text-center"
         >
           {/* Main Heading */}
           <motion.h1
@@ -47,7 +102,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-lg md:text-xl text-slate-600 mb-12 leading-relaxed"
+            className="text-lg md:text-xl text-slate-600 mb-12 leading-relaxed max-w-2xl mx-auto"
           >
             Experience innovative, human-first technology solutions.
             <br />
@@ -59,7 +114,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex flex-wrap items-center gap-4"
+            className="flex flex-wrap items-center justify-center gap-4"
           >
             <Link href="/company/contact">
               <button className="px-8 py-3 text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700">
@@ -74,77 +129,6 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Right Column - Visual Design */}
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="hidden lg:flex absolute right-0 top-0 bottom-0 w-1/2 xl:w-[55%] items-center justify-center"
-      >
-        <div className="relative w-full h-full flex items-center justify-center">
-          {/* Main circle with gradient */}
-          <div className="relative w-80 h-80 xl:w-96 xl:h-96">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-full blur-2xl" />
-            <div className="absolute inset-4 bg-gradient-to-br from-white/80 to-white/40 rounded-full backdrop-blur-sm border border-white/50 shadow-2xl flex items-center justify-center">
-              <div className="grid grid-cols-2 gap-6 p-8">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                  className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg"
-                >
-                  <Sparkles className="w-10 h-10 text-white" />
-                </motion.div>
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.9 }}
-                  className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg"
-                >
-                  <Zap className="w-10 h-10 text-white" />
-                </motion.div>
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 1.0 }}
-                  className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg"
-                >
-                  <Globe className="w-10 h-10 text-white" />
-                </motion.div>
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 1.1 }}
-                  className="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg"
-                >
-                  <Shield className="w-10 h-10 text-white" />
-                </motion.div>
-              </div>
-            </div>
-          </div>
-
-          {/* Floating accent circles */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            className="absolute top-20 right-20 w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full opacity-60 blur-sm"
-          />
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.3 }}
-            className="absolute bottom-32 right-32 w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-full opacity-50 blur-sm"
-          />
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 1.4 }}
-            className="absolute top-1/3 right-10 w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-70"
-          />
-        </div>
-      </motion.div>
     </section>
   );
 };
