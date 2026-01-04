@@ -171,39 +171,47 @@ export const DomainSection: React.FC<DomainSectionProps> = ({
             reverse ? 'lg:col-start-1 lg:row-start-1' : ''
           )}
         >
-          {title === "Empathy Tech" ? (
-            <div className="w-full h-full flex items-center justify-center">
+          {/* Desktop: Show 3D canvas animations */}
+          <div className="hidden md:flex w-full h-full items-center justify-center">
+            {title === "Empathy Tech" ? (
               <PulsingWaveform isDarkMode={!isLightVariant} />
-            </div>
-          ) : title === "FinTech" ? (
-            <div className="w-full h-full flex items-center justify-center">
+            ) : title === "FinTech" ? (
               <AnimatedWallet isDarkMode={!isLightVariant} />
-            </div>
-          ) : title === "Human Tech" ? (
-            <div className="w-full h-full flex items-center justify-center">
+            ) : title === "Human Tech" ? (
               <AnimatedAR isDarkMode={!isLightVariant} />
-            </div>
-          ) : title === "AI & Innovation" ? (
-            <div className="w-full h-full flex items-center justify-center">
+            ) : title === "AI & Innovation" ? (
               <AnimatedBrain isDarkMode={!isLightVariant} />
-            </div>
-          ) : title === "Deep Tech" ? (
-            <div className="w-full h-full flex items-center justify-center">
+            ) : title === "Deep Tech" ? (
               <QuantumGrid isDarkMode={!isLightVariant} />
-            </div>
-          ) : (
+            ) : (
+              <div className={cn(
+                "w-64 h-64 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-105",
+                isLightVariant ? "bg-slate-100/80 backdrop-blur-sm border border-slate-200" : "bg-white/10 backdrop-blur-sm border border-white/20"
+              )}>
+                <div className={cn(
+                  "text-8xl font-bold opacity-20",
+                  isLightVariant ? "text-slate-400" : "text-white"
+                )}>
+                  {title.charAt(0)}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Mobile: Show simple icon placeholder */}
+          <div className="flex md:hidden w-full h-full items-center justify-center">
             <div className={cn(
-              "w-64 h-64 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-105",
-              isLightVariant ? "bg-slate-100/80 backdrop-blur-sm border border-slate-200" : "bg-white/10 backdrop-blur-sm border border-white/20"
+              "w-32 h-32 rounded-2xl flex items-center justify-center",
+              isLightVariant ? "bg-gradient-to-br from-blue-100 to-purple-100 border border-slate-200" : "bg-white/10 backdrop-blur-sm border border-white/20"
             )}>
               <div className={cn(
-                "text-8xl font-bold opacity-20",
-                isLightVariant ? "text-slate-400" : "text-white"
+                "text-5xl font-bold",
+                isLightVariant ? "bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent" : "text-white"
               )}>
                 {title.charAt(0)}
               </div>
             </div>
-          )}
+          </div>
         </motion.div>
       </div>
     </FullWidthSection>
