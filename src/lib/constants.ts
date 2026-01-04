@@ -157,7 +157,7 @@ export const TECH_DOMAINS = [
     id: 'empathy-tech',
     name: 'Empathy Tech',
     description: 'Building technology that understands and responds to human emotions and needs.',
-    icon: 'heart',
+    icon: 'shield',
     color: 'text-pink-500'
   },
   {
