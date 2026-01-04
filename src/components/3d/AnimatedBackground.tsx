@@ -132,7 +132,8 @@ interface AnimatedBackgroundProps {
 
 const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({ className = "" }) => {
   return (
-    <div className={`absolute inset-0 -z-10 ${className}`}>
+    // Hidden on mobile (below md) to prevent crashes
+    <div className={`absolute inset-0 -z-10 hidden md:block ${className}`}>
       <Canvas
         camera={{ position: [0, 0, 5], fov: 75 }}
         style={{ background: 'transparent' }}
