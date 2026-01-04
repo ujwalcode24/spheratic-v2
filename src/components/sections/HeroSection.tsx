@@ -1,47 +1,23 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { Sparkles, Zap, Globe, Shield } from 'lucide-react';
 
 import { ANIMATIONS } from '@/lib/constants';
 
 const HeroSection = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // GSAP animations will be added here
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!heroRef.current) return;
-
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-
-      const xPos = (clientX / innerWidth - 0.5) * 20;
-      const yPos = (clientY / innerHeight - 0.5) * 20;
-
-      const floatingElements = heroRef.current.querySelectorAll('.floating-element');
-      floatingElements.forEach((element, index) => {
-        const speed = (index + 1) * 0.5;
-        (element as HTMLElement).style.transform = `translate(${xPos * speed}px, ${yPos * speed}px)`;
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   return (
     <section
-      ref={heroRef}
       className="relative min-h-screen flex items-center overflow-hidden"
       style={{ background: 'linear-gradient(135deg, #F0F9FF 0%, #E8F4FD 50%, #F3E8FF 100%)' }}
     >
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="floating-element absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-3xl" />
-        <div className="floating-element absolute bottom-20 right-1/3 w-96 h-96 bg-gradient-to-br from-purple-200/20 to-pink-200/20 rounded-full blur-3xl" />
-        <div className="floating-element absolute top-1/3 left-1/4 w-48 h-48 bg-gradient-to-br from-cyan-200/25 to-blue-200/25 rounded-full blur-2xl" />
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-1/3 w-96 h-96 bg-gradient-to-br from-purple-200/20 to-pink-200/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 left-1/4 w-48 h-48 bg-gradient-to-br from-cyan-200/25 to-blue-200/25 rounded-full blur-2xl" />
       </div>
 
       {/* Left Column - Text Content */}
@@ -99,22 +75,75 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Right Column - Sketchfab 3D Model (Stuck to right edge) */}
+      {/* Right Column - Visual Design */}
       <motion.div
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="hidden lg:block absolute right-0 top-0 bottom-0 w-1/2 xl:w-[55%]"
+        className="hidden lg:flex absolute right-0 top-0 bottom-0 w-1/2 xl:w-[55%] items-center justify-center"
       >
-        <iframe
-          title="Worker 12"
-          frameBorder={0}
-          allowFullScreen
-          allow="autoplay; fullscreen; xr-spatial-tracking"
-          src="https://sketchfab.com/models/9688985db84d447580d40e40e1649407/embed?autospin=1&autostart=1&preload=1&transparent=1&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1&camera=0&scrollzoom=0"
-          className="w-full h-full"
-          style={{ border: 'none', minHeight: '100vh' }}
-        />
+        <div className="relative w-full h-full flex items-center justify-center">
+          {/* Main circle with gradient */}
+          <div className="relative w-80 h-80 xl:w-96 xl:h-96">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-full blur-2xl" />
+            <div className="absolute inset-4 bg-gradient-to-br from-white/80 to-white/40 rounded-full backdrop-blur-sm border border-white/50 shadow-2xl flex items-center justify-center">
+              <div className="grid grid-cols-2 gap-6 p-8">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg"
+                >
+                  <Sparkles className="w-10 h-10 text-white" />
+                </motion.div>
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.9 }}
+                  className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg"
+                >
+                  <Zap className="w-10 h-10 text-white" />
+                </motion.div>
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.5, delay: 1.0 }}
+                  className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg"
+                >
+                  <Globe className="w-10 h-10 text-white" />
+                </motion.div>
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.5, delay: 1.1 }}
+                  className="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg"
+                >
+                  <Shield className="w-10 h-10 text-white" />
+                </motion.div>
+              </div>
+            </div>
+          </div>
+
+          {/* Floating accent circles */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+            className="absolute top-20 right-20 w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full opacity-60 blur-sm"
+          />
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.3 }}
+            className="absolute bottom-32 right-32 w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-full opacity-50 blur-sm"
+          />
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 1.4 }}
+            className="absolute top-1/3 right-10 w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-70"
+          />
+        </div>
       </motion.div>
     </section>
   );

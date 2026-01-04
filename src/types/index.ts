@@ -99,17 +99,3 @@ export interface AnimationConfig {
   ease?: string;
   repeat?: number;
 }
-
-export interface ThreeJSScene {
-  camera: {
-    position: [number, number, number];
-    fov: number;
-  };
-  lights: {
-    ambient: number;
-    directional: {
-      intensity: number;
-      position: [number, number, number];
-    };
-  };
-}
