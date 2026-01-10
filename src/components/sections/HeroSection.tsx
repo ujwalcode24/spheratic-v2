@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Sparkles, Zap } from 'lucide-react';
 
 import { ANIMATIONS } from '@/lib/constants';
 
@@ -42,38 +41,6 @@ const HeroSection = () => {
           <path d="M0,250 Q300,200 600,250 T1200,230" fill="none" stroke="url(#wave2)" strokeWidth="1.5" />
         </svg>
       </div>
-
-      {/* Floating decorative icons */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        className="absolute top-24 left-[10%] text-purple-400"
-      >
-        <Sparkles className="w-6 h-6" />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 1.0 }}
-        className="absolute top-40 left-[8%] text-cyan-400"
-      >
-        <Zap className="w-5 h-5" />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.9 }}
-        className="absolute top-32 right-[12%] text-cyan-400"
-      >
-        <Sparkles className="w-5 h-5" />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 1.1 }}
-        className="absolute top-1/3 right-[8%] w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full"
-      />
 
       {/* Centered Content */}
       <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

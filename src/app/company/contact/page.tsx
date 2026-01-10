@@ -67,19 +67,7 @@ const ContactPage = () => {
       iconColor: 'text-blue-500',
       iconBg: 'bg-blue-50'
     },
-    {
-      title: 'Call Us',
-      description: 'Speak directly with our team',
-      value: COMPANY_INFO.phone,
-      action: `tel:${COMPANY_INFO.phone}`,
-      icon: (
-        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg>
-      ),
-      iconColor: 'text-green-500',
-      iconBg: 'bg-green-50'
-    },
+
     {
       title: 'Visit Us',
       description: 'Come see us at our office',
@@ -165,7 +153,7 @@ const ContactPage = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {contactMethods.map((method, index) => (
               <motion.a
                 key={method.title}
@@ -243,7 +231,7 @@ const ContactPage = () => {
                       required
                       value={formData.firstName}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-lg border ${errors.firstName ? 'border-red-500' : 'border-slate-300'} focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all`}
+                      className={`w-full px-4 py-3 rounded-lg border ${errors.firstName ? 'border-red-500' : 'border-slate-300'} focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all`}
                       placeholder="John"
                     />
                     {errors.firstName && <p className="mt-1 text-sm text-red-500">{errors.firstName}</p>}
@@ -259,7 +247,7 @@ const ContactPage = () => {
                       required
                       value={formData.lastName}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-lg border ${errors.lastName ? 'border-red-500' : 'border-slate-300'} focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all`}
+                      className={`w-full px-4 py-3 rounded-lg border ${errors.lastName ? 'border-red-500' : 'border-slate-300'} focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all`}
                       placeholder="Doe"
                     />
                     {errors.lastName && <p className="mt-1 text-sm text-red-500">{errors.lastName}</p>}
@@ -278,7 +266,7 @@ const ContactPage = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-lg border ${errors.email ? 'border-red-500' : 'border-slate-300'} focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all`}
+                      className={`w-full px-4 py-3 rounded-lg border ${errors.email ? 'border-red-500' : 'border-slate-300'} focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all`}
                       placeholder="you@company.com"
                     />
                     {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
@@ -293,7 +281,7 @@ const ContactPage = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                       placeholder="+1 (555) 000-0000"
                     />
                   </div>
@@ -310,7 +298,7 @@ const ContactPage = () => {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                       placeholder="Your company name"
                     />
                   </div>
@@ -323,7 +311,7 @@ const ContactPage = () => {
                       name="type"
                       value={formData.type}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-white"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all bg-white"
                     >
                       {CONTACT_TYPES.map(type => (
                         <option key={type.value} value={type.value}>
@@ -345,7 +333,7 @@ const ContactPage = () => {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 rounded-lg border ${errors.subject ? 'border-red-500' : 'border-slate-300'} focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all`}
+                    className={`w-full px-4 py-3 rounded-lg border ${errors.subject ? 'border-red-500' : 'border-slate-300'} focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all`}
                     placeholder="How can we help you?"
                   />
                   {errors.subject && <p className="mt-1 text-sm text-red-500">{errors.subject}</p>}
@@ -362,7 +350,7 @@ const ContactPage = () => {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 rounded-lg border ${errors.message ? 'border-red-500' : 'border-slate-300'} focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none`}
+                    className={`w-full px-4 py-3 rounded-lg border ${errors.message ? 'border-red-500' : 'border-slate-300'} focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all resize-none`}
                     placeholder="Tell us about your project or inquiry..."
                   />
                   {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}

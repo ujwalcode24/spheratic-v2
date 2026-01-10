@@ -306,7 +306,7 @@ const BecomePartnerPage = () => {
                       required
                       value={formData.companyName}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                       placeholder="Your company name"
                     />
                   </div>
@@ -321,7 +321,7 @@ const BecomePartnerPage = () => {
                       required
                       value={formData.contactName}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                       placeholder="Your full name"
                     />
                   </div>
@@ -339,7 +339,7 @@ const BecomePartnerPage = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                       placeholder="you@company.com"
                     />
                   </div>
@@ -353,7 +353,7 @@ const BecomePartnerPage = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                       placeholder="+1 (555) 000-0000"
                     />
                   </div>
@@ -369,7 +369,7 @@ const BecomePartnerPage = () => {
                     name="website"
                     value={formData.website}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                     placeholder="https://yourcompany.com"
                   />
                 </div>
@@ -385,7 +385,7 @@ const BecomePartnerPage = () => {
                       required
                       value={formData.partnerType}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-white"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all bg-white"
                     >
                       <option value="">Select partnership type</option>
                       <option value="technology">Technology Partner</option>
@@ -404,7 +404,7 @@ const BecomePartnerPage = () => {
                       required
                       value={formData.companySize}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-white"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all bg-white"
                     >
                       <option value="">Select company size</option>
                       <option value="1-10">1-10 employees</option>
@@ -426,7 +426,7 @@ const BecomePartnerPage = () => {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all resize-none"
                     placeholder="Describe your business, expertise, and what you hope to achieve through this partnership..."
                   />
                 </div>
