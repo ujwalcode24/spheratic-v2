@@ -48,9 +48,36 @@ const ContactPage = () => {
     e.preventDefault();
     if (!validateForm()) return;
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setSubmitted(true);
+
+    try {
+      const response = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          message: `Subject: ${formData.subject}
+Company: ${formData.company || 'Not provided'}
+Phone: ${formData.phone || 'Not provided'}
+Inquiry Type: ${formData.type}
+
+Message:
+${formData.message}`,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setSubmitted(true);
+    } catch {
+      setErrors({ ...errors, form: 'Failed to send message. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [
@@ -355,6 +382,12 @@ const ContactPage = () => {
                   />
                   {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
                 </div>
+
+                {errors.form && (
+                  <div className="p-4 rounded-lg bg-red-50 border border-red-200">
+                    <p className="text-sm text-red-600">{errors.form}</p>
+                  </div>
+                )}
 
                 <button
                   type="submit"

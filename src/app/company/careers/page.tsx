@@ -47,9 +47,37 @@ const CareersPage = () => {
     e.preventDefault();
     if (!validateForm()) return;
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setSubmitted(true);
+
+    try {
+      const response = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'career',
+          name: formData.fullName,
+          email: formData.email,
+          message: `Position Applied: ${formData.position}
+Experience Level: ${formData.experience}
+Phone: ${formData.phone || 'Not provided'}
+Portfolio/LinkedIn: ${formData.portfolio || 'Not provided'}
+
+Cover Letter:
+${formData.coverLetter}`,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit application');
+      }
+
+      setSubmitted(true);
+    } catch {
+      setErrors({ ...errors, form: 'Failed to submit application. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const openPositions = [
@@ -458,6 +486,12 @@ const CareersPage = () => {
                   />
                   {errors.coverLetter && <p className="mt-1 text-sm text-red-500">{errors.coverLetter}</p>}
                 </div>
+
+                {errors.form && (
+                  <div className="p-4 rounded-lg bg-red-50 border border-red-200">
+                    <p className="text-sm text-red-600">{errors.form}</p>
+                  </div>
+                )}
 
                 <div className="flex justify-center">
                   <button

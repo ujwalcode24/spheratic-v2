@@ -23,13 +23,44 @@ const BecomePartnerPage = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const [error, setError] = useState('');
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setSubmitted(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'partnership',
+          name: formData.contactName,
+          email: formData.email,
+          message: `Company: ${formData.companyName}
+Website: ${formData.website || 'Not provided'}
+Phone: ${formData.phone || 'Not provided'}
+Partnership Type: ${formData.partnerType}
+Company Size: ${formData.companySize}
+
+Message:
+${formData.message || 'No additional message provided'}`,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit application');
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError('Failed to submit application. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const partnerTypes = [
@@ -430,6 +461,12 @@ const BecomePartnerPage = () => {
                     placeholder="Describe your business, expertise, and what you hope to achieve through this partnership..."
                   />
                 </div>
+
+                {error && (
+                  <div className="p-4 rounded-lg bg-red-50 border border-red-200">
+                    <p className="text-sm text-red-600">{error}</p>
+                  </div>
+                )}
 
                 <button
                   type="submit"
